@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -28,16 +27,16 @@
   --gold-lt:#e0c070;
   --gold-dim:rgba(201,168,76,0.1);
   --gold-dim2:rgba(201,168,76,0.18);
-  --maroon:#7a2020;
   --navy:#0c1a2e;
   --fh:'Cormorant Garamond',serif;
   --fb:'Inter',sans-serif;
 }
 html{scroll-behavior:auto;}
-body{font-family:var(--fb);background:var(--white);color:var(--text);overflow-x:hidden;}
+body{font-family:var(--fb);background:var(--white);color:var(--text);overflow-x:hidden;padding-bottom:64px;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.1);}
 .n-logo{text-decoration:none;display:flex;flex-direction:column;gap:1px;}
 .n-logo-main{font-family:var(--fh);font-size:1.4rem;font-weight:600;letter-spacing:.12em;color:var(--text);text-transform:uppercase;line-height:1;}
 .n-logo-sub{font-size:.48rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-family:var(--fb);font-weight:600;}
@@ -47,7 +46,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .n-cta{padding:10px 24px;background:var(--gold);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;transition:background .2s,transform .2s;}
 .n-cta:hover{background:var(--gold-dk);transform:translateY(-1px);}
 
-/* HERO — split: text left, photo+3D right */
+/* HERO */
 #hero{width:100vw;height:100vh;min-height:700px;display:grid;grid-template-columns:1fr 1fr;padding-top:72px;background:var(--white);}
 .h-left{display:flex;flex-direction:column;justify-content:center;padding:56px 72px;position:relative;z-index:2;}
 .h-left::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#d4cfc7 1px,transparent 1px);background-size:28px 28px;opacity:.35;z-index:-1;}
@@ -56,7 +55,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .h-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
 .h-title{font-family:var(--fh);font-size:clamp(3.4rem,5vw,5.8rem);font-weight:300;line-height:.9;letter-spacing:.01em;color:var(--text);margin-bottom:20px;}
 .h-title em{font-style:italic;color:var(--gold-dk);display:block;}
-.h-sub{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--text2);max-width:400px;margin-bottom:32px;}
+.h-sub{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--text2);max-width:400px;margin-bottom:24px;}
+.h-finance{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:6px 14px;margin-bottom:24px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dk);}
+.h-finance svg{stroke:var(--gold-dk);fill:none;stroke-width:2;width:13px;height:13px;flex-shrink:0;}
 .h-btns{display:flex;gap:12px;flex-wrap:wrap;}
 .btn-gold{padding:14px 30px;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .2s,transform .2s,box-shadow .2s;}
 .btn-gold:hover{background:var(--gold-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3);}
@@ -64,14 +65,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .btn-outline:hover{border-color:var(--gold);color:var(--gold-dk);transform:translateY(-2px);}
 .h-certs{display:flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap;}
 .h-cert{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);background:var(--light);border:1px solid var(--bd);padding:4px 12px;}
-
-/* Hero right — photo + 3D overlay */
 .h-right{position:relative;overflow:hidden;background:#1a1612;}
 .h-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .8s ease;}
 .h-right:hover .h-photo{transform:scale(1.03);}
-.h-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,8,6,.55),rgba(10,8,6,.2));z-index:1;}
-#hc{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;}
-/* Floating stat cards */
+.h-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,8,6,.45),rgba(10,8,6,.1));z-index:1;}
 .h-sc{position:absolute;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.8);padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.15);}
 .h-sc-1{top:22%;left:-24px;}
 .h-sc-2{bottom:30%;right:24px;}
@@ -79,22 +76,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .h-sc-num{font-family:var(--fh);font-size:1.9rem;font-weight:600;color:var(--gold-dk);line-height:1;margin-bottom:2px;}
 .h-sc-lbl{font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);}
 
-/* MARQUEE — gold */
+/* TICKER */
+.ticker{background:var(--text);padding:13px 0;overflow:hidden;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);}
+.ticker-inner{display:flex;width:max-content;animation:tick 60s linear infinite;}
+.ticker-inner:hover{animation-play-state:paused;}
+.ticker-item{font-size:.65rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);padding:0 40px;white-space:nowrap;}
+.ticker-item span{color:var(--gold);margin-right:8px;}
+.ticker-sep{color:rgba(201,168,76,.4);padding:0 4px;}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* MARQUEE */
 .mq{background:var(--gold);padding:11px 0;overflow:hidden;}
 .mq-inner{display:flex;width:max-content;animation:mqs 35s linear infinite;}
 .mq-inner:hover{animation-play-state:paused;}
 .mq-item{font-family:var(--fh);font-size:.9rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--text);padding:0 48px;white-space:nowrap;}
 .mq-item::after{content:' · ';}
 @keyframes mqs{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
-/* STATS GRID */
-.stats{background:var(--off);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:48px 72px;}
-.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);}
-.stat-item{background:var(--white);padding:36px 28px;display:flex;flex-direction:column;gap:6px;transition:background .2s;}
-.stat-item:hover{background:var(--off);}
-.stat-n{font-family:var(--fh);font-size:clamp(2.8rem,4vw,4rem);font-weight:300;color:var(--gold-dk);line-height:1;letter-spacing:.02em;}
-.stat-l{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);}
-.stat-desc{font-size:.78rem;font-weight:300;color:var(--text2);margin-top:4px;}
 
 /* SECTION HELPERS */
 .eyebrow{font-size:.58rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
@@ -103,7 +100,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .sec-title em{font-style:italic;color:var(--gold-dk);}
 .sec-sub{font-size:.9rem;font-weight:300;line-height:1.8;color:var(--text2);}
 
-/* ABOUT — split: text left, visual right */
+/* ABOUT */
 #about{padding:120px 72px;background:var(--white);}
 .ab-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .ab-body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--text2);margin:20px 0 36px;}
@@ -113,7 +110,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .ab-pt-icon svg{stroke:var(--gold-dk);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .ab-pt-txt{font-size:.84rem;line-height:1.65;color:var(--text2);}
 .ab-pt-txt strong{color:var(--text);font-weight:600;}
-/* Right visual panel */
 .ab-right{position:relative;}
 .ab-photo-wrap{position:relative;aspect-ratio:4/5;overflow:hidden;}
 .ab-photo{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .8s ease;}
@@ -122,7 +118,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .ab-tag-num{font-family:var(--fh);font-size:3rem;font-weight:300;line-height:1;margin-bottom:2px;}
 .ab-tag-lbl{font-size:.52rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;font-family:var(--fb);opacity:.7;}
 
-/* SERVICES — list with sweep */
+/* SERVICES */
 #services{padding:120px 72px;background:var(--off);}
 .sv-inner{max-width:1200px;margin:0 auto;}
 .sv-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:72px;}
@@ -141,8 +137,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .sv-item:hover .sv-arrow{border-color:var(--gold);background:var(--gold);transform:rotate(45deg);}
 .sv-item:hover .sv-arrow svg{stroke:var(--text);}
 
-/* PROJECTS — cards with real photos */
-#projects{padding:120px 72px;background:var(--white);}
+/* MATERIALS */
+#materials{padding:100px 72px;background:var(--white);}
+.mat-inner{max-width:1200px;margin:0 auto;}
+.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bd);margin-top:56px;}
+.mat-card{background:var(--white);padding:44px 36px;transition:background .3s;position:relative;overflow:hidden;}
+.mat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.mat-card:hover::before{transform:scaleX(1);}
+.mat-card:hover{background:var(--off);}
+.mat-icon{width:52px;height:52px;background:var(--gold-dim);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin-bottom:24px;}
+.mat-icon svg{stroke:var(--gold-dk);fill:none;stroke-width:1.5;width:24px;height:24px;}
+.mat-name{font-family:var(--fh);font-size:1.6rem;font-weight:400;color:var(--text);margin-bottom:10px;}
+.mat-desc{font-size:.82rem;font-weight:300;line-height:1.75;color:var(--text2);}
+.mat-tag{display:inline-block;margin-top:18px;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);background:var(--gold-dim);padding:4px 10px;border:1px solid rgba(201,168,76,.25);}
+
+/* PROJECTS */
+#projects{padding:120px 72px;background:var(--off);}
 .pj-inner{max-width:1200px;margin:0 auto;}
 .pj-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
 .pj-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:460px 320px;gap:16px;}
@@ -162,6 +172,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .pj-card:hover .pj-arrow{opacity:1;transform:translateY(0);background:var(--gold);}
 .pj-card:hover .pj-arrow svg{stroke:var(--text);}
 
+/* INSURANCE CLAIMS */
+#insurance{padding:0 72px 0;background:var(--white);}
+.ins-inner{max-width:1200px;margin:0 auto;}
+.ins-box{background:var(--text);padding:64px 72px;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;position:relative;overflow:hidden;}
+.ins-box::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--gold);}
+.ins-box::after{content:'INSURANCE';position:absolute;right:-20px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:var(--fh);font-size:5rem;font-weight:300;letter-spacing:.3em;color:rgba(201,168,76,.05);white-space:nowrap;pointer-events:none;}
+.ins-eyebrow{font-size:.56rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.ins-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+.ins-title{font-family:var(--fh);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1;color:#fff;margin-bottom:24px;}
+.ins-title em{font-style:italic;color:var(--gold-lt);}
+.ins-points{display:flex;flex-direction:column;gap:10px;}
+.ins-point{display:flex;align-items:center;gap:12px;font-size:.82rem;font-weight:300;color:rgba(255,255,255,.65);}
+.ins-point::before{content:'';width:6px;height:6px;background:var(--gold);flex-shrink:0;}
+.ins-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0;}
+.ins-note{font-size:.62rem;color:rgba(255,255,255,.3);text-align:center;letter-spacing:.04em;}
+
 /* PROCESS */
 #process{padding:120px 72px;background:var(--off);}
 .pr-inner{max-width:1200px;margin:0 auto;}
@@ -175,6 +201,53 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .pr-step:hover .pr-step-n{color:var(--gold-dim2);}
 .pr-step-title{font-family:var(--fh);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:12px;}
 .pr-step-desc{font-size:.8rem;font-weight:300;line-height:1.7;color:var(--text2);}
+
+/* REVIEWS */
+#reviews{padding:100px 72px;background:var(--white);}
+.rv-inner{max-width:1200px;margin:0 auto;}
+.rv-summary{display:flex;align-items:center;gap:32px;margin-bottom:56px;}
+.rv-score{font-family:var(--fh);font-size:5rem;font-weight:300;color:var(--text);line-height:1;}
+.rv-meta{display:flex;flex-direction:column;gap:6px;}
+.rv-stars{display:flex;gap:3px;}
+.rv-stars span{font-size:1.3rem;color:var(--gold);}
+.rv-count{font-size:.75rem;font-weight:500;color:var(--text3);letter-spacing:.06em;}
+.rv-badge{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:#4285f4;color:#fff;padding:3px 10px;display:inline-block;margin-top:2px;}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rv-card{background:var(--off);border:1px solid var(--bd);padding:32px 28px;}
+.rv-card-stars{display:flex;gap:2px;margin-bottom:14px;}
+.rv-card-stars span{font-size:.95rem;color:var(--gold);}
+.rv-card-quote{font-family:var(--fh);font-size:1.1rem;font-weight:400;font-style:italic;line-height:1.55;color:var(--text);margin-bottom:20px;}
+.rv-card-author{font-size:.72rem;font-weight:600;color:var(--text2);letter-spacing:.04em;}
+.rv-card-loc{font-size:.66rem;color:var(--text3);margin-top:2px;}
+
+/* EMERGENCY */
+#emergency{background:var(--gold);padding:28px 72px;}
+.em-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.em-left{display:flex;align-items:center;gap:20px;}
+.em-icon{width:44px;height:44px;background:rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.em-icon svg{stroke:var(--text);fill:none;stroke-width:2;width:22px;height:22px;}
+.em-title{font-family:var(--fh);font-size:1.6rem;font-weight:400;color:var(--text);line-height:1;}
+.em-sub{font-size:.75rem;font-weight:500;color:rgba(26,22,18,.6);margin-top:3px;letter-spacing:.02em;}
+.em-phone{font-family:var(--fh);font-size:2rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.04em;transition:opacity .2s;}
+.em-phone:hover{opacity:.7;}
+
+/* FIXED EMERGENCY BAR */
+.em-bar{position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--text);border-top:2px solid var(--gold);padding:10px 40px;display:flex;align-items:center;justify-content:center;gap:20px;}
+.em-bar-txt{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);}
+.em-bar-txt strong{color:var(--gold);}
+.em-bar-phone{font-family:var(--fh);font-size:1.1rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.em-bar-phone:hover{color:var(--gold-lt);}
+.em-bar-close{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:1.1rem;line-height:1;padding:4px 8px;transition:color .2s;}
+.em-bar-close:hover{color:rgba(255,255,255,.7);}
+
+/* SERVICE AREA */
+#service-area{padding:100px 72px;background:var(--off);}
+.sa-inner{max-width:1200px;margin:0 auto;}
+.sa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);margin-top:48px;}
+.sa-item{background:var(--white);padding:24px 22px;display:flex;align-items:center;gap:12px;transition:background .2s;}
+.sa-item:hover{background:var(--light);}
+.sa-dot{width:6px;height:6px;background:var(--gold);flex-shrink:0;}
+.sa-name{font-size:.82rem;font-weight:500;color:var(--text2);letter-spacing:.02em;}
 
 /* TESTIMONIAL */
 #testimonial{padding:120px 72px;background:var(--text);}
@@ -221,7 +294,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .faq-item.open .faq-a{max-height:200px;padding-bottom:16px;}
 .faq-a-txt{font-size:.82rem;font-weight:300;line-height:1.75;color:var(--text2);}
 
-/* CTA — split */
+/* CTA */
 #cta{background:var(--white);display:grid;grid-template-columns:1fr 1fr;}
 .cta-left{padding:100px 72px;background:var(--text);position:relative;overflow:hidden;}
 .cta-left::before{content:'';position:absolute;left:20%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.1) 30%,rgba(201,168,76,.1) 70%,transparent);pointer-events:none;}
@@ -230,7 +303,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;
 .ct-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
 .ct-title{font-family:var(--fh);font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:.9;color:#fff;margin-bottom:18px;}
 .ct-title em{font-style:italic;color:var(--gold-lt);}
-.ct-sub{font-size:.9rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.5);max-width:420px;margin-bottom:40px;}
+.ct-sub{font-size:.9rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.5);max-width:420px;margin-bottom:16px;}
+.ct-finance-note{font-size:.68rem;font-weight:600;letter-spacing:.06em;color:var(--gold);background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);padding:7px 14px;display:inline-block;margin-bottom:28px;}
 .ct-form{display:flex;flex-direction:column;gap:14px;max-width:420px;}
 .ct-input{padding:14px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:.84rem;font-family:var(--fb);outline:none;transition:border-color .2s;}
 .ct-input::placeholder{color:rgba(255,255,255,.3);}
@@ -262,20 +336,14 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
 .ft-badges{display:flex;gap:8px;}
 .ft-badge{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);background:rgba(201,168,76,.06);padding:5px 12px;border:1px solid rgba(201,168,76,.12);}
 
-/* LOADER */
-#loader{position:fixed;inset:0;background:var(--text);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
-.l-name{font-family:var(--fh);font-size:3rem;font-weight:300;letter-spacing:.25em;color:#fff;text-transform:uppercase;}
-.l-sub{font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);}
-.l-line{width:180px;height:1px;background:rgba(255,255,255,.08);position:relative;overflow:hidden;}
-.l-prog{position:absolute;top:0;left:0;height:100%;background:var(--gold);width:0%;}
-.l-num{font-family:var(--fh);font-size:1.6rem;font-weight:300;color:rgba(255,255,255,.28);}
-
 /* RESPONSIVE */
 @media(max-width:1100px){
   nav{padding:0 28px;}.n-links{display:none;}
   #hero{grid-template-columns:1fr;height:auto;min-height:100vh;}
   .h-right{min-height:50vw;}.h-sc{display:none;}
-  .stats,.mq,#about,#services,#projects,#process,#testimonial,#faq,#partners,footer{padding-left:28px;padding-right:28px;}
+  .mq,#about,#services,#materials,#projects,#process,#testimonial,#faq,#partners,#reviews,#service-area,footer{padding-left:28px;padding-right:28px;}
+  #insurance,#emergency{padding-left:28px;padding-right:28px;}
+  .ins-box{padding:44px 32px;grid-template-columns:1fr;}
   #cta{grid-template-columns:1fr;}.cta-right{min-height:300px;}
   .cta-left{padding:72px 28px;}
   .ab-inner,.sv-head,.pr-head,.faq-inner{grid-template-columns:1fr;gap:40px;}
@@ -283,7 +351,9 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
   .pj-grid{grid-template-columns:1fr;grid-template-rows:auto;}
   .pj-card:first-child{grid-row:span 1;height:340px;}.pj-card{height:240px;}
   .ft-top{grid-template-columns:1fr 1fr;gap:32px;}
-  .stats-inner{grid-template-columns:1fr 1fr;}
+  .mat-grid,.rv-grid{grid-template-columns:1fr;}
+  .sa-grid{grid-template-columns:1fr 1fr;}
+  .em-inner{flex-direction:column;align-items:flex-start;}
 }
 @media(max-width:640px){
   .pr-steps,.ft-top{grid-template-columns:1fr;}
@@ -291,23 +361,22 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
   .h-btns{flex-direction:column;}
   .pt-logos{flex-direction:column;align-items:center;}
   .pt-logo{border-right:none;border-bottom:1px solid var(--bd);}
+  .sa-grid{grid-template-columns:1fr;}
+  .em-bar{padding:10px 20px;gap:10px;flex-wrap:wrap;justify-content:flex-start;}
 }
 </style>
 </head>
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <div>
-    <div class="l-name">Apex</div>
-    <div class="l-sub">Construction Group</div>
-  </div>
-  <div class="l-line"><div class="l-prog" id="lprog"></div></div>
-  <div class="l-num" id="lnum">0</div>
+<!-- FIXED EMERGENCY BAR -->
+<div class="em-bar" id="emBar">
+  <span class="em-bar-txt"><strong>24/7 Emergency Service</strong> — Storm damage? Don't wait.</span>
+  <a href="tel:3055550100" class="em-bar-phone">(305) 555-0100</a>
+  <button class="em-bar-close" onclick="document.getElementById('emBar').style.display='none'" aria-label="Close">✕</button>
 </div>
 
 <!-- NAV -->
-<nav>
+<nav id="nav">
   <a href="#" class="n-logo">
     <div class="n-logo-main">Apex</div>
     <div class="n-logo-sub">Construction Group</div>
@@ -328,6 +397,10 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
     <div class="h-label">Licensed General Contractor · Est. 2004</div>
     <h1 class="h-title">Building<br/>Excellence<br/><em>in Every Project</em></h1>
     <p class="h-sub">Premium construction services delivering innovative solutions for commercial, residential, and industrial projects. 20+ years transforming visions into reality with precision and professionalism.</p>
+    <div class="h-finance">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Financing Available — 0% for 18 Months on Approved Credit
+    </div>
     <div class="h-btns">
       <a href="#projects" class="btn-gold">View Our Projects</a>
       <a href="#cta" class="btn-outline">Get a Quote</a>
@@ -337,41 +410,36 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
       <span class="h-cert">Insured</span>
       <span class="h-cert">BBB A+</span>
       <span class="h-cert">LEED Certified</span>
+      <span class="h-cert">GAF Certified</span>
     </div>
   </div>
   <div class="h-right">
-    <img class="h-photo" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80&auto=format&fit=crop" alt="Construction site"/>
+    <img class="h-photo" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80" alt="Modern building construction — Apex Construction Group Miami"/>
     <div class="h-ov"></div>
-    <canvas id="hc"></canvas>
     <div class="h-sc h-sc-1"><div class="h-sc-num">500+</div><div class="h-sc-lbl">Projects Completed</div></div>
     <div class="h-sc h-sc-2"><div class="h-sc-num">98%</div><div class="h-sc-lbl">Client Satisfaction</div></div>
     <div class="h-sc h-sc-3"><div class="h-sc-num">20+</div><div class="h-sc-lbl">Years Experience</div></div>
   </div>
 </section>
 
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
 <!-- MARQUEE -->
 <div class="mq"><div class="mq-inner" id="mq"></div></div>
-
-<!-- STATS GRID -->
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat-item"><div class="stat-n" id="sn1">0</div><div class="stat-l">Projects Completed</div><div class="stat-desc">Across commercial, residential & industrial sectors</div></div>
-    <div class="stat-item"><div class="stat-n" id="sn2">0</div><div class="stat-l">Satisfied Clients</div><div class="stat-desc">Fortune 500 companies and leading organizations</div></div>
-    <div class="stat-item"><div class="stat-n" id="sn3">0</div><div class="stat-l">Skilled Professionals</div><div class="stat-desc">Architects, engineers, and master tradespeople</div></div>
-    <div class="stat-item"><div class="stat-n" id="sn4">0</div><div class="stat-l">Total Project Value</div><div class="stat-desc">Delivered on schedule and on budget</div></div>
-  </div>
-</div>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="ab-inner">
     <div>
-      <div class="eyebrow">About BuildCorp</div>
+      <div class="eyebrow">About Apex</div>
       <h2 class="sec-title">Trusted<br/><em>Construction Leaders</em></h2>
-      <p class="ab-body">Apex Construction Group stands as the industry's most trusted construction partner, combining cutting-edge technology with time-tested methodology. Our dedicated team of architects, engineers, and skilled craftspeople work collaboratively to deliver projects that exceed expectations and stand the test of time.</p>
+      <p class="ab-body">Apex Construction Group stands as South Florida's most trusted construction partner, combining cutting-edge technology with time-tested methodology. Our dedicated team of architects, engineers, and skilled craftspeople work collaboratively to deliver projects that exceed expectations and stand the test of time.</p>
       <div class="ab-points">
         <div class="ab-point"><div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ab-pt-txt"><strong>LEED Certified Projects</strong> — Sustainable building practices that reduce environmental impact while cutting long-term operating costs.</div></div>
-        <div class="ab-point"><div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ab-pt-txt"><strong>On-Time & On-Budget</strong> — 98% of projects delivered on schedule. Transparent pricing with no hidden costs.</div></div>
+        <div class="ab-point"><div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ab-pt-txt"><strong>On-Time &amp; On-Budget</strong> — 98% of projects delivered on schedule. Transparent pricing with no hidden costs.</div></div>
         <div class="ab-point"><div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ab-pt-txt"><strong>Full-Service Capabilities</strong> — From architectural design through final inspection. One team, one vision.</div></div>
       </div>
       <a href="#cta" class="btn-gold">Discuss Your Project</a>
@@ -416,13 +484,48 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
       </div>
       <div class="sv-item">
         <div class="sv-num">04</div>
-        <div><div class="sv-name">Project Management</div><div class="sv-desc">Expert oversight ensuring projects stay on schedule, within budget, and meet quality standards. Budget control, timeline management, and quality assurance.</div></div>
+        <div><div class="sv-name">Roofing &amp; Storm Repair</div><div class="sv-desc">GAF-certified roofing installation and storm damage repair. We handle everything from architectural shingles to standing seam metal and commercial TPO systems.</div></div>
         <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       </div>
       <div class="sv-item">
         <div class="sv-num">05</div>
         <div><div class="sv-name">Commercial Build-Out</div><div class="sv-desc">Retail spaces, Class A offices, restaurants, and industrial facilities built to your exact specifications. We build commercial spaces that work hard for your business.</div></div>
         <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section id="materials">
+  <div class="mat-inner">
+    <div class="eyebrow">Quality Standard</div>
+    <h2 class="sec-title">Premium<br/><em>Materials Only</em></h2>
+    <p class="sec-sub" style="max-width:520px;">We never cut corners on materials. Every product we install is sourced from industry-leading manufacturers and backed by manufacturer warranties.</p>
+    <div class="mat-grid">
+      <div class="mat-card">
+        <div class="mat-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="mat-name">Architectural Shingles</div>
+        <p class="mat-desc">Dimensional asphalt shingles with 30–50 year warranties. Wind-rated up to 130 mph, Class A fire-rated. Available in 40+ colors to match any home style.</p>
+        <span class="mat-tag">GAF · Owens Corning · CertainTeed</span>
+      </div>
+      <div class="mat-card">
+        <div class="mat-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="mat-name">Standing Seam Metal</div>
+        <p class="mat-desc">Premium metal roofing with concealed fasteners for a clean, modern look. Energy-efficient, 50+ year lifespan, and ideal for South Florida's intense sun and rain.</p>
+        <span class="mat-tag">Kynar 500 · Florida Product Approved</span>
+      </div>
+      <div class="mat-card">
+        <div class="mat-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <div class="mat-name">Commercial TPO</div>
+        <p class="mat-desc">Thermoplastic polyolefin membrane for flat and low-slope commercial roofs. Heat-weld seams, UV-resistant, and energy-star rated. Industry standard for commercial builds.</p>
+        <span class="mat-tag">Firestone · Carlisle · Johns Manville</span>
       </div>
     </div>
   </div>
@@ -473,6 +576,29 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
   </div>
 </section>
 
+<!-- INSURANCE CLAIMS -->
+<section id="insurance">
+  <div class="ins-inner">
+    <div class="ins-box">
+      <div>
+        <div class="ins-eyebrow">Storm &amp; Disaster Relief</div>
+        <h2 class="ins-title">We Handle Your<br/><em>Insurance Claim</em></h2>
+        <div class="ins-points">
+          <div class="ins-point">We work directly with your insurance adjuster — no back-and-forth for you</div>
+          <div class="ins-point">Free damage assessment and full documentation for your claim</div>
+          <div class="ins-point">Repairs start immediately after approval — no waiting, no delays</div>
+          <div class="ins-point">Licensed public adjusters on staff to maximize your payout</div>
+        </div>
+      </div>
+      <div class="ins-cta-wrap">
+        <a href="#cta" class="btn-gold" style="white-space:nowrap;">Start Your Claim →</a>
+        <a href="tel:3055550100" class="ct-phone" style="font-size:1.3rem;color:var(--gold-lt);">(305) 555-0100</a>
+        <div class="ins-note">Available 24/7 for emergencies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section id="process">
   <div class="pr-inner">
@@ -485,7 +611,7 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
     </div>
     <div class="pr-steps">
       <div class="pr-step"><span class="pr-step-n">01</span><div class="pr-step-title">Free Consultation</div><p class="pr-step-desc">We meet on site, learn your vision, and provide a detailed quote with no hidden costs and absolutely no pressure.</p></div>
-      <div class="pr-step"><span class="pr-step-n">02</span><div class="pr-step-title">Planning & Design</div><p class="pr-step-desc">Complete project plan with timeline, materials, and milestones clearly defined from day one. No ambiguity.</p></div>
+      <div class="pr-step"><span class="pr-step-n">02</span><div class="pr-step-title">Planning &amp; Design</div><p class="pr-step-desc">Complete project plan with timeline, materials, and milestones clearly defined from day one. No ambiguity.</p></div>
       <div class="pr-step"><span class="pr-step-n">03</span><div class="pr-step-title">Build Phase</div><p class="pr-step-desc">We execute with precision. Regular progress updates throughout the entire build. You're always informed.</p></div>
       <div class="pr-step"><span class="pr-step-n">04</span><div class="pr-step-title">Final Walkthrough</div><p class="pr-step-desc">Nothing is done until you're completely satisfied with every detail. We stand behind every surface and finish.</p></div>
     </div>
@@ -511,6 +637,56 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
   </div>
 </section>
 
+<!-- GOOGLE REVIEWS -->
+<section id="reviews">
+  <div class="rv-inner">
+    <div class="rv-summary">
+      <div class="rv-score">4.9</div>
+      <div class="rv-meta">
+        <div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="rv-count">Based on 312 Google Reviews</div>
+        <div class="rv-badge">Google Verified</div>
+      </div>
+    </div>
+    <div class="rv-grid">
+      <div class="rv-card">
+        <div class="rv-card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="rv-card-quote">"After Hurricane Ian hit our roof, Apex handled everything — the inspection, the insurance adjuster meeting, and the full replacement in under two weeks. Zero stress on our end."</p>
+        <div class="rv-card-author">Maria R.</div>
+        <div class="rv-card-loc">Coral Gables, FL</div>
+      </div>
+      <div class="rv-card">
+        <div class="rv-card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="rv-card-quote">"We hired Apex for a full commercial build-out of our Brickell office space. On time, on budget, and the quality is exceptional. They're the only crew I'll ever call."</p>
+        <div class="rv-card-author">David K.</div>
+        <div class="rv-card-loc">Brickell, Miami</div>
+      </div>
+      <div class="rv-card">
+        <div class="rv-card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="rv-card-quote">"My standing seam metal roof looks incredible and the crew was professional from day one. They cleaned up every day and finished 3 days ahead of schedule. Absolutely recommend."</p>
+        <div class="rv-card-author">Thomas W.</div>
+        <div class="rv-card-loc">Miami Beach, FL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY CALLOUT SECTION -->
+<section id="emergency">
+  <div class="em-inner">
+    <div class="em-left">
+      <div class="em-icon">
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <div>
+        <div class="em-title">24/7 Emergency Storm &amp; Damage Response</div>
+        <div class="em-sub">We deploy crews same-day — tarping, board-up, and emergency repairs across all of South Florida</div>
+      </div>
+    </div>
+    <a href="tel:3055550100" class="em-phone">(305) 555-0100</a>
+  </div>
+</section>
+
 <!-- PARTNERS -->
 <section id="partners">
   <div class="pt-inner">
@@ -530,6 +706,29 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
   </div>
 </section>
 
+<!-- SERVICE AREA -->
+<section id="service-area">
+  <div class="sa-inner">
+    <div class="eyebrow">Coverage</div>
+    <h2 class="sec-title">We Serve All of<br/><em>South Florida</em></h2>
+    <p class="sec-sub" style="max-width:520px;margin-bottom:0;">Licensed and operating across Miami-Dade and Broward County. Wherever you are, we come to you.</p>
+    <div class="sa-grid">
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Miami Gardens</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Hialeah</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Coral Gables</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Doral</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Kendall</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Brickell</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Coconut Grove</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">South Beach</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Miami Beach</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">North Miami</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Aventura</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Homestead</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <div class="faq-inner">
@@ -545,20 +744,20 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
           <div class="faq-a"><p class="faq-a-txt">Project timelines vary by scope. Residential renovations typically take 3–6 months, custom home builds 12–18 months, and commercial projects 18–36 months. We provide detailed schedules at consultation with weekly milestone updates throughout.</p></div>
         </div>
         <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Do you handle insurance claims?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="faq-a"><p class="faq-a-txt">Yes — this is one of our most requested services. We handle the entire insurance claims process: free damage inspection, photo documentation, adjuster meetings, and negotiation. We work directly with all major insurers in Florida. You file the claim; we handle the rest.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Is financing available?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="faq-a"><p class="faq-a-txt">Yes. We offer 0% financing for 18 months on approved credit for qualifying projects. We work with multiple lending partners to get you the best rate. Ask about financing options during your free consultation — there's no obligation.</p></div>
+        </div>
+        <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">How do you ensure projects stay within budget?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
           <div class="faq-a"><p class="faq-a-txt">We use fixed-price contracts with detailed scope definitions. Our in-house cost estimators use real-time material pricing databases, and we maintain a 5% contingency reserve. Any change orders are approved by you before execution — no surprises.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What quality standards do you follow?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">All projects comply with local building codes, IBC standards, and OSHA regulations. We hold LEED certification, ISO 9001 quality management certification, and perform third-party inspections at every major milestone.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What sectors do you specialize in?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">We operate across residential luxury, commercial office, retail, industrial/manufacturing, hospitality, and mixed-use developments. Our largest sector is commercial, representing 60% of our annual project volume.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What safety measures are in place?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">Safety is non-negotiable. We maintain an EMR of 0.68, well below the industry average of 1.0. All workers complete 30-hour OSHA training, and we conduct weekly safety audits on every active site.</p></div>
+          <div class="faq-a"><p class="faq-a-txt">All projects comply with local building codes, IBC standards, and OSHA regulations. We hold LEED certification, GAF Master Elite certification, and perform third-party inspections at every major milestone.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What contract options are available?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
@@ -569,16 +768,17 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- CTA — SPLIT -->
+<!-- CTA -->
 <section id="cta">
   <div class="cta-left">
     <div class="ct-eyebrow">Get Started</div>
     <h2 class="ct-title">Start Your<br/><em>Project Today</em></h2>
     <p class="ct-sub">Ready to bring your construction project to life? Contact our team for a free consultation and detailed project proposal. No commitment required.</p>
+    <div class="ct-finance-note">★ Financing Available — 0% for 18 Months on Approved Credit</div>
     <div class="ct-form">
       <input class="ct-input" type="text" placeholder="Your Name"/>
       <input class="ct-input" type="email" placeholder="Enter your email"/>
-      <input class="ct-input" type="text" placeholder="Project Type & Location"/>
+      <input class="ct-input" type="text" placeholder="Project Type &amp; Location"/>
       <button class="ct-btn">Request Consultation →</button>
       <span class="ct-note">By contacting us, you agree to our Terms of Service and Privacy Policy.</span>
     </div>
@@ -601,31 +801,47 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
       <div class="ft-logo-sub">Construction Group</div>
       <p class="ft-brand-desc">Premium general contracting for residential and commercial properties. Licensed, insured, and built on 20 years of uncompromising quality. Miami, FL.</p>
     </div>
-    <div class="ft-col"><h4>Services</h4><ul><li><a href="#">New Construction</a></li><li><a href="#">Design-Build</a></li><li><a href="#">Renovations</a></li><li><a href="#">Project Management</a></li><li><a href="#">Commercial Build-Out</a></li></ul></div>
+    <div class="ft-col"><h4>Services</h4><ul><li><a href="#">New Construction</a></li><li><a href="#">Design-Build</a></li><li><a href="#">Renovations</a></li><li><a href="#">Roofing</a></li><li><a href="#">Commercial Build-Out</a></li></ul></div>
     <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About Apex</a></li><li><a href="#">Our Process</a></li><li><a href="#">Projects</a></li><li><a href="#">Partners</a></li><li><a href="#">Careers</a></li></ul></div>
     <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:3055550100">(305) 555-0100</a></li><li><a href="#">build@apexconstruction.com</a></li><li><a href="#">Free Consultation</a></li><li><a href="#">Miami, FL</a></li></ul></div>
   </div>
   <div class="ft-bot">
     <p>© 2026 Apex Construction Group. All rights reserved.</p>
-    <div class="ft-badges"><span class="ft-badge">Licensed</span><span class="ft-badge">Insured</span><span class="ft-badge">BBB A+</span><span class="ft-badge">LEED</span></div>
+    <div class="ft-badges"><span class="ft-badge">Licensed</span><span class="ft-badge">Insured</span><span class="ft-badge">BBB A+</span><span class="ft-badge">LEED</span><span class="ft-badge">GAF Certified</span></div>
   </div>
 </footer>
 
 <script>
 // LENIS
-var lenis=new Lenis({duration:1.5,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}});
-(function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(0);
+var lenis=new Lenis({duration:1.4,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothTouch:false});
+function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
+requestAnimationFrame(raf);
 
-// MAGNETIC
+// NAV SCROLL SHADOW
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+});
+
+// MAGNETIC BUTTONS
 document.querySelectorAll('.btn-gold,.btn-outline,.n-cta,.ct-btn').forEach(function(el){
   el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();el.style.transform='translate('+(e.clientX-r.left-r.width/2)*.14+'px,'+(e.clientY-r.top-r.height/2)*.14+'px) translateY(-2px)';});
   el.addEventListener('mouseleave',function(){el.style.transform='';});
 });
 
 // MARQUEE
-var mi=['New Construction','Luxury Renovation','Commercial Build-Out','Design-Build','Project Management','Custom Homes','Office Build-Out','Restaurant Construction','High-End Interiors','Ground-Up Builds'];
+var mi=['New Construction','Luxury Renovation','Commercial Build-Out','Design-Build','Roofing &amp; Waterproofing','Custom Homes','Office Build-Out','Restaurant Construction','High-End Interiors','Storm Damage Repair'];
 var mel=document.getElementById('mq');
-mi.concat(mi).concat(mi).concat(mi).forEach(function(t){var d=document.createElement('div');d.className='mq-item';d.textContent=t;mel.appendChild(d);});
+mi.concat(mi).concat(mi).concat(mi).forEach(function(t){var d=document.createElement('div');d.className='mq-item';d.innerHTML=t;mel.appendChild(d);});
+
+// TICKER
+var tickItems=['500+ PROJECTS COMPLETED','$200M+ DELIVERED','20+ YEARS EXPERIENCE','MIAMI, FL','LICENSED &amp; INSURED','GAF MASTER ELITE','LEED CERTIFIED','BBB A+ RATED','24/7 EMERGENCY SERVICE','FREE CONSULTATIONS'];
+var tickEl=document.getElementById('tickerInner');
+tickItems.concat(tickItems).concat(tickItems).forEach(function(t){
+  var d=document.createElement('div');
+  d.className='ticker-item';
+  d.innerHTML='<span>·</span>'+t;
+  tickEl.appendChild(d);
+});
 
 // FAQ
 function toggleFaq(btn){
@@ -635,131 +851,82 @@ function toggleFaq(btn){
   if(!wasOpen)item.classList.add('open');
 }
 
-// COUNTERS
-function animCount(id,target,suffix,dur){
-  var el=document.getElementById(id),v=0,step=target/(dur/16);
-  var t=setInterval(function(){v=Math.min(v+step,target);el.textContent=(target>=1000?Math.floor(v).toLocaleString():Math.floor(v))+suffix;if(v>=target)clearInterval(t);},16);
-}
-
-// THREE.JS HERO — gold wireframe building
-(function(){
-  var canvas=document.getElementById('hc');
-  if(!canvas)return;
-  var W=canvas.offsetWidth||window.innerWidth/2,H=canvas.offsetHeight||window.innerHeight;
-  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  renderer.setSize(W,H);renderer.setClearColor(0,0);
-  var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(50,W/H,.1,1000);
-  camera.position.set(0,0,18);
-  scene.add(new THREE.AmbientLight(0x111111,1));
-  var pt=new THREE.PointLight(0xC9A84C,2.5,80);pt.position.set(8,8,8);scene.add(pt);
-  var pt2=new THREE.PointLight(0xe0c070,1.2,60);pt2.position.set(-6,-4,-6);scene.add(pt2);
-  var G=new THREE.Group();
-  var wG=new THREE.LineBasicMaterial({color:0xC9A84C,transparent:true,opacity:.55});
-  var wD=new THREE.LineBasicMaterial({color:0xC9A84C,transparent:true,opacity:.18});
-  G.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(8,11,6)),wG));
-  G.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(6,9,4)),wD));
-  var lm=new THREE.LineBasicMaterial({color:0xC9A84C,transparent:true,opacity:.12});
-  for(var f=0;f<6;f++){var fl=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(8,.04,6)),wD);fl.position.y=-5.5+f*2.2;G.add(fl);}
-  [[-2,0],[0,0],[2,0]].forEach(function(p){var pts=[new THREE.Vector3(p[0],-5.5,p[1]),new THREE.Vector3(p[0],5.5,p[1])];G.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),lm));});
-  var bm=new THREE.LineBasicMaterial({color:0xC9A84C,transparent:true,opacity:.1});
-  [[new THREE.Vector3(-4,-5,3),new THREE.Vector3(4,5,3)],[new THREE.Vector3(4,-5,3),new THREE.Vector3(-4,5,3)]].forEach(function(pts){G.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),bm));});
-  var floaters=[];
-  [1.2,.8,1.5,.6,1.0,1.3,.7,1.1].forEach(function(s){
-    var sm=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(s,s,s)),new THREE.LineBasicMaterial({color:0xC9A84C,transparent:true,opacity:.3}));
-    sm.position.set((Math.random()-.5)*22,(Math.random()-.5)*16,(Math.random()-.5)*8-2);
-    sm.userData={bX:sm.position.x,bY:sm.position.y,rs:(Math.random()-.5)*.006,fs:Math.random()*.3+.1,fa:Math.random()*.6+.2,ph:Math.random()*Math.PI*2};
-    scene.add(sm);floaters.push(sm);
-  });
-  var pg=new THREE.BufferGeometry(),pp=new Float32Array(220*3);
-  for(var j=0;j<220*3;j++)pp[j]=(Math.random()-.5)*50;
-  pg.setAttribute('position',new THREE.BufferAttribute(pp,3));
-  var pts2=new THREE.Points(pg,new THREE.PointsMaterial({color:0xC9A84C,size:.04,transparent:true,opacity:.28}));
-  scene.add(pts2);scene.add(G);G.position.set(2,0,0);
-  var mx=0,my=0;
-  document.addEventListener('mousemove',function(e){mx=(e.clientX/window.innerWidth-.5)*2;my=-(e.clientY/window.innerHeight-.5)*2;});
-  window.addEventListener('resize',function(){var W2=canvas.offsetWidth,H2=canvas.offsetHeight;camera.aspect=W2/H2;camera.updateProjectionMatrix();renderer.setSize(W2,H2);});
-  var time=0;
-  (function anim(){requestAnimationFrame(anim);time+=.006;
-    G.rotation.y=THREE.MathUtils.lerp(G.rotation.y,mx*.18,.03);
-    G.rotation.x=THREE.MathUtils.lerp(G.rotation.x,my*.08,.03);
-    G.position.y=Math.sin(time*.3)*.15;
-    floaters.forEach(function(f){f.rotation.x+=f.userData.rs;f.rotation.y+=f.userData.rs*.7;f.position.y=f.userData.bY+Math.sin(time*f.userData.fs+f.userData.ph)*f.userData.fa;f.position.x=f.userData.bX+mx*.18;});
-    pts2.rotation.y+=.0003;renderer.render(scene,camera);
-  })();
-})();
-
-// LOADER
-var lp=document.getElementById('lprog'),ln=document.getElementById('lnum'),pv=0;
-var iv=setInterval(function(){pv+=Math.random()*12+4;if(pv>=100){pv=100;clearInterval(iv);setTimeout(doneLoad,250);}lp.style.width=pv+'%';ln.textContent=Math.floor(pv);},70);
-function doneLoad(){
-  gsap.to('#loader',{opacity:0,duration:.7,ease:'power2.inOut',onComplete:function(){document.getElementById('loader').style.display='none';startAnims();}});
-}
-
 // GSAP ANIMATIONS
-function startAnims(){
-  gsap.registerPlugin(ScrollTrigger);
-  lenis.on('scroll',ScrollTrigger.update);
-  gsap.ticker.add(function(t){lenis.raf(t*1000);});
-  gsap.ticker.lagSmoothing(0);
+gsap.registerPlugin(ScrollTrigger);
+lenis.on('scroll',ScrollTrigger.update);
+gsap.ticker.add(function(t){lenis.raf(t*1000);});
+gsap.ticker.lagSmoothing(0);
 
-  // Hero entrance
-  gsap.from('.h-label',{opacity:0,y:16,duration:.9,delay:.2,ease:'power3.out'});
-  gsap.from('.h-title',{opacity:0,y:40,duration:1.1,delay:.4,ease:'expo.out'});
-  gsap.from('.h-sub',{opacity:0,y:20,duration:.9,delay:.7,ease:'power3.out'});
-  gsap.from('.h-btns',{opacity:0,y:16,duration:.7,delay:1,ease:'power3.out'});
-  gsap.from('.h-certs',{opacity:0,y:10,duration:.6,delay:1.2,ease:'power3.out'});
-  gsap.from('.h-sc',{opacity:0,scale:.85,duration:.8,stagger:.15,delay:.9,ease:'back.out(1.5)'});
+// Hero entrance
+gsap.from('.h-label',{opacity:0,y:16,duration:.9,delay:.3,ease:'power3.out'});
+gsap.from('.h-title',{opacity:0,y:40,duration:1.1,delay:.5,ease:'expo.out'});
+gsap.from('.h-sub',{opacity:0,y:20,duration:.9,delay:.8,ease:'power3.out'});
+gsap.from('.h-finance',{opacity:0,y:12,duration:.7,delay:1,ease:'power3.out'});
+gsap.from('.h-btns',{opacity:0,y:16,duration:.7,delay:1.1,ease:'power3.out'});
+gsap.from('.h-certs',{opacity:0,y:10,duration:.6,delay:1.3,ease:'power3.out'});
+gsap.from('.h-sc',{opacity:0,scale:.85,duration:.8,stagger:.15,delay:1,ease:'back.out(1.5)'});
+gsap.from('.h-right',{opacity:0,duration:1.2,delay:.2,ease:'power3.out'});
 
-  // Stats counter
-  ScrollTrigger.create({trigger:'.stats',start:'top 88%',once:true,onEnter:function(){
-    animCount('sn1',500,'+',1600);
-    animCount('sn2',2000,'+',1800);
-    animCount('sn3',1200,'+',1600);
-    animCount('sn4',2,'B+',1200);
-    gsap.from('.stat-item',{opacity:0,y:24,duration:.6,stagger:.08,ease:'power3.out'});
-  }});
+// About
+ScrollTrigger.create({trigger:'#about',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.ab-inner>div:first-child',{opacity:0,x:-40,duration:1,ease:'power3.out'});
+  gsap.from('.ab-right',{opacity:0,x:40,duration:1,delay:.15,ease:'power3.out'});
+}});
 
-  // About
-  ScrollTrigger.create({trigger:'#about',start:'top 80%',once:true,onEnter:function(){
-    gsap.from('.ab-inner>div:first-child',{opacity:0,x:-40,duration:1,ease:'power3.out'});
-    gsap.from('.ab-right',{opacity:0,x:40,duration:1,delay:.15,ease:'power3.out'});
-  }});
+// Services
+ScrollTrigger.create({trigger:'#services',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.sv-item',{opacity:0,y:20,duration:.6,stagger:.08,ease:'power3.out'});
+}});
 
-  // Services
-  ScrollTrigger.create({trigger:'#services',start:'top 80%',once:true,onEnter:function(){
-    gsap.from('.sv-item',{opacity:0,y:20,duration:.6,stagger:.08,ease:'power3.out'});
-  }});
+// Materials
+ScrollTrigger.create({trigger:'#materials',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.mat-card',{opacity:0,y:32,duration:.7,stagger:.1,ease:'power3.out'});
+}});
 
-  // Projects
-  ScrollTrigger.create({trigger:'#projects',start:'top 80%',once:true,onEnter:function(){
-    gsap.from('.pj-card',{opacity:0,y:32,duration:.8,stagger:.12,ease:'power3.out'});
-  }});
+// Projects
+ScrollTrigger.create({trigger:'#projects',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.pj-card',{opacity:0,y:32,duration:.8,stagger:.12,ease:'power3.out'});
+}});
 
-  // Process
-  ScrollTrigger.create({trigger:'#process',start:'top 80%',once:true,onEnter:function(){
-    gsap.from('.pr-step',{opacity:0,y:28,duration:.7,stagger:.1,ease:'power3.out'});
-  }});
+// Insurance
+ScrollTrigger.create({trigger:'#insurance',start:'top 82%',once:true,onEnter:function(){
+  gsap.from('.ins-box',{opacity:0,y:24,duration:.9,ease:'power3.out'});
+}});
 
-  // Testimonial
-  ScrollTrigger.create({trigger:'#testimonial',start:'top 82%',once:true,onEnter:function(){
-    gsap.from('.tm-quote',{opacity:0,y:32,duration:1,ease:'expo.out'});
-    gsap.from('.tm-author',{opacity:0,y:16,duration:.7,delay:.3,ease:'power3.out'});
-  }});
+// Process
+ScrollTrigger.create({trigger:'#process',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.pr-step',{opacity:0,y:28,duration:.7,stagger:.1,ease:'power3.out'});
+}});
 
-  // FAQ
-  ScrollTrigger.create({trigger:'#faq',start:'top 80%',once:true,onEnter:function(){
-    gsap.from('.faq-photo-wrap',{opacity:0,x:-40,duration:1,ease:'power3.out'});
-    gsap.from('.faq-item',{opacity:0,y:16,duration:.5,stagger:.07,delay:.2,ease:'power3.out'});
-  }});
+// Reviews
+ScrollTrigger.create({trigger:'#reviews',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.rv-summary',{opacity:0,x:-30,duration:.8,ease:'power3.out'});
+  gsap.from('.rv-card',{opacity:0,y:28,duration:.7,stagger:.12,delay:.2,ease:'power3.out'});
+}});
 
-  // CTA
-  ScrollTrigger.create({trigger:'#cta',start:'top 80%',once:true,onEnter:function(){
-    gsap.from('.ct-title',{opacity:0,y:40,duration:1,ease:'expo.out'});
-    gsap.from('.ct-form',{opacity:0,y:24,duration:.8,delay:.3,ease:'power3.out'});
-    gsap.from('.cta-right',{opacity:0,scale:.97,duration:1,delay:.2,ease:'power3.out'});
-  }});
-}
+// Testimonial
+ScrollTrigger.create({trigger:'#testimonial',start:'top 82%',once:true,onEnter:function(){
+  gsap.from('.tm-quote',{opacity:0,y:32,duration:1,ease:'expo.out'});
+  gsap.from('.tm-author',{opacity:0,y:16,duration:.7,delay:.3,ease:'power3.out'});
+}});
+
+// Service Area
+ScrollTrigger.create({trigger:'#service-area',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.sa-item',{opacity:0,y:16,duration:.5,stagger:.04,ease:'power3.out'});
+}});
+
+// FAQ
+ScrollTrigger.create({trigger:'#faq',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.faq-photo-wrap',{opacity:0,x:-40,duration:1,ease:'power3.out'});
+  gsap.from('.faq-item',{opacity:0,y:16,duration:.5,stagger:.07,delay:.2,ease:'power3.out'});
+}});
+
+// CTA
+ScrollTrigger.create({trigger:'#cta',start:'top 80%',once:true,onEnter:function(){
+  gsap.from('.ct-title',{opacity:0,y:40,duration:1,ease:'expo.out'});
+  gsap.from('.ct-form',{opacity:0,y:24,duration:.8,delay:.3,ease:'power3.out'});
+  gsap.from('.cta-right',{opacity:0,scale:.97,duration:1,delay:.2,ease:'power3.out'});
+}});
 </script>
 </body>
 </html>
