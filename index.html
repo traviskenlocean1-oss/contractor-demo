@@ -3,108 +3,116 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Apex Construction Group — Building Excellence in Every Project</title>
+<title>El Duro Construction LLC — Concrete, Flooring & General Construction Jacksonville FL</title>
+<meta name="description" content="El Duro Construction LLC — Jacksonville FL concrete contractor. Patios, sidewalks, hardwood flooring, vinyl flooring, and general construction. 4.9 stars on Google."/>
+<link rel="canonical" href="https://elduroconstructionllc.com/"/>
+<meta property="og:title" content="El Duro Construction LLC — Jacksonville, FL"/>
+<meta property="og:description" content="Concrete, flooring, and general construction done right. Fair prices, punctual, professional."/>
+<meta property="og:type" content="website"/>
+<meta name="robots" content="index, follow"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Duro Construction LLC","description":"Concrete contractor, flooring installation, and general construction in Jacksonville, Florida","telephone":"(904) 775-2057","address":{"@type":"PostalAddress","addressLocality":"Jacksonville","addressRegion":"FL","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"14"}}</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --white:#ffffff;
-  --off:#f8f6f2;
-  --light:#f3f1ed;
-  --light2:#ede9e3;
-  --bd:#e8e4dd;
-  --bd2:#d4cfc7;
-  --text:#1a1612;
-  --text2:#5a5248;
-  --text3:#9a9088;
-  --gold:#C9A84C;
-  --gold-dk:#b8922e;
-  --gold-lt:#e0c070;
-  --gold-dim:rgba(201,168,76,0.1);
-  --gold-dim2:rgba(201,168,76,0.18);
-  --navy:#0c1a2e;
+  --off:#F5F4F1;
+  --light:#EDEAE6;
+  --light2:#E4E0DB;
+  --bd:#D7D3CD;
+  --bd2:#C3BEB7;
+  --text:#1B1A18;
+  --text2:#524E48;
+  --text3:#908C84;
+  --gold:#B5882A;
+  --gold-dk:#9D7420;
+  --gold-lt:#D0A440;
+  --gold-dim:rgba(181,136,42,.1);
+  --gold-dim2:rgba(181,136,42,.18);
+  --dark:#151412;
   --fh:'Cormorant Garamond',serif;
   --fb:'Inter',sans-serif;
 }
 html{scroll-behavior:auto;}
-body{font-family:var(--fb);background:var(--white);color:var(--text);overflow-x:hidden;padding-bottom:64px;}
+body{font-family:var(--fb);background:var(--white);color:var(--text);overflow-x:hidden;padding-bottom:60px;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);transition:box-shadow .3s;}
-nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.1);}
+nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.09);}
 .n-logo{text-decoration:none;display:flex;flex-direction:column;gap:1px;}
-.n-logo-main{font-family:var(--fh);font-size:1.4rem;font-weight:600;letter-spacing:.12em;color:var(--text);text-transform:uppercase;line-height:1;}
-.n-logo-sub{font-size:.48rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-family:var(--fb);font-weight:600;}
-.n-links{display:flex;gap:40px;list-style:none;}
-.n-links a{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s;}
-.n-links a:hover{color:var(--gold-dk);}
-.n-cta{padding:10px 24px;background:var(--gold);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;transition:background .2s,transform .2s;}
+.n-logo-main{font-family:var(--fh);font-size:1.25rem;font-weight:600;letter-spacing:.14em;color:var(--text);text-transform:uppercase;line-height:1;}
+.n-logo-sub{font-size:.44rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);font-family:var(--fb);font-weight:600;}
+.n-links{display:flex;gap:38px;list-style:none;}
+.n-links a{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s;}
+.n-links a:hover,.n-links a.active{color:var(--gold-dk);}
+.n-cta{padding:10px 24px;background:var(--gold);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .2s;}
 .n-cta:hover{background:var(--gold-dk);transform:translateY(-1px);}
 
 /* HERO */
 #hero{width:100vw;height:100vh;min-height:700px;display:grid;grid-template-columns:1fr 1fr;padding-top:72px;background:var(--white);}
 .h-left{display:flex;flex-direction:column;justify-content:center;padding:56px 72px;position:relative;z-index:2;}
-.h-left::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#d4cfc7 1px,transparent 1px);background-size:28px 28px;opacity:.35;z-index:-1;}
+.h-left::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#d0ccc6 1px,transparent 1px);background-size:28px 28px;opacity:.32;z-index:-1;}
 .h-left::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0) 50%,rgba(255,255,255,.95) 100%);z-index:-1;pointer-events:none;}
 .h-label{font-size:.6rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
 .h-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
-.h-title{font-family:var(--fh);font-size:clamp(3.4rem,5vw,5.8rem);font-weight:300;line-height:.9;letter-spacing:.01em;color:var(--text);margin-bottom:20px;}
+.h-title{font-family:var(--fh);font-size:clamp(3.2rem,4.8vw,5.6rem);font-weight:300;line-height:.92;letter-spacing:.01em;color:var(--text);margin-bottom:20px;}
 .h-title em{font-style:italic;color:var(--gold-dk);display:block;}
-.h-sub{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--text2);max-width:400px;margin-bottom:24px;}
-.h-finance{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:6px 14px;margin-bottom:24px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dk);}
-.h-finance svg{stroke:var(--gold-dk);fill:none;stroke-width:2;width:13px;height:13px;flex-shrink:0;}
+.h-sub{font-size:.9rem;font-weight:300;line-height:1.82;color:var(--text2);max-width:400px;margin-bottom:22px;}
+.h-rating{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid rgba(181,136,42,.3);padding:6px 14px;margin-bottom:24px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dk);}
+.h-rating-stars{color:var(--gold);letter-spacing:1px;}
 .h-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-gold{padding:14px 30px;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .2s,transform .2s,box-shadow .2s;}
-.btn-gold:hover{background:var(--gold-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3);}
-.btn-outline{padding:14px 30px;background:transparent;color:var(--text);border:1.5px solid var(--bd2);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s,transform .2s;}
+.btn-gold{padding:14px 30px;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-block;border:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;font-family:var(--fb);}
+.btn-gold:hover{background:var(--gold-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(181,136,42,.28);}
+.btn-outline{padding:14px 30px;background:transparent;color:var(--text);border:1.5px solid var(--bd2);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-block;cursor:pointer;transition:border-color .2s,color .2s,transform .2s;font-family:var(--fb);}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold-dk);transform:translateY(-2px);}
-.h-certs{display:flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap;}
-.h-cert{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);background:var(--light);border:1px solid var(--bd);padding:4px 12px;}
-.h-right{position:relative;overflow:hidden;background:#1a1612;}
+.h-trust{display:flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap;}
+.h-trust-item{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);background:var(--light);border:1px solid var(--bd);padding:4px 12px;}
+.h-right{position:relative;overflow:hidden;background:var(--dark);}
 .h-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .8s ease;}
 .h-right:hover .h-photo{transform:scale(1.03);}
-.h-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,8,6,.45),rgba(10,8,6,.1));z-index:1;}
+.h-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,8,6,.5),rgba(10,8,6,.12));z-index:1;}
 .h-sc{position:absolute;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.8);padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.15);}
 .h-sc-1{top:22%;left:-24px;}
 .h-sc-2{bottom:30%;right:24px;}
-.h-sc-3{top:60%;left:-14px;}
+.h-sc-3{top:62%;left:-14px;}
 .h-sc-num{font-family:var(--fh);font-size:1.9rem;font-weight:600;color:var(--gold-dk);line-height:1;margin-bottom:2px;}
-.h-sc-lbl{font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);}
+.h-sc-lbl{font-size:.56rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);}
 
 /* TICKER */
-.ticker{background:var(--text);padding:13px 0;overflow:hidden;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);}
-.ticker-inner{display:flex;width:max-content;animation:tick 60s linear infinite;}
+.ticker{background:var(--text);padding:13px 0;overflow:hidden;border-top:1px solid rgba(181,136,42,.15);border-bottom:1px solid rgba(181,136,42,.15);}
+.ticker-inner{display:flex;width:max-content;animation:tick 55s linear infinite;}
 .ticker-inner:hover{animation-play-state:paused;}
-.ticker-item{font-size:.65rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);padding:0 40px;white-space:nowrap;}
-.ticker-item span{color:var(--gold);margin-right:8px;}
-.ticker-sep{color:rgba(201,168,76,.4);padding:0 4px;}
+.ticker-item{font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.65);padding:0 36px;white-space:nowrap;}
+.ticker-item span{color:var(--gold);margin-right:6px;}
 @keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* MARQUEE */
 .mq{background:var(--gold);padding:11px 0;overflow:hidden;}
-.mq-inner{display:flex;width:max-content;animation:mqs 35s linear infinite;}
+.mq-inner{display:flex;width:max-content;animation:mqs 32s linear infinite;}
 .mq-inner:hover{animation-play-state:paused;}
-.mq-item{font-family:var(--fh);font-size:.9rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--text);padding:0 48px;white-space:nowrap;}
+.mq-item{font-family:var(--fh);font-size:.88rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--text);padding:0 44px;white-space:nowrap;}
 .mq-item::after{content:' · ';}
 @keyframes mqs{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* SECTION HELPERS */
-.eyebrow{font-size:.58rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.eyebrow{font-size:.56rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
-.sec-title{font-family:var(--fh);font-size:clamp(2.8rem,4.5vw,5rem);font-weight:300;line-height:.92;letter-spacing:.01em;color:var(--text);margin-bottom:14px;}
+.sec-title{font-family:var(--fh);font-size:clamp(2.8rem,4.5vw,4.8rem);font-weight:300;line-height:.93;letter-spacing:.01em;color:var(--text);margin-bottom:14px;}
 .sec-title em{font-style:italic;color:var(--gold-dk);}
-.sec-sub{font-size:.9rem;font-weight:300;line-height:1.8;color:var(--text2);}
+.sec-sub{font-size:.88rem;font-weight:300;line-height:1.82;color:var(--text2);}
 
 /* ABOUT */
 #about{padding:120px 72px;background:var(--white);}
 .ab-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.ab-body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--text2);margin:20px 0 36px;}
-.ab-points{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
+.ab-body{font-size:.9rem;font-weight:300;line-height:1.88;color:var(--text2);margin:20px 0 34px;}
+.ab-points{display:flex;flex-direction:column;gap:12px;margin-bottom:34px;}
 .ab-point{display:flex;align-items:flex-start;gap:14px;}
 .ab-pt-icon{width:22px;height:22px;background:var(--gold-dim);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
 .ab-pt-icon svg{stroke:var(--gold-dk);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
@@ -114,318 +122,248 @@ nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.1);}
 .ab-photo-wrap{position:relative;aspect-ratio:4/5;overflow:hidden;}
 .ab-photo{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .8s ease;}
 .ab-photo-wrap:hover .ab-photo{transform:scale(1.04);}
-.ab-tag{position:absolute;bottom:0;right:0;background:var(--gold);color:var(--text);padding:24px 28px;}
-.ab-tag-num{font-family:var(--fh);font-size:3rem;font-weight:300;line-height:1;margin-bottom:2px;}
-.ab-tag-lbl{font-size:.52rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;font-family:var(--fb);opacity:.7;}
+.ab-tag{position:absolute;bottom:0;right:0;background:var(--gold);color:var(--text);padding:22px 26px;}
+.ab-tag-num{font-family:var(--fh);font-size:2.4rem;font-weight:600;color:var(--text);line-height:1;margin-bottom:2px;}
+.ab-tag-lbl{font-size:.5rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-family:var(--fb);opacity:.75;}
 
 /* SERVICES */
 #services{padding:120px 72px;background:var(--off);}
 .sv-inner{max-width:1200px;margin:0 auto;}
-.sv-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:72px;}
+.sv-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px;}
 .sv-list{display:flex;flex-direction:column;}
-.sv-item{display:grid;grid-template-columns:72px 1fr 52px;align-items:center;gap:32px;padding:32px 0;border-bottom:1px solid var(--bd);position:relative;overflow:hidden;transition:padding .2s;}
+.sv-item{display:grid;grid-template-columns:72px 1fr 52px;align-items:center;gap:32px;padding:30px 0;border-bottom:1px solid var(--bd);position:relative;overflow:hidden;transition:padding .2s;}
 .sv-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold-dim);transition:width .5s ease;z-index:0;}
 .sv-item:hover::before{width:100%;}
 .sv-item:first-child{border-top:1px solid var(--bd);}
 .sv-item>*{position:relative;z-index:1;}
-.sv-num{font-family:var(--fh);font-size:3rem;font-weight:300;color:var(--bd2);line-height:1;transition:color .3s;}
-.sv-item:hover .sv-num{color:rgba(201,168,76,.4);}
-.sv-name{font-family:var(--fh);font-size:1.9rem;font-weight:400;color:var(--text);margin-bottom:6px;transition:color .3s;}
+.sv-num{font-family:var(--fh);font-size:2.8rem;font-weight:300;color:var(--bd2);line-height:1;transition:color .3s;}
+.sv-item:hover .sv-num{color:rgba(181,136,42,.4);}
+.sv-name{font-family:var(--fh);font-size:1.8rem;font-weight:400;color:var(--text);margin-bottom:5px;transition:color .3s;}
 .sv-item:hover .sv-name{color:var(--gold-dk);}
-.sv-desc{font-size:.8rem;font-weight:300;line-height:1.7;color:var(--text2);}
+.sv-desc{font-size:.8rem;font-weight:300;line-height:1.72;color:var(--text2);}
 .sv-arrow{width:44px;height:44px;border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .3s,background .3s,transform .3s;}
 .sv-item:hover .sv-arrow{border-color:var(--gold);background:var(--gold);transform:rotate(45deg);}
 .sv-item:hover .sv-arrow svg{stroke:var(--text);}
 
-/* MATERIALS */
-#materials{padding:100px 72px;background:var(--white);}
-.mat-inner{max-width:1200px;margin:0 auto;}
-.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bd);margin-top:56px;}
-.mat-card{background:var(--white);padding:44px 36px;transition:background .3s;position:relative;overflow:hidden;}
-.mat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
-.mat-card:hover::before{transform:scaleX(1);}
-.mat-card:hover{background:var(--off);}
-.mat-icon{width:52px;height:52px;background:var(--gold-dim);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin-bottom:24px;}
-.mat-icon svg{stroke:var(--gold-dk);fill:none;stroke-width:1.5;width:24px;height:24px;}
-.mat-name{font-family:var(--fh);font-size:1.6rem;font-weight:400;color:var(--text);margin-bottom:10px;}
-.mat-desc{font-size:.82rem;font-weight:300;line-height:1.75;color:var(--text2);}
-.mat-tag{display:inline-block;margin-top:18px;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);background:var(--gold-dim);padding:4px 10px;border:1px solid rgba(201,168,76,.25);}
+/* WHY CHOOSE */
+#why{padding:0 72px 0;background:var(--white);}
+.why-inner{max-width:1200px;margin:0 auto;}
+.why-box{background:var(--dark);padding:64px 72px;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;position:relative;overflow:hidden;}
+.why-box::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--gold);}
+.why-eyebrow{font-size:.54rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.why-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+.why-title{font-family:var(--fh);font-size:clamp(2rem,3.2vw,3rem);font-weight:300;line-height:1;color:#fff;margin-bottom:22px;}
+.why-title em{font-style:italic;color:var(--gold-lt);}
+.why-points{display:flex;flex-direction:column;gap:10px;}
+.why-point{display:flex;align-items:center;gap:12px;font-size:.82rem;font-weight:300;color:rgba(255,255,255,.62);}
+.why-point::before{content:'';width:6px;height:6px;background:var(--gold);flex-shrink:0;}
+.why-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0;}
+.why-note{font-size:.6rem;color:rgba(255,255,255,.28);text-align:center;letter-spacing:.04em;}
+.why-phone{font-family:var(--fh);font-size:1.4rem;font-weight:300;color:var(--gold-lt);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.why-phone:hover{color:#fff;}
 
 /* PROJECTS */
 #projects{padding:120px 72px;background:var(--off);}
 .pj-inner{max-width:1200px;margin:0 auto;}
-.pj-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
-.pj-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:460px 320px;gap:16px;}
+.pj-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;}
+.pj-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:460px 300px;gap:14px;}
 .pj-card{position:relative;overflow:hidden;background:var(--light);}
 .pj-card:first-child{grid-row:span 2;}
 .pj-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease;}
 .pj-card:hover .pj-card-img{transform:scale(1.05);}
-.pj-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,.9) 0%,rgba(10,8,6,.1) 55%,transparent 100%);transition:background .4s;}
-.pj-card:hover .pj-ov{background:linear-gradient(to top,rgba(10,8,6,.95) 20%,rgba(10,8,6,.4) 100%);}
-.pj-body{position:absolute;bottom:0;left:0;right:0;padding:28px 32px;z-index:2;}
-.pj-cat{font-size:.56rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:8px;}
-.pj-name{font-family:var(--fh);font-size:1.8rem;font-weight:400;color:#fff;line-height:1.1;margin-bottom:6px;}
-.pj-meta{display:flex;align-items:center;gap:12px;}
-.pj-price{font-family:var(--fh);font-size:1.2rem;font-weight:600;color:var(--gold-lt);}
-.pj-loc{font-size:.72rem;color:rgba(255,255,255,.5);}
+.pj-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,.9) 0%,rgba(10,8,6,.12) 55%,transparent 100%);transition:background .4s;}
+.pj-card:hover .pj-ov{background:linear-gradient(to top,rgba(10,8,6,.95) 20%,rgba(10,8,6,.38) 100%);}
+.pj-body{position:absolute;bottom:0;left:0;right:0;padding:26px 30px;z-index:2;}
+.pj-cat{font-size:.54rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:7px;}
+.pj-name{font-family:var(--fh);font-size:1.7rem;font-weight:400;color:#fff;line-height:1.1;margin-bottom:5px;}
+.pj-meta{font-size:.7rem;color:rgba(255,255,255,.48);}
 .pj-arrow{position:absolute;top:20px;right:20px;width:36px;height:36px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s,background .3s;}
 .pj-card:hover .pj-arrow{opacity:1;transform:translateY(0);background:var(--gold);}
 .pj-card:hover .pj-arrow svg{stroke:var(--text);}
 
-/* INSURANCE CLAIMS */
-#insurance{padding:0 72px 0;background:var(--white);}
-.ins-inner{max-width:1200px;margin:0 auto;}
-.ins-box{background:var(--text);padding:64px 72px;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;position:relative;overflow:hidden;}
-.ins-box::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--gold);}
-.ins-box::after{content:'INSURANCE';position:absolute;right:-20px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:var(--fh);font-size:5rem;font-weight:300;letter-spacing:.3em;color:rgba(201,168,76,.05);white-space:nowrap;pointer-events:none;}
-.ins-eyebrow{font-size:.56rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-.ins-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
-.ins-title{font-family:var(--fh);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1;color:#fff;margin-bottom:24px;}
-.ins-title em{font-style:italic;color:var(--gold-lt);}
-.ins-points{display:flex;flex-direction:column;gap:10px;}
-.ins-point{display:flex;align-items:center;gap:12px;font-size:.82rem;font-weight:300;color:rgba(255,255,255,.65);}
-.ins-point::before{content:'';width:6px;height:6px;background:var(--gold);flex-shrink:0;}
-.ins-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0;}
-.ins-note{font-size:.62rem;color:rgba(255,255,255,.3);text-align:center;letter-spacing:.04em;}
-
 /* PROCESS */
-#process{padding:120px 72px;background:var(--off);}
+#process{padding:120px 72px;background:var(--white);}
 .pr-inner{max-width:1200px;margin:0 auto;}
-.pr-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:80px;}
+.pr-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:72px;}
 .pr-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);}
-.pr-step{background:var(--white);padding:44px 32px;position:relative;overflow:hidden;transition:background .3s;}
+.pr-step{background:var(--white);padding:44px 30px;position:relative;overflow:hidden;transition:background .3s;}
 .pr-step:hover{background:var(--light);}
 .pr-step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
 .pr-step:hover::before{transform:scaleX(1);}
-.pr-step-n{font-family:var(--fh);font-size:4rem;font-weight:300;color:var(--bd2);line-height:1;margin-bottom:24px;display:block;transition:color .3s;}
+.pr-step-n{font-family:var(--fh);font-size:3.8rem;font-weight:300;color:var(--bd2);line-height:1;margin-bottom:22px;display:block;transition:color .3s;}
 .pr-step:hover .pr-step-n{color:var(--gold-dim2);}
-.pr-step-title{font-family:var(--fh);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:12px;}
-.pr-step-desc{font-size:.8rem;font-weight:300;line-height:1.7;color:var(--text2);}
-
-/* REVIEWS */
-#reviews{padding:100px 72px;background:var(--white);}
-.rv-inner{max-width:1200px;margin:0 auto;}
-.rv-summary{display:flex;align-items:center;gap:32px;margin-bottom:56px;}
-.rv-score{font-family:var(--fh);font-size:5rem;font-weight:300;color:var(--text);line-height:1;}
-.rv-meta{display:flex;flex-direction:column;gap:6px;}
-.rv-stars{display:flex;gap:3px;}
-.rv-stars span{font-size:1.3rem;color:var(--gold);}
-.rv-count{font-size:.75rem;font-weight:500;color:var(--text3);letter-spacing:.06em;}
-.rv-badge{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:#4285f4;color:#fff;padding:3px 10px;display:inline-block;margin-top:2px;}
-.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.rv-card{background:var(--off);border:1px solid var(--bd);padding:32px 28px;}
-.rv-card-stars{display:flex;gap:2px;margin-bottom:14px;}
-.rv-card-stars span{font-size:.95rem;color:var(--gold);}
-.rv-card-quote{font-family:var(--fh);font-size:1.1rem;font-weight:400;font-style:italic;line-height:1.55;color:var(--text);margin-bottom:20px;}
-.rv-card-author{font-size:.72rem;font-weight:600;color:var(--text2);letter-spacing:.04em;}
-.rv-card-loc{font-size:.66rem;color:var(--text3);margin-top:2px;}
-
-/* EMERGENCY */
-#emergency{background:var(--gold);padding:28px 72px;}
-.em-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
-.em-left{display:flex;align-items:center;gap:20px;}
-.em-icon{width:44px;height:44px;background:rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.em-icon svg{stroke:var(--text);fill:none;stroke-width:2;width:22px;height:22px;}
-.em-title{font-family:var(--fh);font-size:1.6rem;font-weight:400;color:var(--text);line-height:1;}
-.em-sub{font-size:.75rem;font-weight:500;color:rgba(26,22,18,.6);margin-top:3px;letter-spacing:.02em;}
-.em-phone{font-family:var(--fh);font-size:2rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.04em;transition:opacity .2s;}
-.em-phone:hover{opacity:.7;}
-
-/* FIXED EMERGENCY BAR */
-.em-bar{position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--text);border-top:2px solid var(--gold);padding:10px 40px;display:flex;align-items:center;justify-content:center;gap:20px;}
-.em-bar-txt{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);}
-.em-bar-txt strong{color:var(--gold);}
-.em-bar-phone{font-family:var(--fh);font-size:1.1rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.04em;transition:color .2s;}
-.em-bar-phone:hover{color:var(--gold-lt);}
-.em-bar-close{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:1.1rem;line-height:1;padding:4px 8px;transition:color .2s;}
-.em-bar-close:hover{color:rgba(255,255,255,.7);}
-
-/* SERVICE AREA */
-#service-area{padding:100px 72px;background:var(--off);}
-.sa-inner{max-width:1200px;margin:0 auto;}
-.sa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);margin-top:48px;}
-.sa-item{background:var(--white);padding:24px 22px;display:flex;align-items:center;gap:12px;transition:background .2s;}
-.sa-item:hover{background:var(--light);}
-.sa-dot{width:6px;height:6px;background:var(--gold);flex-shrink:0;}
-.sa-name{font-size:.82rem;font-weight:500;color:var(--text2);letter-spacing:.02em;}
+.pr-step-title{font-family:var(--fh);font-size:1.45rem;font-weight:400;color:var(--text);margin-bottom:10px;}
+.pr-step-desc{font-size:.78rem;font-weight:300;line-height:1.72;color:var(--text2);}
 
 /* TESTIMONIAL */
-#testimonial{padding:120px 72px;background:var(--text);}
-.tm-inner{max-width:1000px;margin:0 auto;text-align:center;}
-.tm-stars{display:flex;justify-content:center;gap:4px;margin-bottom:28px;}
+#testimonial{padding:120px 72px;background:var(--dark);}
+.tm-inner{max-width:980px;margin:0 auto;text-align:center;}
+.tm-stars{display:flex;justify-content:center;gap:4px;margin-bottom:26px;}
 .tm-stars span{font-size:1.2rem;color:var(--gold);}
-.tm-quote{font-family:var(--fh);font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:300;font-style:italic;line-height:1.25;color:#fff;margin-bottom:40px;letter-spacing:.01em;}
-.tm-author{display:flex;align-items:center;justify-content:center;gap:14px;}
-.tm-photos{display:flex;}
-.tm-photo{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2);margin-left:-10px;}
-.tm-photo:first-child{margin-left:0;}
-.tm-name{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.7);}
-.tm-role{font-size:.72rem;color:rgba(255,255,255,.4);}
+.tm-quote{font-family:var(--fh);font-size:clamp(1.7rem,3vw,2.7rem);font-weight:300;font-style:italic;line-height:1.28;color:#fff;margin-bottom:36px;letter-spacing:.01em;}
+.tm-author{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.55);}
+.tm-role{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:3px;}
 
-/* PARTNERS */
-#partners{padding:72px 72px;background:var(--off);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);}
-.pt-inner{max-width:1200px;margin:0 auto;}
-.pt-head{text-align:center;margin-bottom:40px;}
-.pt-eyebrow{font-size:.58rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:12px;}
-.pt-eyebrow::before,.pt-eyebrow::after{content:'';display:block;width:24px;height:1px;background:var(--gold);}
-.pt-title{font-family:var(--fh);font-size:1.6rem;font-weight:300;color:var(--text);}
-.pt-title em{font-style:italic;color:var(--gold-dk);}
-.pt-logos{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap;}
-.pt-logo{padding:16px 32px;font-family:var(--fh);font-size:1.1rem;font-weight:600;letter-spacing:.08em;color:var(--bd2);text-transform:uppercase;border-right:1px solid var(--bd);transition:color .2s;}
-.pt-logo:last-child{border-right:none;}
-.pt-logo:hover{color:var(--gold-dk);}
+/* GOOGLE REVIEWS */
+#reviews{padding:100px 72px;background:var(--white);}
+.rv-inner{max-width:1200px;margin:0 auto;}
+.rv-summary{display:flex;align-items:center;gap:28px;margin-bottom:52px;}
+.rv-score{font-family:var(--fh);font-size:4.8rem;font-weight:300;color:var(--text);line-height:1;}
+.rv-meta{display:flex;flex-direction:column;gap:6px;}
+.rv-stars{display:flex;gap:3px;}
+.rv-stars span{font-size:1.25rem;color:var(--gold);}
+.rv-count{font-size:.72rem;font-weight:500;color:var(--text3);letter-spacing:.06em;}
+.rv-badge{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#4285f4;color:#fff;padding:3px 10px;display:inline-block;margin-top:2px;}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rv-card{background:var(--off);border:1px solid var(--bd);padding:30px 26px;}
+.rv-card-stars{display:flex;gap:2px;margin-bottom:13px;}
+.rv-card-stars span{font-size:.9rem;color:var(--gold);}
+.rv-card-quote{font-family:var(--fh);font-size:1.08rem;font-weight:400;font-style:italic;line-height:1.58;color:var(--text);margin-bottom:18px;}
+.rv-card-author{font-size:.7rem;font-weight:600;color:var(--text2);letter-spacing:.04em;}
+.rv-card-loc{font-size:.64rem;color:var(--text3);margin-top:2px;}
 
-/* FAQ */
-#faq{padding:120px 72px;background:var(--white);}
-.faq-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.faq-photo-wrap{position:relative;}
-.faq-photo{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
-.faq-list{display:flex;flex-direction:column;}
-.faq-item{border-bottom:1px solid var(--bd);}
-.faq-item:first-child{border-top:1px solid var(--bd);}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;transition:color .2s;}
-.faq-q:hover{color:var(--gold-dk);}
-.faq-q-txt{font-size:.88rem;font-weight:500;color:var(--text);}
-.faq-toggle{width:28px;height:28px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .3s;}
-.faq-toggle svg{stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .3s;}
-.faq-item.open .faq-toggle{background:var(--gold-dk);}
-.faq-item.open .faq-toggle svg{transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;}
-.faq-item.open .faq-a{max-height:200px;padding-bottom:16px;}
-.faq-a-txt{font-size:.82rem;font-weight:300;line-height:1.75;color:var(--text2);}
+/* SERVICE AREA */
+#service-area{padding:96px 72px;background:var(--off);}
+.sa-inner{max-width:1200px;margin:0 auto;}
+.sa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);margin-top:44px;}
+.sa-item{background:var(--white);padding:22px 20px;display:flex;align-items:center;gap:10px;transition:background .2s;}
+.sa-item:hover{background:var(--light);}
+.sa-dot{width:5px;height:5px;background:var(--gold);flex-shrink:0;}
+.sa-name{font-size:.8rem;font-weight:500;color:var(--text2);letter-spacing:.02em;}
 
 /* CTA */
 #cta{background:var(--white);display:grid;grid-template-columns:1fr 1fr;}
-.cta-left{padding:100px 72px;background:var(--text);position:relative;overflow:hidden;}
-.cta-left::before{content:'';position:absolute;left:20%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.1) 30%,rgba(201,168,76,.1) 70%,transparent);pointer-events:none;}
-.cta-left::after{content:'';position:absolute;right:20%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.1) 30%,rgba(201,168,76,.1) 70%,transparent);pointer-events:none;}
-.ct-eyebrow{font-size:.58rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.cta-left{padding:100px 72px;background:var(--dark);position:relative;overflow:hidden;}
+.cta-left::before{content:'';position:absolute;left:20%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(181,136,42,.1) 30%,rgba(181,136,42,.1) 70%,transparent);}
+.ct-eyebrow{font-size:.56rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
 .ct-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
-.ct-title{font-family:var(--fh);font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:.9;color:#fff;margin-bottom:18px;}
+.ct-title{font-family:var(--fh);font-size:clamp(2.8rem,4.5vw,5rem);font-weight:300;line-height:.92;color:#fff;margin-bottom:16px;}
 .ct-title em{font-style:italic;color:var(--gold-lt);}
-.ct-sub{font-size:.9rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.5);max-width:420px;margin-bottom:16px;}
-.ct-finance-note{font-size:.68rem;font-weight:600;letter-spacing:.06em;color:var(--gold);background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);padding:7px 14px;display:inline-block;margin-bottom:28px;}
-.ct-form{display:flex;flex-direction:column;gap:14px;max-width:420px;}
-.ct-input{padding:14px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:.84rem;font-family:var(--fb);outline:none;transition:border-color .2s;}
-.ct-input::placeholder{color:rgba(255,255,255,.3);}
+.ct-sub{font-size:.88rem;font-weight:300;line-height:1.82;color:rgba(255,255,255,.48);max-width:400px;margin-bottom:28px;}
+.ct-form{display:flex;flex-direction:column;gap:13px;max-width:400px;}
+.ct-input{padding:13px 17px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);color:#fff;font-size:.84rem;font-family:var(--fb);outline:none;transition:border-color .2s;}
+.ct-input::placeholder{color:rgba(255,255,255,.28);}
 .ct-input:focus{border-color:var(--gold);}
+.ct-select{padding:13px 17px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);color:rgba(255,255,255,.7);font-size:.84rem;font-family:var(--fb);outline:none;transition:border-color .2s;appearance:none;}
+.ct-select:focus{border-color:var(--gold);}
+.ct-select option{background:var(--dark);color:#fff;}
 .ct-btn{padding:14px 32px;background:var(--gold);color:var(--text);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;font-family:var(--fb);}
 .ct-btn:hover{background:var(--gold-dk);}
-.ct-note{font-size:.68rem;color:rgba(255,255,255,.3);}
-.ct-contact{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);}
-.ct-phone{font-family:var(--fh);font-size:1.8rem;font-weight:300;color:var(--gold-lt);text-decoration:none;transition:color .2s;letter-spacing:.04em;}
-.ct-phone:hover{color:#fff;}
-.ct-or{font-size:.7rem;color:rgba(255,255,255,.2);letter-spacing:.1em;}
-.ct-email{font-size:.8rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
-.ct-email:hover{color:var(--gold-lt);}
+.ct-note{font-size:.66rem;color:rgba(255,255,255,.28);}
+.ct-contact{display:flex;align-items:center;gap:16px;margin-top:26px;padding-top:26px;border-top:1px solid rgba(255,255,255,.07);}
+.ct-phone-link{font-family:var(--fh);font-size:1.75rem;font-weight:300;color:var(--gold-lt);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.ct-phone-link:hover{color:#fff;}
+.ct-or{font-size:.68rem;color:rgba(255,255,255,.18);letter-spacing:.1em;}
 .cta-right{position:relative;overflow:hidden;min-height:600px;}
 .cta-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 
+/* CALL BAR (fixed bottom) */
+.call-bar{position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--dark);border-top:2px solid var(--gold);padding:10px 40px;display:flex;align-items:center;justify-content:center;gap:20px;}
+.call-bar-txt{font-size:.67rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.58);}
+.call-bar-txt strong{color:var(--gold);}
+.call-bar-phone{font-family:var(--fh);font-size:1.08rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.call-bar-phone:hover{color:var(--gold-lt);}
+.call-bar-close{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.28);cursor:pointer;font-size:1.1rem;line-height:1;padding:4px 8px;transition:color .2s;}
+.call-bar-close:hover{color:rgba(255,255,255,.6);}
+
 /* FOOTER */
-footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(201,168,76,.08);}
-.ft-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:52px;}
-.ft-logo-main{font-family:var(--fh);font-size:1.6rem;font-weight:400;letter-spacing:.12em;color:#fff;text-transform:uppercase;margin-bottom:4px;}
-.ft-logo-sub{font-size:.48rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-family:var(--fb);margin-bottom:16px;}
-.ft-brand-desc{font-size:.78rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.32);max-width:240px;}
-.ft-col h4{font-size:.54rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
-.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.ft-col a{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s,padding-left .2s;}
+footer{background:var(--dark);padding:72px 72px 36px;border-top:1px solid rgba(181,136,42,.07);}
+.ft-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:48px;}
+.ft-logo-main{font-family:var(--fh);font-size:1.5rem;font-weight:400;letter-spacing:.13em;color:#fff;text-transform:uppercase;margin-bottom:3px;}
+.ft-logo-sub{font-size:.44rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-family:var(--fb);margin-bottom:14px;}
+.ft-brand-desc{font-size:.76rem;font-weight:300;line-height:1.78;color:rgba(255,255,255,.3);max-width:230px;}
+.ft-col h4{font-size:.52rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.ft-col a{font-size:.78rem;font-weight:300;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s,padding-left .2s;}
 .ft-col a:hover{color:var(--gold-lt);padding-left:4px;}
-.ft-bot{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-.ft-bot p{font-size:.7rem;font-weight:300;color:rgba(255,255,255,.2);}
+.ft-bot{max-width:1200px;margin:0 auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.ft-bot p{font-size:.68rem;font-weight:300;color:rgba(255,255,255,.18);}
 .ft-badges{display:flex;gap:8px;}
-.ft-badge{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);background:rgba(201,168,76,.06);padding:5px 12px;border:1px solid rgba(201,168,76,.12);}
+.ft-badge{font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.2);background:rgba(181,136,42,.05);padding:5px 10px;border:1px solid rgba(181,136,42,.11);}
 
 /* RESPONSIVE */
 @media(max-width:1100px){
   nav{padding:0 28px;}.n-links{display:none;}
   #hero{grid-template-columns:1fr;height:auto;min-height:100vh;}
   .h-right{min-height:50vw;}.h-sc{display:none;}
-  .mq,#about,#services,#materials,#projects,#process,#testimonial,#faq,#partners,#reviews,#service-area,footer{padding-left:28px;padding-right:28px;}
-  #insurance,#emergency{padding-left:28px;padding-right:28px;}
-  .ins-box{padding:44px 32px;grid-template-columns:1fr;}
-  #cta{grid-template-columns:1fr;}.cta-right{min-height:300px;}
-  .cta-left{padding:72px 28px;}
-  .ab-inner,.sv-head,.pr-head,.faq-inner{grid-template-columns:1fr;gap:40px;}
+  .mq,#about,#services,#projects,#process,#testimonial,#reviews,#service-area,footer{padding-left:28px;padding-right:28px;}
+  #why{padding-left:28px;padding-right:28px;}
+  .why-box{padding:44px 32px;grid-template-columns:1fr;}
+  #cta{grid-template-columns:1fr;}.cta-right{min-height:280px;}.cta-left{padding:72px 28px;}
+  .ab-inner,.sv-head,.pr-head{grid-template-columns:1fr;gap:40px;}
   .pr-steps{grid-template-columns:1fr 1fr;}
   .pj-grid{grid-template-columns:1fr;grid-template-rows:auto;}
   .pj-card:first-child{grid-row:span 1;height:340px;}.pj-card{height:240px;}
-  .ft-top{grid-template-columns:1fr 1fr;gap:32px;}
-  .mat-grid,.rv-grid{grid-template-columns:1fr;}
+  .ft-top{grid-template-columns:1fr 1fr;gap:30px;}
+  .rv-grid{grid-template-columns:1fr;}
   .sa-grid{grid-template-columns:1fr 1fr;}
-  .em-inner{flex-direction:column;align-items:flex-start;}
+  .h-left{padding:48px 28px;}
 }
 @media(max-width:640px){
   .pr-steps,.ft-top{grid-template-columns:1fr;}
-  .sv-item{grid-template-columns:56px 1fr;}.sv-arrow{display:none;}
+  .sv-item{grid-template-columns:52px 1fr;}.sv-arrow{display:none;}
   .h-btns{flex-direction:column;}
-  .pt-logos{flex-direction:column;align-items:center;}
-  .pt-logo{border-right:none;border-bottom:1px solid var(--bd);}
   .sa-grid{grid-template-columns:1fr;}
-  .em-bar{padding:10px 20px;gap:10px;flex-wrap:wrap;justify-content:flex-start;}
+  .call-bar{padding:10px 18px;gap:10px;flex-wrap:wrap;justify-content:flex-start;}
 }
 </style>
 </head>
 <body>
 
-<!-- FIXED EMERGENCY BAR -->
-<div class="em-bar" id="emBar">
-  <span class="em-bar-txt"><strong>24/7 Emergency Service</strong> — Storm damage? Don't wait.</span>
-  <a href="tel:3055550100" class="em-bar-phone">(305) 555-0100</a>
-  <button class="em-bar-close" onclick="document.getElementById('emBar').style.display='none'" aria-label="Close">✕</button>
+<!-- CALL BAR -->
+<div class="call-bar" id="callBar">
+  <span class="call-bar-txt">Ready to start your project? <strong>Call Gerard directly</strong></span>
+  <a href="tel:9047752057" class="call-bar-phone">(904) 775-2057</a>
+  <button class="call-bar-close" onclick="document.getElementById('callBar').style.display='none'" aria-label="Close">✕</button>
 </div>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="n-logo">
-    <div class="n-logo-main">Apex</div>
-    <div class="n-logo-sub">Construction Group</div>
+  <a href="index.html" class="n-logo">
+    <div class="n-logo-main">El Duro Construction</div>
+    <div class="n-logo-sub">Concrete · Flooring · General Construction</div>
   </a>
   <ul class="n-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="#cta" class="n-cta">Start a Project</a>
+  <a href="contact.html" class="n-cta">Get a Free Estimate</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="h-left">
-    <div class="h-label">Licensed General Contractor · Est. 2004</div>
-    <h1 class="h-title">Building<br/>Excellence<br/><em>in Every Project</em></h1>
-    <p class="h-sub">Premium construction services delivering innovative solutions for commercial, residential, and industrial projects. 20+ years transforming visions into reality with precision and professionalism.</p>
-    <div class="h-finance">
-      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      Financing Available — 0% for 18 Months on Approved Credit
+    <div class="h-label">Concrete · Flooring · General Construction · Jacksonville, FL</div>
+    <h1 class="h-title">Work Done<br/>The Right<br/><em>Way.</em></h1>
+    <p class="h-sub">Jacksonville homeowners trust El Duro Construction for concrete work, patios, sidewalks, flooring, and general construction. Fair prices, clear communication, and quality you'll notice immediately.</p>
+    <div class="h-rating">
+      <span class="h-rating-stars">★★★★★</span>
+      4.9 on Google · 14 Verified Reviews
     </div>
     <div class="h-btns">
-      <a href="#projects" class="btn-gold">View Our Projects</a>
-      <a href="#cta" class="btn-outline">Get a Quote</a>
+      <a href="projects.html" class="btn-gold">View Our Work</a>
+      <a href="contact.html" class="btn-outline">Get a Free Estimate</a>
     </div>
-    <div class="h-certs">
-      <span class="h-cert">Licensed</span>
-      <span class="h-cert">Insured</span>
-      <span class="h-cert">BBB A+</span>
-      <span class="h-cert">LEED Certified</span>
-      <span class="h-cert">GAF Certified</span>
+    <div class="h-trust">
+      <span class="h-trust-item">Professional</span>
+      <span class="h-trust-item">Fair Pricing</span>
+      <span class="h-trust-item">Punctual</span>
+      <span class="h-trust-item">Jacksonville Local</span>
     </div>
   </div>
   <div class="h-right">
-    <img class="h-photo" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80" alt="Modern building construction — Apex Construction Group Miami"/>
+    <img class="h-photo" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop" alt="El Duro Construction — concrete work Jacksonville FL"/>
     <div class="h-ov"></div>
-    <div class="h-sc h-sc-1"><div class="h-sc-num">500+</div><div class="h-sc-lbl">Projects Completed</div></div>
-    <div class="h-sc h-sc-2"><div class="h-sc-num">98%</div><div class="h-sc-lbl">Client Satisfaction</div></div>
-    <div class="h-sc h-sc-3"><div class="h-sc-num">20+</div><div class="h-sc-lbl">Years Experience</div></div>
+    <div class="h-sc h-sc-1"><div class="h-sc-num">4.9</div><div class="h-sc-lbl">Google Rating</div></div>
+    <div class="h-sc h-sc-2"><div class="h-sc-num">14</div><div class="h-sc-lbl">5-Star Reviews</div></div>
+    <div class="h-sc h-sc-3"><div class="h-sc-num">JAX</div><div class="h-sc-lbl">Jacksonville, FL</div></div>
   </div>
 </section>
 
 <!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-inner" id="tickerInner"></div>
-</div>
+<div class="ticker"><div class="ticker-inner" id="tickerInner"></div></div>
 
 <!-- MARQUEE -->
 <div class="mq"><div class="mq-inner" id="mq"></div></div>
@@ -434,22 +372,31 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
 <section id="about">
   <div class="ab-inner">
     <div>
-      <div class="eyebrow">About Apex</div>
-      <h2 class="sec-title">Trusted<br/><em>Construction Leaders</em></h2>
-      <p class="ab-body">Apex Construction Group stands as South Florida's most trusted construction partner, combining cutting-edge technology with time-tested methodology. Our dedicated team of architects, engineers, and skilled craftspeople work collaboratively to deliver projects that exceed expectations and stand the test of time.</p>
+      <div class="eyebrow">About El Duro</div>
+      <h2 class="sec-title">Built on<br/><em>Trust &amp; Results</em></h2>
+      <p class="ab-body">El Duro Construction LLC is a Jacksonville-based concrete and flooring company built on a straightforward foundation: do the work right, communicate clearly, and charge a fair price. Gerard and his crew take on every project with the same level of care — whether it's a patio replacement, a sidewalk repair, or a complete hardwood floor redo. No shortcuts. No runaround. Just quality work done the way it was discussed.</p>
       <div class="ab-points">
-        <div class="ab-point"><div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ab-pt-txt"><strong>LEED Certified Projects</strong> — Sustainable building practices that reduce environmental impact while cutting long-term operating costs.</div></div>
-        <div class="ab-point"><div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ab-pt-txt"><strong>On-Time &amp; On-Budget</strong> — 98% of projects delivered on schedule. Transparent pricing with no hidden costs.</div></div>
-        <div class="ab-point"><div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ab-pt-txt"><strong>Full-Service Capabilities</strong> — From architectural design through final inspection. One team, one vision.</div></div>
+        <div class="ab-point">
+          <div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="ab-pt-txt"><strong>Clear Communication</strong> — You'll always know what's being done, when it starts, and exactly what it costs. No surprises.</div>
+        </div>
+        <div class="ab-point">
+          <div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="ab-pt-txt"><strong>Punctual &amp; Dependable</strong> — When El Duro says they're showing up, they show up. The job gets done when it's supposed to.</div>
+        </div>
+        <div class="ab-point">
+          <div class="ab-pt-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="ab-pt-txt"><strong>Fair, Honest Pricing</strong> — Straightforward quotes with no hidden fees. You get real value for real work.</div>
+        </div>
       </div>
-      <a href="#cta" class="btn-gold">Discuss Your Project</a>
+      <a href="contact.html" class="btn-gold">Discuss Your Project</a>
     </div>
     <div class="ab-right">
       <div class="ab-photo-wrap">
-        <img class="ab-photo" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80&auto=format&fit=crop" alt="Construction team"/>
+        <img class="ab-photo" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80&auto=format&fit=crop" alt="El Duro Construction crew"/>
         <div class="ab-tag">
-          <div class="ab-tag-num">20+</div>
-          <div class="ab-tag-lbl">Years of Excellence</div>
+          <div class="ab-tag-num">4.9★</div>
+          <div class="ab-tag-lbl">Google Rated</div>
         </div>
       </div>
     </div>
@@ -461,71 +408,65 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
   <div class="sv-inner">
     <div class="sv-head">
       <div>
-        <div class="eyebrow">What We Build</div>
+        <div class="eyebrow">What We Do</div>
         <h2 class="sec-title">Our<br/><em>Services</em></h2>
       </div>
-      <p class="sec-sub">Every project we take on becomes a benchmark. We don't just build structures — we create environments that define the people who inhabit them. From concept to completion, we deliver.</p>
+      <p class="sec-sub">From concrete foundations to finished floors, El Duro Construction handles the jobs other crews turn down. Every service is delivered with the same professionalism and attention to detail that keeps clients calling back.</p>
     </div>
     <div class="sv-list">
       <div class="sv-item">
         <div class="sv-num">01</div>
-        <div><div class="sv-name">New Construction</div><div class="sv-desc">Full ground-up construction for residential and commercial properties. We manage every phase from foundation to finish with precision and uncompromising quality.</div></div>
+        <div><div class="sv-name">Concrete Work</div><div class="sv-desc">Structural and decorative concrete for residential and commercial properties. Foundations, slabs, curbs, and more — poured right the first time.</div></div>
         <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       </div>
       <div class="sv-item">
         <div class="sv-num">02</div>
-        <div><div class="sv-name">Design-Build Services</div><div class="sv-desc">Seamless integration of architectural design and construction execution. Conceptual planning, architectural design, and construction management under one roof.</div></div>
+        <div><div class="sv-name">Patio Construction &amp; Repair</div><div class="sv-desc">New patio installs and full replacements. We shape the outdoor space you've been wanting with clean, durable concrete work built to last.</div></div>
         <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       </div>
       <div class="sv-item">
         <div class="sv-num">03</div>
-        <div><div class="sv-name">Luxury Renovations</div><div class="sv-desc">Complete interior and exterior renovations that transform existing spaces into something extraordinary. We breathe new life into every structure we touch.</div></div>
+        <div><div class="sv-name">Sidewalk Installation</div><div class="sv-desc">New sidewalks, repairs, and full replacements done at a fair price. Punctual scheduling, clean execution, no mess left behind.</div></div>
         <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       </div>
       <div class="sv-item">
         <div class="sv-num">04</div>
-        <div><div class="sv-name">Roofing &amp; Storm Repair</div><div class="sv-desc">GAF-certified roofing installation and storm damage repair. We handle everything from architectural shingles to standing seam metal and commercial TPO systems.</div></div>
+        <div><div class="sv-name">Hardwood Floor Redo</div><div class="sv-desc">Complete hardwood floor replacement and refinishing. Clients consistently say the results exceeded what was discussed — and that says everything.</div></div>
         <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       </div>
       <div class="sv-item">
         <div class="sv-num">05</div>
-        <div><div class="sv-name">Commercial Build-Out</div><div class="sv-desc">Retail spaces, Class A offices, restaurants, and industrial facilities built to your exact specifications. We build commercial spaces that work hard for your business.</div></div>
+        <div><div class="sv-name">Vinyl Flooring Installation</div><div class="sv-desc">Glue-down vinyl and full vinyl flooring installs for bathrooms, kitchens, and common areas. Clean, professional finish every time.</div></div>
+        <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="sv-item">
+        <div class="sv-num">06</div>
+        <div><div class="sv-name">General Construction</div><div class="sv-desc">Residential and light commercial construction work. When you need a reliable crew that shows up and gets it done right — El Duro is the call.</div></div>
         <div class="sv-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MATERIALS -->
-<section id="materials">
-  <div class="mat-inner">
-    <div class="eyebrow">Quality Standard</div>
-    <h2 class="sec-title">Premium<br/><em>Materials Only</em></h2>
-    <p class="sec-sub" style="max-width:520px;">We never cut corners on materials. Every product we install is sourced from industry-leading manufacturers and backed by manufacturer warranties.</p>
-    <div class="mat-grid">
-      <div class="mat-card">
-        <div class="mat-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+<!-- WHY CHOOSE EL DURO -->
+<section id="why">
+  <div class="why-inner">
+    <div class="why-box">
+      <div>
+        <div class="why-eyebrow">Why El Duro</div>
+        <h2 class="why-title">Quality work at a fair price —<br/><em>the same crew, every time.</em></h2>
+        <div class="why-points">
+          <div class="why-point">Clear communication from the first call through final walkthrough</div>
+          <div class="why-point">We show up when we say we will — punctuality is part of the job</div>
+          <div class="why-point">Fair, upfront pricing — no surprises, no hidden costs</div>
+          <div class="why-point">Every project is treated like it matters, because it does</div>
+          <div class="why-point">4.9 stars on Google — Jacksonville clients keep recommending us</div>
         </div>
-        <div class="mat-name">Architectural Shingles</div>
-        <p class="mat-desc">Dimensional asphalt shingles with 30–50 year warranties. Wind-rated up to 130 mph, Class A fire-rated. Available in 40+ colors to match any home style.</p>
-        <span class="mat-tag">GAF · Owens Corning · CertainTeed</span>
       </div>
-      <div class="mat-card">
-        <div class="mat-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div class="mat-name">Standing Seam Metal</div>
-        <p class="mat-desc">Premium metal roofing with concealed fasteners for a clean, modern look. Energy-efficient, 50+ year lifespan, and ideal for South Florida's intense sun and rain.</p>
-        <span class="mat-tag">Kynar 500 · Florida Product Approved</span>
-      </div>
-      <div class="mat-card">
-        <div class="mat-icon">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-        </div>
-        <div class="mat-name">Commercial TPO</div>
-        <p class="mat-desc">Thermoplastic polyolefin membrane for flat and low-slope commercial roofs. Heat-weld seams, UV-resistant, and energy-star rated. Industry standard for commercial builds.</p>
-        <span class="mat-tag">Firestone · Carlisle · Johns Manville</span>
+      <div class="why-cta-wrap">
+        <a href="contact.html" class="btn-gold" style="white-space:nowrap;">Get a Free Estimate →</a>
+        <a href="tel:9047752057" class="why-phone">(904) 775-2057</a>
+        <div class="why-note">No pressure. Just an honest quote.</div>
       </div>
     </div>
   </div>
@@ -539,61 +480,38 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
         <div class="eyebrow">Selected Work</div>
         <h2 class="sec-title">Featured <em>Projects</em></h2>
       </div>
-      <a href="#cta" class="btn-gold">View All Projects</a>
+      <a href="projects.html" class="btn-gold">View All Projects</a>
     </div>
     <div class="pj-grid">
       <div class="pj-card">
-        <img class="pj-card-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&auto=format&fit=crop" alt="Downtown Financial Tower"/>
+        <img class="pj-card-img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80&auto=format&fit=crop" alt="Patio replacement Jacksonville"/>
         <div class="pj-ov"></div>
         <div class="pj-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="pj-body">
-          <div class="pj-cat">Commercial · New Construction</div>
-          <div class="pj-name">Downtown Financial Tower</div>
-          <div class="pj-meta"><span class="pj-price">$85M</span><span class="pj-loc">Miami, FL · 48 Stories · Delivered 2024</span></div>
+          <div class="pj-cat">Concrete · Outdoor</div>
+          <div class="pj-name">Patio Replacement</div>
+          <div class="pj-meta">Jacksonville, FL · Full concrete pour & finish</div>
         </div>
       </div>
       <div class="pj-card">
-        <img class="pj-card-img" src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=700&q=80&auto=format&fit=crop" alt="Luxury Residential"/>
+        <img class="pj-card-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=700&q=80&auto=format&fit=crop" alt="Hardwood floor installation Jacksonville"/>
         <div class="pj-ov"></div>
         <div class="pj-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="pj-body">
-          <div class="pj-cat">Residential · Luxury Build</div>
-          <div class="pj-name">Sunset Heights</div>
-          <div class="pj-meta"><span class="pj-price">$42M</span><span class="pj-loc">Coral Gables · 6,800 sq ft</span></div>
+          <div class="pj-cat">Flooring · Hardwood</div>
+          <div class="pj-name">Hardwood Floor Redo</div>
+          <div class="pj-meta">Jacksonville, FL · Full replacement</div>
         </div>
       </div>
       <div class="pj-card">
-        <img class="pj-card-img" src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=700&q=80&auto=format&fit=crop" alt="Industrial Complex"/>
+        <img class="pj-card-img" src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=700&q=80&auto=format&fit=crop" alt="Vinyl flooring installation Jacksonville"/>
         <div class="pj-ov"></div>
         <div class="pj-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="pj-body">
-          <div class="pj-cat">Industrial · Manufacturing</div>
-          <div class="pj-name">Advanced Mfg. Complex</div>
-          <div class="pj-meta"><span class="pj-price">$65M</span><span class="pj-loc">Doral · 280,000 sq ft</span></div>
+          <div class="pj-cat">Flooring · Vinyl</div>
+          <div class="pj-name">Vinyl Floor Installation</div>
+          <div class="pj-meta">Jacksonville, FL · Glue-down vinyl</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INSURANCE CLAIMS -->
-<section id="insurance">
-  <div class="ins-inner">
-    <div class="ins-box">
-      <div>
-        <div class="ins-eyebrow">Storm &amp; Disaster Relief</div>
-        <h2 class="ins-title">We Handle Your<br/><em>Insurance Claim</em></h2>
-        <div class="ins-points">
-          <div class="ins-point">We work directly with your insurance adjuster — no back-and-forth for you</div>
-          <div class="ins-point">Free damage assessment and full documentation for your claim</div>
-          <div class="ins-point">Repairs start immediately after approval — no waiting, no delays</div>
-          <div class="ins-point">Licensed public adjusters on staff to maximize your payout</div>
-        </div>
-      </div>
-      <div class="ins-cta-wrap">
-        <a href="#cta" class="btn-gold" style="white-space:nowrap;">Start Your Claim →</a>
-        <a href="tel:3055550100" class="ct-phone" style="font-size:1.3rem;color:var(--gold-lt);">(305) 555-0100</a>
-        <div class="ins-note">Available 24/7 for emergencies</div>
       </div>
     </div>
   </div>
@@ -607,33 +525,24 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
         <div class="eyebrow">How We Work</div>
         <h2 class="sec-title">The<br/><em>Process</em></h2>
       </div>
-      <p class="sec-sub">A proven system refined over 20 years. Every client, every project — the same relentless standard of communication, execution, and delivery that has built our reputation.</p>
+      <p class="sec-sub">Every job starts with a conversation and ends with a walkthrough. In between, you'll always know what's happening, when it's happening, and who's doing it. That's the El Duro way.</p>
     </div>
     <div class="pr-steps">
-      <div class="pr-step"><span class="pr-step-n">01</span><div class="pr-step-title">Free Consultation</div><p class="pr-step-desc">We meet on site, learn your vision, and provide a detailed quote with no hidden costs and absolutely no pressure.</p></div>
-      <div class="pr-step"><span class="pr-step-n">02</span><div class="pr-step-title">Planning &amp; Design</div><p class="pr-step-desc">Complete project plan with timeline, materials, and milestones clearly defined from day one. No ambiguity.</p></div>
-      <div class="pr-step"><span class="pr-step-n">03</span><div class="pr-step-title">Build Phase</div><p class="pr-step-desc">We execute with precision. Regular progress updates throughout the entire build. You're always informed.</p></div>
-      <div class="pr-step"><span class="pr-step-n">04</span><div class="pr-step-title">Final Walkthrough</div><p class="pr-step-desc">Nothing is done until you're completely satisfied with every detail. We stand behind every surface and finish.</p></div>
+      <div class="pr-step"><span class="pr-step-n">01</span><div class="pr-step-title">Free Estimate</div><p class="pr-step-desc">We come to you, assess the project, and give you a clear and honest quote. No pressure, no jargon, no games.</p></div>
+      <div class="pr-step"><span class="pr-step-n">02</span><div class="pr-step-title">Scope &amp; Schedule</div><p class="pr-step-desc">We confirm the scope, select materials, and lock in a timeline that works for you. Everything agreed on upfront.</p></div>
+      <div class="pr-step"><span class="pr-step-n">03</span><div class="pr-step-title">The Build</div><p class="pr-step-desc">We show up when we said we would and do exactly what we discussed. You're kept in the loop throughout.</p></div>
+      <div class="pr-step"><span class="pr-step-n">04</span><div class="pr-step-title">Final Walkthrough</div><p class="pr-step-desc">We walk through the finished project with you. Nothing is done until you're completely satisfied with the result.</p></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- TESTIMONIAL HERO QUOTE -->
 <section id="testimonial">
   <div class="tm-inner">
     <div class="tm-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-    <blockquote class="tm-quote">"Apex transformed our vision into reality. Their professionalism, attention to detail, and commitment to excellence exceeded our expectations at every stage. Highly recommended."</blockquote>
-    <div class="tm-author">
-      <div class="tm-photos">
-        <img class="tm-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80&auto=format&fit=crop&crop=face" alt=""/>
-        <img class="tm-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80&auto=format&fit=crop&crop=face" alt=""/>
-        <img class="tm-photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format&fit=crop&crop=face" alt=""/>
-      </div>
-      <div>
-        <div class="tm-name">James Mitchell — CEO, Meridian Properties</div>
-        <div class="tm-role">Downtown Financial Tower · Miami, FL</div>
-      </div>
-    </div>
+    <blockquote class="tm-quote">"El Duro Construction did an exceptional job re-doing my hardwood floors. The owner and his crew were very professional and did exactly what we discussed."</blockquote>
+    <div class="tm-author">Jacksonville Homeowner</div>
+    <div class="tm-role">Hardwood Floor Replacement · Google Review</div>
   </div>
 </section>
 
@@ -644,64 +553,29 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
       <div class="rv-score">4.9</div>
       <div class="rv-meta">
         <div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div class="rv-count">Based on 312 Google Reviews</div>
+        <div class="rv-count">Based on 14 Google Reviews</div>
         <div class="rv-badge">Google Verified</div>
       </div>
     </div>
     <div class="rv-grid">
       <div class="rv-card">
         <div class="rv-card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="rv-card-quote">"After Hurricane Ian hit our roof, Apex handled everything — the inspection, the insurance adjuster meeting, and the full replacement in under two weeks. Zero stress on our end."</p>
-        <div class="rv-card-author">Maria R.</div>
-        <div class="rv-card-loc">Coral Gables, FL</div>
+        <p class="rv-card-quote">"El Duro Construction did an exceptional job re-doing my hardwood floors. The owner and his crew were very professional and did exactly what we discussed. Highly recommend."</p>
+        <div class="rv-card-author">Google Reviewer</div>
+        <div class="rv-card-loc">Jacksonville, FL · Hardwood Flooring</div>
       </div>
       <div class="rv-card">
         <div class="rv-card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="rv-card-quote">"We hired Apex for a full commercial build-out of our Brickell office space. On time, on budget, and the quality is exceptional. They're the only crew I'll ever call."</p>
-        <div class="rv-card-author">David K.</div>
-        <div class="rv-card-loc">Brickell, Miami</div>
+        <p class="rv-card-quote">"They replaced my patio and sidewalks at a very fair price. They were punctual and did everything they said they would do. A pleasure to work with."</p>
+        <div class="rv-card-author">Google Reviewer</div>
+        <div class="rv-card-loc">Jacksonville, FL · Patio &amp; Sidewalk</div>
       </div>
       <div class="rv-card">
         <div class="rv-card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="rv-card-quote">"My standing seam metal roof looks incredible and the crew was professional from day one. They cleaned up every day and finished 3 days ahead of schedule. Absolutely recommend."</p>
-        <div class="rv-card-author">Thomas W.</div>
-        <div class="rv-card-loc">Miami Beach, FL</div>
+        <p class="rv-card-quote">"I recently had them glue down vinyl flooring in my restroom and I'm more than happy with the outcome. Very professional people and reasonable prices. Amazing work."</p>
+        <div class="rv-card-author">Google Reviewer</div>
+        <div class="rv-card-loc">Jacksonville, FL · Vinyl Flooring</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- EMERGENCY CALLOUT SECTION -->
-<section id="emergency">
-  <div class="em-inner">
-    <div class="em-left">
-      <div class="em-icon">
-        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      </div>
-      <div>
-        <div class="em-title">24/7 Emergency Storm &amp; Damage Response</div>
-        <div class="em-sub">We deploy crews same-day — tarping, board-up, and emergency repairs across all of South Florida</div>
-      </div>
-    </div>
-    <a href="tel:3055550100" class="em-phone">(305) 555-0100</a>
-  </div>
-</section>
-
-<!-- PARTNERS -->
-<section id="partners">
-  <div class="pt-inner">
-    <div class="pt-head">
-      <div class="pt-eyebrow">Partners</div>
-      <h2 class="pt-title">Trusted by <em>Industry Leaders</em></h2>
-    </div>
-    <div class="pt-logos">
-      <span class="pt-logo">Meridian</span>
-      <span class="pt-logo">Vantage</span>
-      <span class="pt-logo">Pinnacle</span>
-      <span class="pt-logo">Summit RE</span>
-      <span class="pt-logo">Harlow Capital</span>
-      <span class="pt-logo">Fortis Group</span>
-      <span class="pt-logo">Beacon</span>
     </div>
   </div>
 </section>
@@ -709,61 +583,22 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
 <!-- SERVICE AREA -->
 <section id="service-area">
   <div class="sa-inner">
-    <div class="eyebrow">Coverage</div>
-    <h2 class="sec-title">We Serve All of<br/><em>South Florida</em></h2>
-    <p class="sec-sub" style="max-width:520px;margin-bottom:0;">Licensed and operating across Miami-Dade and Broward County. Wherever you are, we come to you.</p>
+    <div class="eyebrow">Where We Work</div>
+    <h2 class="sec-title" style="margin-bottom:8px;">Serving Greater<br/><em>Jacksonville, FL</em></h2>
+    <p class="sec-sub" style="max-width:540px;">El Duro Construction serves homeowners and businesses throughout the Jacksonville metro area and surrounding communities.</p>
     <div class="sa-grid">
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Miami Gardens</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Hialeah</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Coral Gables</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Doral</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Kendall</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Brickell</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Coconut Grove</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">South Beach</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Miami Beach</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">North Miami</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Aventura</div></div>
-      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Homestead</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="faq-inner">
-    <div class="faq-photo-wrap">
-      <img class="faq-photo" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop" alt="Construction site"/>
-    </div>
-    <div>
-      <div class="eyebrow">FAQ</div>
-      <h2 class="sec-title" style="margin-bottom:36px;">Common<br/><em>Questions</em></h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What is your typical project timeline?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">Project timelines vary by scope. Residential renovations typically take 3–6 months, custom home builds 12–18 months, and commercial projects 18–36 months. We provide detailed schedules at consultation with weekly milestone updates throughout.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Do you handle insurance claims?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">Yes — this is one of our most requested services. We handle the entire insurance claims process: free damage inspection, photo documentation, adjuster meetings, and negotiation. We work directly with all major insurers in Florida. You file the claim; we handle the rest.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Is financing available?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">Yes. We offer 0% financing for 18 months on approved credit for qualifying projects. We work with multiple lending partners to get you the best rate. Ask about financing options during your free consultation — there's no obligation.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">How do you ensure projects stay within budget?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">We use fixed-price contracts with detailed scope definitions. Our in-house cost estimators use real-time material pricing databases, and we maintain a 5% contingency reserve. Any change orders are approved by you before execution — no surprises.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What quality standards do you follow?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">All projects comply with local building codes, IBC standards, and OSHA regulations. We hold LEED certification, GAF Master Elite certification, and perform third-party inspections at every major milestone.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What contract options are available?</span><div class="faq-toggle"><svg width="12" height="12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-          <div class="faq-a"><p class="faq-a-txt">We offer fixed-price contracts, cost-plus with GMP (Guaranteed Maximum Price), and design-build contracts. All include milestone payment schedules, performance bonds, and 1-year workmanship warranties on all completed work.</p></div>
-        </div>
-      </div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Southside</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Northside</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Arlington</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Mandarin</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Riverside</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Downtown Jacksonville</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Jacksonville Beach</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Orange Park</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Fleming Island</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Atlantic Beach</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Neptune Beach</div></div>
+      <div class="sa-item"><div class="sa-dot"></div><div class="sa-name">Ponte Vedra</div></div>
     </div>
   </div>
 </section>
@@ -771,25 +606,35 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
 <!-- CTA -->
 <section id="cta">
   <div class="cta-left">
-    <div class="ct-eyebrow">Get Started</div>
-    <h2 class="ct-title">Start Your<br/><em>Project Today</em></h2>
-    <p class="ct-sub">Ready to bring your construction project to life? Contact our team for a free consultation and detailed project proposal. No commitment required.</p>
-    <div class="ct-finance-note">★ Financing Available — 0% for 18 Months on Approved Credit</div>
-    <div class="ct-form">
-      <input class="ct-input" type="text" placeholder="Your Name"/>
-      <input class="ct-input" type="email" placeholder="Enter your email"/>
-      <input class="ct-input" type="text" placeholder="Project Type &amp; Location"/>
-      <button class="ct-btn">Request Consultation →</button>
-      <span class="ct-note">By contacting us, you agree to our Terms of Service and Privacy Policy.</span>
-    </div>
+    <div class="ct-eyebrow">Start a Project</div>
+    <h2 class="ct-title">Ready to<br/>Get <em>Started?</em></h2>
+    <p class="ct-sub">Tell us about your project and we'll get back to you quickly with an honest, no-pressure estimate.</p>
+    <form class="ct-form" onsubmit="handleSubmit(event)">
+      <input type="text" class="ct-input" placeholder="Your Name" required/>
+      <input type="tel" class="ct-input" placeholder="Phone Number" required/>
+      <input type="email" class="ct-input" placeholder="Email Address"/>
+      <select class="ct-select" required>
+        <option value="" disabled selected>Service Needed</option>
+        <option>Concrete Work</option>
+        <option>Patio Construction / Repair</option>
+        <option>Sidewalk Installation</option>
+        <option>Hardwood Flooring</option>
+        <option>Vinyl Flooring</option>
+        <option>General Construction</option>
+        <option>Other / Not Sure Yet</option>
+      </select>
+      <textarea class="ct-input" placeholder="Project details (optional)" rows="3" style="resize:vertical;"></textarea>
+      <button type="submit" class="ct-btn">Send My Request →</button>
+      <div class="ct-note">We typically respond within a few hours.</div>
+    </form>
     <div class="ct-contact">
-      <a href="tel:3055550100" class="ct-phone">(305) 555-0100</a>
+      <a href="tel:9047752057" class="ct-phone-link">(904) 775-2057</a>
       <span class="ct-or">or</span>
-      <a href="mailto:build@apexconstruction.com" class="ct-email">build@apexconstruction.com</a>
+      <span style="font-size:.78rem;color:rgba(255,255,255,.35);">Call Gerard directly</span>
     </div>
   </div>
   <div class="cta-right">
-    <img class="cta-photo" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop" alt="Architecture planning"/>
+    <img class="cta-photo" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80&auto=format&fit=crop" alt="Construction work Jacksonville"/>
   </div>
 </section>
 
@@ -797,136 +642,104 @@ footer{background:var(--text);padding:72px 72px 40px;border-top:1px solid rgba(2
 <footer>
   <div class="ft-top">
     <div>
-      <div class="ft-logo-main">Apex</div>
-      <div class="ft-logo-sub">Construction Group</div>
-      <p class="ft-brand-desc">Premium general contracting for residential and commercial properties. Licensed, insured, and built on 20 years of uncompromising quality. Miami, FL.</p>
+      <div class="ft-logo-main">El Duro Construction</div>
+      <div class="ft-logo-sub">Concrete · Flooring · General Construction</div>
+      <p class="ft-brand-desc">Serving Jacksonville, FL and surrounding communities. Quality work, fair pricing, and clear communication — every project, every time.</p>
     </div>
-    <div class="ft-col"><h4>Services</h4><ul><li><a href="#">New Construction</a></li><li><a href="#">Design-Build</a></li><li><a href="#">Renovations</a></li><li><a href="#">Roofing</a></li><li><a href="#">Commercial Build-Out</a></li></ul></div>
-    <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About Apex</a></li><li><a href="#">Our Process</a></li><li><a href="#">Projects</a></li><li><a href="#">Partners</a></li><li><a href="#">Careers</a></li></ul></div>
-    <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:3055550100">(305) 555-0100</a></li><li><a href="#">build@apexconstruction.com</a></li><li><a href="#">Free Consultation</a></li><li><a href="#">Miami, FL</a></li></ul></div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Concrete Work</a></li>
+        <li><a href="services.html">Patio Construction</a></li>
+        <li><a href="services.html">Sidewalk Installation</a></li>
+        <li><a href="services.html">Hardwood Flooring</a></li>
+        <li><a href="services.html">Vinyl Flooring</a></li>
+        <li><a href="services.html">General Construction</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:9047752057">(904) 775-2057</a></li>
+        <li><a href="contact.html">Request a Quote</a></li>
+        <li><a href="#">Jacksonville, FL</a></li>
+      </ul>
+    </div>
   </div>
   <div class="ft-bot">
-    <p>© 2026 Apex Construction Group. All rights reserved.</p>
-    <div class="ft-badges"><span class="ft-badge">Licensed</span><span class="ft-badge">Insured</span><span class="ft-badge">BBB A+</span><span class="ft-badge">LEED</span><span class="ft-badge">GAF Certified</span></div>
+    <p>© 2025 El Duro Construction LLC · Jacksonville, FL</p>
+    <div class="ft-badges">
+      <span class="ft-badge">4.9★ Google</span>
+      <span class="ft-badge">Jacksonville, FL</span>
+    </div>
   </div>
 </footer>
 
 <script>
-// LENIS
-var lenis=new Lenis({duration:1.4,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothTouch:false});
-function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
-requestAnimationFrame(raf);
+/* LENIS smooth scroll */
+try{
+  const lenis=new Lenis({lerp:.09,smoothWheel:true});
+  gsap.registerPlugin(ScrollTrigger);
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+}catch(e){}
 
-// NAV SCROLL SHADOW
-window.addEventListener('scroll',function(){
-  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+/* NAV scroll shadow */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);
 });
 
-// MAGNETIC BUTTONS
-document.querySelectorAll('.btn-gold,.btn-outline,.n-cta,.ct-btn').forEach(function(el){
-  el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();el.style.transform='translate('+(e.clientX-r.left-r.width/2)*.14+'px,'+(e.clientY-r.top-r.height/2)*.14+'px) translateY(-2px)';});
-  el.addEventListener('mouseleave',function(){el.style.transform='';});
-});
+/* TICKER */
+(function(){
+  const items=['CONCRETE WORK','PATIO CONSTRUCTION','SIDEWALK INSTALLATION','HARDWOOD FLOORING','VINYL FLOORING','GENERAL CONSTRUCTION','JACKSONVILLE, FL','FAIR PRICING','QUALITY WORK'];
+  const t=document.getElementById('tickerInner');
+  const html=items.map(i=>`<span class="ticker-item"><span>◆</span>${i}</span>`).join('');
+  t.innerHTML=html+html;
+})();
 
-// MARQUEE
-var mi=['New Construction','Luxury Renovation','Commercial Build-Out','Design-Build','Roofing &amp; Waterproofing','Custom Homes','Office Build-Out','Restaurant Construction','High-End Interiors','Storm Damage Repair'];
-var mel=document.getElementById('mq');
-mi.concat(mi).concat(mi).concat(mi).forEach(function(t){var d=document.createElement('div');d.className='mq-item';d.innerHTML=t;mel.appendChild(d);});
+/* MARQUEE */
+(function(){
+  const items=['QUALITY','RELIABLE','PUNCTUAL','FAIR PRICING','PROFESSIONAL','JACKSONVILLE LOCAL','CONCRETE','FLOORING'];
+  const m=document.getElementById('mq');
+  const html=items.map(i=>`<span class="mq-item">${i}</span>`).join('');
+  m.innerHTML=html+html;
+})();
 
-// TICKER
-var tickItems=['500+ PROJECTS COMPLETED','$200M+ DELIVERED','20+ YEARS EXPERIENCE','MIAMI, FL','LICENSED &amp; INSURED','GAF MASTER ELITE','LEED CERTIFIED','BBB A+ RATED','24/7 EMERGENCY SERVICE','FREE CONSULTATIONS'];
-var tickEl=document.getElementById('tickerInner');
-tickItems.concat(tickItems).concat(tickItems).forEach(function(t){
-  var d=document.createElement('div');
-  d.className='ticker-item';
-  d.innerHTML='<span>·</span>'+t;
-  tickEl.appendChild(d);
-});
-
-// FAQ
-function toggleFaq(btn){
-  var item=btn.closest('.faq-item');
-  var wasOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-  if(!wasOpen)item.classList.add('open');
-}
-
-// GSAP ANIMATIONS
+/* SCROLL ANIMATIONS */
 gsap.registerPlugin(ScrollTrigger);
-lenis.on('scroll',ScrollTrigger.update);
-gsap.ticker.add(function(t){lenis.raf(t*1000);});
-gsap.ticker.lagSmoothing(0);
+gsap.utils.toArray('.sv-item').forEach((el,i)=>{
+  gsap.from(el,{opacity:0,x:-24,duration:.7,ease:'power2.out',delay:i*.06,scrollTrigger:{trigger:el,start:'top 85%'}});
+});
+gsap.utils.toArray('.pr-step').forEach((el,i)=>{
+  gsap.from(el,{opacity:0,y:28,duration:.7,ease:'power2.out',delay:i*.1,scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+gsap.utils.toArray('.rv-card').forEach((el,i)=>{
+  gsap.from(el,{opacity:0,y:22,duration:.65,ease:'power2.out',delay:i*.12,scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+gsap.utils.toArray('.pj-card').forEach((el,i)=>{
+  gsap.from(el,{opacity:0,scale:.97,duration:.8,ease:'power2.out',delay:i*.1,scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+gsap.from('.ab-inner',{opacity:0,y:30,duration:.9,ease:'power2.out',scrollTrigger:{trigger:'#about',start:'top 80%'}});
+gsap.from('.why-box',{opacity:0,y:20,duration:.8,ease:'power2.out',scrollTrigger:{trigger:'#why',start:'top 80%'}});
 
-// Hero entrance
-gsap.from('.h-label',{opacity:0,y:16,duration:.9,delay:.3,ease:'power3.out'});
-gsap.from('.h-title',{opacity:0,y:40,duration:1.1,delay:.5,ease:'expo.out'});
-gsap.from('.h-sub',{opacity:0,y:20,duration:.9,delay:.8,ease:'power3.out'});
-gsap.from('.h-finance',{opacity:0,y:12,duration:.7,delay:1,ease:'power3.out'});
-gsap.from('.h-btns',{opacity:0,y:16,duration:.7,delay:1.1,ease:'power3.out'});
-gsap.from('.h-certs',{opacity:0,y:10,duration:.6,delay:1.3,ease:'power3.out'});
-gsap.from('.h-sc',{opacity:0,scale:.85,duration:.8,stagger:.15,delay:1,ease:'back.out(1.5)'});
-gsap.from('.h-right',{opacity:0,duration:1.2,delay:.2,ease:'power3.out'});
-
-// About
-ScrollTrigger.create({trigger:'#about',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.ab-inner>div:first-child',{opacity:0,x:-40,duration:1,ease:'power3.out'});
-  gsap.from('.ab-right',{opacity:0,x:40,duration:1,delay:.15,ease:'power3.out'});
-}});
-
-// Services
-ScrollTrigger.create({trigger:'#services',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.sv-item',{opacity:0,y:20,duration:.6,stagger:.08,ease:'power3.out'});
-}});
-
-// Materials
-ScrollTrigger.create({trigger:'#materials',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.mat-card',{opacity:0,y:32,duration:.7,stagger:.1,ease:'power3.out'});
-}});
-
-// Projects
-ScrollTrigger.create({trigger:'#projects',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.pj-card',{opacity:0,y:32,duration:.8,stagger:.12,ease:'power3.out'});
-}});
-
-// Insurance
-ScrollTrigger.create({trigger:'#insurance',start:'top 82%',once:true,onEnter:function(){
-  gsap.from('.ins-box',{opacity:0,y:24,duration:.9,ease:'power3.out'});
-}});
-
-// Process
-ScrollTrigger.create({trigger:'#process',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.pr-step',{opacity:0,y:28,duration:.7,stagger:.1,ease:'power3.out'});
-}});
-
-// Reviews
-ScrollTrigger.create({trigger:'#reviews',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.rv-summary',{opacity:0,x:-30,duration:.8,ease:'power3.out'});
-  gsap.from('.rv-card',{opacity:0,y:28,duration:.7,stagger:.12,delay:.2,ease:'power3.out'});
-}});
-
-// Testimonial
-ScrollTrigger.create({trigger:'#testimonial',start:'top 82%',once:true,onEnter:function(){
-  gsap.from('.tm-quote',{opacity:0,y:32,duration:1,ease:'expo.out'});
-  gsap.from('.tm-author',{opacity:0,y:16,duration:.7,delay:.3,ease:'power3.out'});
-}});
-
-// Service Area
-ScrollTrigger.create({trigger:'#service-area',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.sa-item',{opacity:0,y:16,duration:.5,stagger:.04,ease:'power3.out'});
-}});
-
-// FAQ
-ScrollTrigger.create({trigger:'#faq',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.faq-photo-wrap',{opacity:0,x:-40,duration:1,ease:'power3.out'});
-  gsap.from('.faq-item',{opacity:0,y:16,duration:.5,stagger:.07,delay:.2,ease:'power3.out'});
-}});
-
-// CTA
-ScrollTrigger.create({trigger:'#cta',start:'top 80%',once:true,onEnter:function(){
-  gsap.from('.ct-title',{opacity:0,y:40,duration:1,ease:'expo.out'});
-  gsap.from('.ct-form',{opacity:0,y:24,duration:.8,delay:.3,ease:'power3.out'});
-  gsap.from('.cta-right',{opacity:0,scale:.97,duration:1,delay:.2,ease:'power3.out'});
-}});
+/* FORM SUBMIT */
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.ct-btn');
+  btn.textContent='Request Sent ✓';
+  btn.style.background='#4a7c59';
+  setTimeout(()=>{btn.textContent='Send My Request →';btn.style.background='';e.target.reset();},3500);
+}
 </script>
 </body>
 </html>
