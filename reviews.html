@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://elduroconstructionllc.com/reviews.html"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -16,7 +16,7 @@
   --accent:#C9A035;--accent-dk:#A07828;--accent-lt:#E8C060;
   --warm:#FDF6EE;--warm2:#F5EDE0;
   --gray:#64748B;--gray-dk:#334155;--bd:#E2E8F0;
-  --fh:'Bebas Neue',sans-serif;--fb:'Oswald',sans-serif;
+  --fh:'Bebas Neue',sans-serif;--fb:'Inter',system-ui,-apple-system,sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);color:var(--dark);background:#fff;overflow-x:hidden}
@@ -30,15 +30,15 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
 .top-bar-btn:hover{background:var(--accent-dk)}
 
 /* NAV */
-nav{background:var(--dark);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.4);position:sticky;top:0;z-index:999;border-bottom:2px solid var(--accent)}
+nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.08);position:sticky;top:0;z-index:999}
 .nav-logo{display:flex;align-items:center;gap:12px}
 .nav-logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
-.nav-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:17px;color:#fff;text-transform:uppercase}
+.nav-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:17px;color:var(--dark);text-transform:uppercase}
 .nav-logo-text span:last-child{display:block;font-size:11px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:.5px}
 .nav-links{display:flex;align-items:center;gap:4px}
 .nav-links>li{position:relative}
-.nav-links>li>a{display:block;padding:8px 12px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);border-radius:6px;transition:color .2s,background .2s;white-space:nowrap}
-.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links>li>a{display:block;padding:8px 12px;font-size:13px;font-weight:600;color:var(--gray-dk);border-radius:6px;transition:color .2s,background .2s;white-space:nowrap}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:var(--dark);background:rgba(0,0,0,.05)}
 .has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:8px;min-width:230px;box-shadow:0 12px 40px rgba(0,0,0,.2);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s}
 .nav-dropdown a{display:block;padding:9px 14px;font-size:13px;font-weight:500;color:var(--gray-dk);border-radius:6px;transition:background .15s,color .15s}
