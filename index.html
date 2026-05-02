@@ -12,7 +12,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Duro Construction LLC","telephone":"(904) 775-2057","address":{"@type":"PostalAddress","addressLocality":"Jacksonville","addressRegion":"FL"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"14"},"url":"https://elduroconstructionllc.com"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -21,7 +21,7 @@
   --white:#fff;--warm:#FDF6EE;--warm2:#F5EDE0;
   --gray-lt:#F1F5F9;--gray:#64748B;--gray-dk:#334155;
   --text:#1A1208;--bd:#E2E8F0;
-  --fh:'Bebas Neue',sans-serif;--fb:'Oswald',sans-serif;
+  --fh:'Bebas Neue',sans-serif;--fb:'Inter',system-ui,-apple-system,sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);color:var(--text);background:#fff;overflow-x:hidden}
@@ -65,6 +65,13 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .hero-desc{font-size:14px;color:rgba(255,255,255,.78);line-height:1.75;margin-bottom:32px;max-width:540px}
 .hero-phone-btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:16px 30px;border-radius:8px;font-weight:700;font-size:19px;font-family:var(--fh);letter-spacing:.5px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(201,160,53,.45)}
 .hero-phone-btn:hover{background:var(--accent-dk);transform:translateY(-2px)}
+.hero-rating{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:15px;font-weight:600}
+.hero-stars{color:#F5C842;font-size:20px;letter-spacing:2px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-hero-primary{background:var(--accent);color:#fff;padding:15px 30px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(201,160,53,.4)}
+.btn-hero-primary:hover{background:var(--accent-dk);transform:translateY(-2px)}
+.btn-hero-secondary{border:2px solid rgba(255,255,255,.6);color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:15px;transition:border-color .2s,background .2s}
+.btn-hero-secondary:hover{border-color:#fff;background:rgba(255,255,255,.12)}
 
 /* Hero form card */
 .hero-form-card{background:rgba(13,11,7,.96);border-radius:16px;padding:30px;backdrop-filter:blur(8px);border:1px solid rgba(201,160,53,.2)}
@@ -313,11 +320,10 @@ footer{background:var(--dark);padding:56px 32px 24px}
   <div class="hero-overlay"></div>
   <div class="hero-split">
     <div class="hero-left">
-      <span class="hero-eyebrow">Jacksonville, FL Concrete &amp; Flooring Contractor</span>
+      <div class="hero-rating">El Duro Construction <span class="hero-stars">★★★★★</span></div>
       <h1 class="hero-title">El Duro<br/>Construction<br/>LLC</h1>
-      <p class="hero-pitch">Concrete work, patios, sidewalks, hardwood &amp; vinyl flooring — done right, on time, at a fair price.</p>
-      <p class="hero-desc">El Duro is a Jacksonville-based contractor trusted by homeowners and businesses across Northeast Florida. We show up when we say we will, do the work properly, and stand behind it. 4.9 stars on Google from 14 real customers.</p>
-      <a href="tel:9047752057" class="hero-phone-btn">📞 &nbsp;(904) 775-2057</a>
+      <p class="hero-desc">Jacksonville's trusted contractor for concrete work, patios, sidewalks, hardwood &amp; vinyl flooring. We show up when we say we will, do the work properly, and stand behind it. 4.9 stars on Google from 14 real customers.</p>
+      <div class="hero-ctas"><a href="tel:9047752057" class="btn-hero-primary">📞 (904) 775-2057</a><a href="projects.html" class="btn-hero-secondary">See Our Work</a></div>
     </div>
     <div class="hero-form-card">
       <p class="form-hook">Free Estimates — No Obligation</p>
