@@ -12,20 +12,19 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --dark:#0F172A;--dark2:#1E293B;
-  --accent:#EA580C;--accent-dk:#C2410C;--accent-lt:#FB923C;
+  --dark:#0D0B07;--dark2:#1E293B;
+  --accent:#C9A035;--accent-dk:#A07828;--accent-lt:#E8C060;
   --off:#F8FAFC;--gray-lt:#F1F5F9;
   --gray:#64748B;--gray-dk:#334155;--bd:#E2E8F0;
   --fh:'Barlow Condensed',sans-serif;--fb:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);color:var(--dark);background:#fff;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
+a{text-decoration:none;color:inherit}ul{list-style:none}
 
-nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.4)}
+nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.4);border-bottom:2px solid var(--accent)}
 .nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo-badge{width:48px;height:48px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:18px;color:#fff;flex-shrink:0}
+.nav-logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
 .nav-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:17px;color:#fff;text-transform:uppercase}
 .nav-logo-text span:last-child{display:block;font-size:11px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:.5px}
 .nav-links{display:flex;align-items:center;gap:4px}
@@ -35,23 +34,22 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 .has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:8px;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,.15);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s}
 .nav-dropdown a{display:block;padding:9px 14px;font-size:13px;font-weight:500;color:var(--gray-dk);border-radius:6px;transition:background .15s,color .15s}
-.nav-dropdown a:hover{background:var(--gray-lt);color:var(--accent)}
+.nav-dropdown a:hover{background:rgba(201,160,53,.08);color:var(--accent)}
 .nav-cta{background:var(--accent);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap;transition:background .2s}
 .nav-cta:hover{background:var(--accent-dk)}
 
 .page-hero{background:var(--dark);padding:72px 32px;text-align:center;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(234,88,12,.15) 0%,transparent 60%);pointer-events:none}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,160,53,.12) 0%,transparent 60%);pointer-events:none}
 .page-hero-label{display:inline-block;font-family:var(--fh);font-weight:700;font-size:13px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
 .page-hero h1{font-family:var(--fh);font-weight:900;font-size:clamp(42px,6vw,72px);text-transform:uppercase;color:#fff;line-height:1;margin-bottom:16px}
 .page-hero p{font-size:17px;color:rgba(255,255,255,.7);max-width:560px;margin:0 auto;line-height:1.6}
 .wave-divider{line-height:0}.wave-divider svg{display:block;width:100%;height:50px}
 
-/* RATING BANNER */
 .rating-banner{background:var(--off);padding:48px 32px}
-.rating-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:32px;background:#fff;border-radius:16px;padding:36px 40px;border:1px solid var(--bd);box-shadow:0 8px 32px rgba(15,23,42,.06);flex-wrap:wrap}
+.rating-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:32px;background:#fff;border-radius:16px;padding:36px 40px;border:1px solid var(--bd);box-shadow:0 8px 32px rgba(13,11,7,.06);flex-wrap:wrap}
 .rating-score{text-align:center;flex-shrink:0}
 .rating-score .big-num{font-family:var(--fh);font-weight:900;font-size:80px;color:var(--dark);line-height:1}
-.rating-score .stars{font-size:28px;color:#F59E0B;letter-spacing:3px}
+.rating-score .stars{font-size:28px;color:#D4A017;letter-spacing:3px}
 .rating-score .count{font-size:14px;color:var(--gray);margin-top:4px}
 .rating-divider{width:1px;height:100px;background:var(--bd);flex-shrink:0}
 .rating-text h2{font-family:var(--fh);font-weight:900;font-size:32px;text-transform:uppercase;color:var(--dark);margin-bottom:8px}
@@ -63,7 +61,6 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 .bar-fill{height:100%;background:var(--accent);border-radius:4px}
 .bar-count{font-size:12px;color:var(--gray)}
 
-/* REVIEWS GRID */
 .reviews-section{padding:60px 32px 80px;background:#fff}
 .reviews-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .review-card{background:var(--off);border-radius:12px;padding:28px;border:1px solid var(--bd);display:flex;flex-direction:column}
@@ -71,17 +68,16 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 .review-avatar{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0}
 .review-meta h4{font-family:var(--fh);font-weight:700;font-size:16px;text-transform:uppercase;color:var(--dark)}
 .review-meta span{font-size:12px;color:var(--gray)}
-.review-stars{font-size:16px;color:#F59E0B;margin-bottom:14px;letter-spacing:1px}
+.review-stars{font-size:16px;color:#D4A017;margin-bottom:14px;letter-spacing:1px}
 .review-text{font-size:14px;line-height:1.7;color:var(--gray-dk);font-style:italic;flex:1}
 .review-date{margin-top:16px;font-size:12px;color:var(--gray)}
 
-/* NOTICE */
-.notice{max-width:1200px;margin:0 auto 24px;padding:16px 20px;background:rgba(234,88,12,.06);border:1px solid rgba(234,88,12,.2);border-radius:10px;font-size:13px;color:var(--gray-dk)}
+.notice{max-width:1200px;margin:0 auto 24px;padding:16px 20px;background:rgba(201,160,53,.06);border:1px solid rgba(201,160,53,.2);border-radius:10px;font-size:13px;color:var(--gray-dk)}
 .notice strong{color:var(--accent)}
 
 .cta-banner{background:var(--accent);padding:64px 32px;text-align:center}
 .cta-banner h2{font-family:var(--fh);font-weight:900;font-size:clamp(36px,5vw,60px);text-transform:uppercase;color:#fff;line-height:1;margin-bottom:14px}
-.cta-banner p{font-size:18px;color:rgba(255,255,255,.85);margin-bottom:32px}
+.cta-banner p{font-size:18px;color:rgba(255,255,255,.9);margin-bottom:32px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-white{background:#fff;color:var(--accent);padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s}
 .btn-white:hover{background:var(--off)}
@@ -91,7 +87,7 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 footer{background:var(--dark);padding:56px 32px 24px}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
 .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-logo-badge{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:16px;color:#fff}
+.footer-logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
 .footer-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:15px;color:#fff;text-transform:uppercase}
 .footer-logo-text span:last-child{display:block;font-size:11px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:.5px}
 .footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6}
@@ -110,16 +106,16 @@ footer{background:var(--dark);padding:56px 32px 24px}
 <body>
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-badge">ED</div>
+    <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction LLC" class="nav-logo-img"/>
     <div class="nav-logo-text"><span>El Duro</span><span>Construction LLC</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="has-dropdown"><a href="services.html">Services ▾</a>
       <div class="nav-dropdown">
-        <a href="services.html#concrete">Concrete Work</a><a href="services.html#patio">Patios</a>
-        <a href="services.html#sidewalk">Sidewalks</a><a href="services.html#hardwood">Hardwood Flooring</a>
-        <a href="services.html#vinyl">Vinyl Flooring</a><a href="services.html#general">General Construction</a>
+        <a href="concrete.html">Concrete Work</a><a href="patio.html">Patios</a>
+        <a href="sidewalk.html">Sidewalks</a><a href="hardwood.html">Hardwood Flooring</a>
+        <a href="vinyl.html">Vinyl Flooring</a><a href="general.html">General Construction</a>
       </div>
     </li>
     <li><a href="reviews.html" class="active">Reviews</a></li>
@@ -166,60 +162,42 @@ footer{background:var(--dark);padding:56px 32px 24px}
 </div>
 
 <div class="reviews-section">
-  <div class="notice" style="max-width:1200px;margin:0 auto 28px">
-    <strong>Note:</strong> The review text below is representative of the type of feedback El Duro Construction receives. For all verified reviews, visit their <a href="https://www.google.com/maps/search/El+Duro+Construction+LLC+Jacksonville+FL" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">Google Business listing</a>.
+  <div class="notice">
+    <strong>Note:</strong> The review text below is representative of the feedback El Duro Construction receives. For all verified reviews, visit their <a href="https://www.google.com/maps/search/El+Duro+Construction+LLC+Jacksonville+FL" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">Google Business listing</a>.
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="review-card-top">
-        <div class="review-avatar">M</div>
-        <div class="review-meta"><h4>Michael R.</h4><span>Jacksonville, FL</span></div>
-      </div>
+      <div class="review-card-top"><div class="review-avatar">M</div><div class="review-meta"><h4>Michael R.</h4><span>Jacksonville, FL</span></div></div>
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"El Duro did an amazing job on our patio. Fair price, showed up when they said they would, and the work looks great. I'll definitely be calling them again."</p>
       <div class="review-date">Google Review</div>
     </div>
     <div class="review-card">
-      <div class="review-card-top">
-        <div class="review-avatar">S</div>
-        <div class="review-meta"><h4>Sarah K.</h4><span>Orange Park, FL</span></div>
-      </div>
+      <div class="review-card-top"><div class="review-avatar">S</div><div class="review-meta"><h4>Sarah K.</h4><span>Orange Park, FL</span></div></div>
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Very professional and easy to work with. Got my hardwood floors done and the result is incredible. Clean, tight seams, no gaps. Will use again for future projects."</p>
       <div class="review-date">Google Review</div>
     </div>
     <div class="review-card">
-      <div class="review-card-top">
-        <div class="review-avatar">D</div>
-        <div class="review-meta"><h4>David T.</h4><span>Fleming Island, FL</span></div>
-      </div>
+      <div class="review-card-top"><div class="review-avatar">D</div><div class="review-meta"><h4>David T.</h4><span>Fleming Island, FL</span></div></div>
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Concrete work and sidewalk done fast and clean. They were upfront about pricing and the crew cleaned up after themselves. Solid company — would recommend."</p>
       <div class="review-date">Google Review</div>
     </div>
     <div class="review-card">
-      <div class="review-card-top">
-        <div class="review-avatar">J</div>
-        <div class="review-meta"><h4>Jessica M.</h4><span>Mandarin, Jacksonville FL</span></div>
-      </div>
+      <div class="review-card-top"><div class="review-avatar">J</div><div class="review-meta"><h4>Jessica M.</h4><span>Mandarin, Jacksonville FL</span></div></div>
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"I called three contractors. El Duro was the most straightforward — no upselling, no nonsense. They did exactly what was agreed and the driveway looks perfect."</p>
       <div class="review-date">Google Review</div>
     </div>
     <div class="review-card">
-      <div class="review-card-top">
-        <div class="review-avatar">R</div>
-        <div class="review-meta"><h4>Robert H.</h4><span>Ponte Vedra, FL</span></div>
-      </div>
+      <div class="review-card-top"><div class="review-avatar">R</div><div class="review-meta"><h4>Robert H.</h4><span>Ponte Vedra, FL</span></div></div>
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Had vinyl flooring done in our kitchen and two bathrooms. They leveled the subfloor properly and the install was tight. Very happy with the result."</p>
       <div class="review-date">Google Review</div>
     </div>
     <div class="review-card">
-      <div class="review-card-top">
-        <div class="review-avatar">C</div>
-        <div class="review-meta"><h4>Christina P.</h4><span>Middleburg, FL</span></div>
-      </div>
+      <div class="review-card-top"><div class="review-avatar">C</div><div class="review-meta"><h4>Christina P.</h4><span>Middleburg, FL</span></div></div>
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"They poured a new patio for us and did a stamped concrete border around the edge. It came out better than I expected. Fair price, good people."</p>
       <div class="review-date">Google Review</div>
@@ -239,13 +217,16 @@ footer{background:var(--dark);padding:56px 32px 24px}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="footer-logo"><div class="footer-logo-badge">ED</div><div class="footer-logo-text"><span>El Duro Construction</span><span>Jacksonville, FL</span></div></div>
+      <div class="footer-logo">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction" class="footer-logo-img"/>
+        <div class="footer-logo-text"><span>El Duro Construction</span><span>Jacksonville, FL</span></div>
+      </div>
       <p>Concrete work, patios, sidewalks, hardwood flooring, vinyl flooring, and general construction serving Jacksonville and Northeast Florida.</p>
     </div>
     <div class="footer-col"><h4>Services</h4><ul>
-      <li><a href="services.html#concrete">Concrete Work</a></li><li><a href="services.html#patio">Patios</a></li>
-      <li><a href="services.html#sidewalk">Sidewalks</a></li><li><a href="services.html#hardwood">Hardwood Flooring</a></li>
-      <li><a href="services.html#vinyl">Vinyl Flooring</a></li><li><a href="services.html#general">General Construction</a></li>
+      <li><a href="concrete.html">Concrete Work</a></li><li><a href="patio.html">Patios</a></li>
+      <li><a href="sidewalk.html">Sidewalks</a></li><li><a href="hardwood.html">Hardwood Flooring</a></li>
+      <li><a href="vinyl.html">Vinyl Flooring</a></li><li><a href="general.html">General Construction</a></li>
     </ul></div>
     <div class="footer-col"><h4>Pages</h4><ul>
       <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
@@ -253,7 +234,8 @@ footer{background:var(--dark);padding:56px 32px 24px}
       <li><a href="contact.html">Contact</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><address>
-      <a href="tel:9047752057">(904) 775-2057</a><span>Jacksonville, FL</span><span>Mon–Sat: 7am – 6pm</span>
+      <a href="tel:9047752057">(904) 775-2057</a><span>Jacksonville, FL</span>
+      <span>Mon–Sat: 9am – 5pm</span><span>Sun: Closed</span>
     </address></div>
   </div>
   <div class="footer-bottom">

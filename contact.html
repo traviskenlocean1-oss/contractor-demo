@@ -12,8 +12,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --dark:#0F172A;--dark2:#1E293B;
-  --accent:#EA580C;--accent-dk:#C2410C;--accent-lt:#FB923C;
+  --dark:#0D0B07;--dark2:#1E293B;
+  --accent:#C9A035;--accent-dk:#A07828;--accent-lt:#E8C060;
   --off:#F8FAFC;--gray-lt:#F1F5F9;
   --gray:#64748B;--gray-dk:#334155;--bd:#E2E8F0;
   --fh:'Barlow Condensed',sans-serif;--fb:'Inter',sans-serif;
@@ -23,9 +23,9 @@ body{font-family:var(--fb);color:var(--dark);background:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
-nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.4)}
+nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.4);border-bottom:2px solid var(--accent)}
 .nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo-badge{width:48px;height:48px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:18px;color:#fff;flex-shrink:0}
+.nav-logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
 .nav-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:17px;color:#fff;text-transform:uppercase}
 .nav-logo-text span:last-child{display:block;font-size:11px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:.5px}
 .nav-links{display:flex;align-items:center;gap:4px}
@@ -35,22 +35,20 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 .has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:8px;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,.15);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s}
 .nav-dropdown a{display:block;padding:9px 14px;font-size:13px;font-weight:500;color:var(--gray-dk);border-radius:6px;transition:background .15s,color .15s}
-.nav-dropdown a:hover{background:var(--gray-lt);color:var(--accent)}
+.nav-dropdown a:hover{background:rgba(201,160,53,.08);color:var(--accent)}
 .nav-cta{background:var(--accent);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap;transition:background .2s}
 .nav-cta:hover{background:var(--accent-dk)}
 
 .page-hero{background:var(--dark);padding:72px 32px;text-align:center;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(234,88,12,.15) 0%,transparent 60%);pointer-events:none}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,160,53,.12) 0%,transparent 60%);pointer-events:none}
 .page-hero-label{display:inline-block;font-family:var(--fh);font-weight:700;font-size:13px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
 .page-hero h1{font-family:var(--fh);font-weight:900;font-size:clamp(42px,6vw,72px);text-transform:uppercase;color:#fff;line-height:1;margin-bottom:16px}
 .page-hero p{font-size:17px;color:rgba(255,255,255,.7);max-width:560px;margin:0 auto;line-height:1.6}
 .wave-divider{line-height:0}.wave-divider svg{display:block;width:100%;height:50px}
 
-/* CONTACT GRID */
 .contact-section{padding:80px 32px;background:var(--off)}
 .contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 480px;gap:60px;align-items:start}
 
-/* Info side */
 .contact-info .label{display:inline-block;font-family:var(--fh);font-weight:700;font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
 .contact-info h2{font-family:var(--fh);font-weight:900;font-size:clamp(34px,4vw,50px);text-transform:uppercase;line-height:1;color:var(--dark);margin-bottom:20px}
 .contact-info p{font-size:15px;color:var(--gray-dk);line-height:1.7;margin-bottom:28px}
@@ -63,7 +61,6 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 .contact-card-body a{color:var(--accent);font-weight:600}
 .contact-card-body a:hover{text-decoration:underline}
 
-/* Hours table */
 .hours-block{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:24px}
 .hours-block h4{font-family:var(--fh);font-weight:800;font-size:18px;text-transform:uppercase;color:var(--dark);margin-bottom:16px}
 .hours-table{width:100%;border-collapse:collapse}
@@ -74,23 +71,20 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 .hours-table tr.closed td{color:var(--gray)}
 .hours-table tr.closed td:last-child{color:var(--gray);font-weight:400}
 
-/* Quote Card */
-.quote-card{border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(15,23,42,.18)}
+.quote-card{border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(13,11,7,.18)}
 .quote-card-header{background:var(--accent);padding:22px 26px}
 .quote-card-title{font-family:var(--fh);font-weight:800;font-size:24px;color:#fff;text-transform:uppercase;letter-spacing:.5px}
-.quote-card-sub{font-size:13px;color:rgba(255,255,255,.8);margin-top:4px}
+.quote-card-sub{font-size:13px;color:rgba(255,255,255,.85);margin-top:4px}
 .quote-card-body{background:var(--dark);padding:26px}
 .qform{display:flex;flex-direction:column;gap:12px}
-.qform input,.qform select,.qform textarea{width:100%;padding:12px 14px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:var(--fb);font-size:14px;outline:none;transition:border-color .2s}
-.qform input::placeholder,.qform textarea::placeholder{color:rgba(255,255,255,.4)}
-.qform select option{background:var(--dark2);color:#fff}
+.qform input,.qform select,.qform textarea{width:100%;padding:12px 14px;border-radius:8px;background:#fff;border:1px solid #ddd;color:#1a1a1a;font-family:var(--fb);font-size:14px;outline:none;transition:border-color .2s}
+.qform select option{background:#fff;color:#1a1a1a}
 .qform input:focus,.qform select:focus,.qform textarea:focus{border-color:var(--accent)}
 .qform textarea{resize:vertical;min-height:90px}
 .qform-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .qform button{background:var(--accent);color:#fff;border:none;cursor:pointer;padding:14px;border-radius:8px;font-family:var(--fh);font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:1px;transition:background .2s;margin-top:4px}
 .qform button:hover{background:var(--accent-dk)}
 
-/* SERVICE AREA */
 .area-section{background:var(--dark2);padding:80px 32px}
 .area-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 .area-text .label{display:inline-block;font-family:var(--fh);font-weight:700;font-size:13px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
@@ -105,7 +99,7 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 footer{background:var(--dark);padding:56px 32px 24px}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
 .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-logo-badge{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:16px;color:#fff}
+.footer-logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
 .footer-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:15px;color:#fff;text-transform:uppercase}
 .footer-logo-text span:last-child{display:block;font-size:11px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:.5px}
 .footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6}
@@ -124,16 +118,16 @@ footer{background:var(--dark);padding:56px 32px 24px}
 <body>
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-badge">ED</div>
+    <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction LLC" class="nav-logo-img"/>
     <div class="nav-logo-text"><span>El Duro</span><span>Construction LLC</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="has-dropdown"><a href="services.html">Services ▾</a>
       <div class="nav-dropdown">
-        <a href="services.html#concrete">Concrete Work</a><a href="services.html#patio">Patios</a>
-        <a href="services.html#sidewalk">Sidewalks</a><a href="services.html#hardwood">Hardwood Flooring</a>
-        <a href="services.html#vinyl">Vinyl Flooring</a><a href="services.html#general">General Construction</a>
+        <a href="concrete.html">Concrete Work</a><a href="patio.html">Patios</a>
+        <a href="sidewalk.html">Sidewalks</a><a href="hardwood.html">Hardwood Flooring</a>
+        <a href="vinyl.html">Vinyl Flooring</a><a href="general.html">General Construction</a>
       </div>
     </li>
     <li><a href="reviews.html">Reviews</a></li>
@@ -193,12 +187,12 @@ footer{background:var(--dark);padding:56px 32px 24px}
         <h4>Business Hours</h4>
         <table class="hours-table">
           <tbody>
-            <tr><td>Monday</td><td>7:00 AM – 6:00 PM</td></tr>
-            <tr><td>Tuesday</td><td>7:00 AM – 6:00 PM</td></tr>
-            <tr><td>Wednesday</td><td>7:00 AM – 6:00 PM</td></tr>
-            <tr><td>Thursday</td><td>7:00 AM – 6:00 PM</td></tr>
-            <tr><td>Friday</td><td>7:00 AM – 6:00 PM</td></tr>
-            <tr><td>Saturday</td><td>8:00 AM – 4:00 PM</td></tr>
+            <tr><td>Monday</td><td>9:00 AM – 5:00 PM</td></tr>
+            <tr><td>Tuesday</td><td>9:00 AM – 5:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>9:00 AM – 5:00 PM</td></tr>
+            <tr><td>Thursday</td><td>9:00 AM – 5:00 PM</td></tr>
+            <tr><td>Friday</td><td>9:00 AM – 5:00 PM</td></tr>
+            <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
             <tr class="closed"><td>Sunday</td><td>Closed</td></tr>
           </tbody>
         </table>
@@ -237,7 +231,6 @@ footer{background:var(--dark);padding:56px 32px 24px}
   </div>
 </section>
 
-<!-- SERVICE AREA -->
 <section class="area-section" id="area">
   <div class="area-inner">
     <div class="area-text">
@@ -245,20 +238,13 @@ footer{background:var(--dark);padding:56px 32px 24px}
       <h2>Service Area</h2>
       <p>We serve Jacksonville and the surrounding Northeast Florida communities. If you're unsure whether we cover your area, just give us a call.</p>
       <div class="area-cities">
-        <div class="city-item">Jacksonville</div>
-        <div class="city-item">Orange Park</div>
-        <div class="city-item">Fleming Island</div>
-        <div class="city-item">Middleburg</div>
-        <div class="city-item">St. Augustine</div>
-        <div class="city-item">Ponte Vedra</div>
-        <div class="city-item">Mandarin</div>
-        <div class="city-item">Arlington</div>
-        <div class="city-item">Neptune Beach</div>
-        <div class="city-item">Atlantic Beach</div>
-        <div class="city-item">Fernandina Beach</div>
-        <div class="city-item">Yulee</div>
-        <div class="city-item">Green Cove Springs</div>
-        <div class="city-item">Macclenny</div>
+        <div class="city-item">Jacksonville</div><div class="city-item">Orange Park</div>
+        <div class="city-item">Fleming Island</div><div class="city-item">Middleburg</div>
+        <div class="city-item">St. Augustine</div><div class="city-item">Ponte Vedra</div>
+        <div class="city-item">Mandarin</div><div class="city-item">Arlington</div>
+        <div class="city-item">Neptune Beach</div><div class="city-item">Atlantic Beach</div>
+        <div class="city-item">Fernandina Beach</div><div class="city-item">Yulee</div>
+        <div class="city-item">Green Cove Springs</div><div class="city-item">Macclenny</div>
       </div>
     </div>
     <div class="area-map">
@@ -270,13 +256,16 @@ footer{background:var(--dark);padding:56px 32px 24px}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="footer-logo"><div class="footer-logo-badge">ED</div><div class="footer-logo-text"><span>El Duro Construction</span><span>Jacksonville, FL</span></div></div>
+      <div class="footer-logo">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction" class="footer-logo-img"/>
+        <div class="footer-logo-text"><span>El Duro Construction</span><span>Jacksonville, FL</span></div>
+      </div>
       <p>Concrete work, patios, sidewalks, hardwood flooring, vinyl flooring, and general construction serving Jacksonville and Northeast Florida.</p>
     </div>
     <div class="footer-col"><h4>Services</h4><ul>
-      <li><a href="services.html#concrete">Concrete Work</a></li><li><a href="services.html#patio">Patios</a></li>
-      <li><a href="services.html#sidewalk">Sidewalks</a></li><li><a href="services.html#hardwood">Hardwood Flooring</a></li>
-      <li><a href="services.html#vinyl">Vinyl Flooring</a></li><li><a href="services.html#general">General Construction</a></li>
+      <li><a href="concrete.html">Concrete Work</a></li><li><a href="patio.html">Patios</a></li>
+      <li><a href="sidewalk.html">Sidewalks</a></li><li><a href="hardwood.html">Hardwood Flooring</a></li>
+      <li><a href="vinyl.html">Vinyl Flooring</a></li><li><a href="general.html">General Construction</a></li>
     </ul></div>
     <div class="footer-col"><h4>Pages</h4><ul>
       <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
@@ -284,7 +273,8 @@ footer{background:var(--dark);padding:56px 32px 24px}
       <li><a href="contact.html">Contact</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><address>
-      <a href="tel:9047752057">(904) 775-2057</a><span>Jacksonville, FL</span><span>Mon–Sat: 7am – 6pm</span>
+      <a href="tel:9047752057">(904) 775-2057</a><span>Jacksonville, FL</span>
+      <span>Mon–Sat: 9am – 5pm</span><span>Sun: Closed</span>
     </address></div>
   </div>
   <div class="footer-bottom">

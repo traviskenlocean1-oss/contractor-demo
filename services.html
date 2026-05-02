@@ -12,8 +12,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --dark:#0F172A;--dark2:#1E293B;
-  --accent:#EA580C;--accent-dk:#C2410C;--accent-lt:#FB923C;
+  --dark:#0D0B07;--dark2:#1E293B;
+  --accent:#C9A035;--accent-dk:#A07828;--accent-lt:#E8C060;
   --off:#F8FAFC;--gray-lt:#F1F5F9;
   --gray:#64748B;--gray-dk:#334155;--bd:#E2E8F0;
   --fh:'Barlow Condensed',sans-serif;--fb:'Inter',sans-serif;
@@ -21,12 +21,11 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);color:var(--dark);background:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-ul{list-style:none}
+img{max-width:100%;display:block}ul{list-style:none}
 
-nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.4)}
+nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.4);border-bottom:2px solid var(--accent)}
 .nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo-badge{width:48px;height:48px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:18px;color:#fff;flex-shrink:0}
+.nav-logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
 .nav-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:17px;color:#fff;text-transform:uppercase}
 .nav-logo-text span:last-child{display:block;font-size:11px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:.5px}
 .nav-links{display:flex;align-items:center;gap:4px}
@@ -36,12 +35,12 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 .has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:8px;min-width:220px;box-shadow:0 12px 40px rgba(0,0,0,.15);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s}
 .nav-dropdown a{display:block;padding:9px 14px;font-size:13px;font-weight:500;color:var(--gray-dk);border-radius:6px;transition:background .15s,color .15s}
-.nav-dropdown a:hover{background:var(--gray-lt);color:var(--accent)}
+.nav-dropdown a:hover{background:rgba(201,160,53,.08);color:var(--accent)}
 .nav-cta{background:var(--accent);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap;transition:background .2s}
 .nav-cta:hover{background:var(--accent-dk)}
 
 .page-hero{background:var(--dark);padding:72px 32px;text-align:center;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(234,88,12,.15) 0%,transparent 60%);pointer-events:none}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,160,53,.12) 0%,transparent 60%);pointer-events:none}
 .page-hero-label{display:inline-block;font-family:var(--fh);font-weight:700;font-size:13px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
 .page-hero h1{font-family:var(--fh);font-weight:900;font-size:clamp(42px,6vw,72px);text-transform:uppercase;color:#fff;line-height:1;margin-bottom:16px}
 .page-hero p{font-size:17px;color:rgba(255,255,255,.7);max-width:560px;margin:0 auto;line-height:1.6}
@@ -66,7 +65,7 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 
 .cta-banner{background:var(--accent);padding:64px 32px;text-align:center}
 .cta-banner h2{font-family:var(--fh);font-weight:900;font-size:clamp(36px,5vw,60px);text-transform:uppercase;color:#fff;line-height:1;margin-bottom:14px}
-.cta-banner p{font-size:18px;color:rgba(255,255,255,.85);margin-bottom:32px}
+.cta-banner p{font-size:18px;color:rgba(255,255,255,.9);margin-bottom:32px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-white{background:#fff;color:var(--accent);padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s}
 .btn-white:hover{background:var(--off)}
@@ -76,7 +75,7 @@ nav{position:sticky;top:0;z-index:999;background:var(--dark);height:72px;display
 footer{background:var(--dark);padding:56px 32px 24px}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
 .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-logo-badge{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:16px;color:#fff}
+.footer-logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
 .footer-logo-text span:first-child{display:block;font-family:var(--fh);font-weight:800;font-size:15px;color:#fff;text-transform:uppercase}
 .footer-logo-text span:last-child{display:block;font-size:11px;color:var(--accent-lt);text-transform:uppercase;letter-spacing:.5px}
 .footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6}
@@ -94,19 +93,16 @@ footer{background:var(--dark);padding:56px 32px 24px}
 <body>
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-badge">ED</div>
+    <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction LLC" class="nav-logo-img"/>
     <div class="nav-logo-text"><span>El Duro</span><span>Construction LLC</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="has-dropdown"><a href="services.html" class="active">Services ▾</a>
       <div class="nav-dropdown">
-        <a href="#concrete">Concrete Work</a>
-        <a href="#patio">Patios</a>
-        <a href="#sidewalk">Sidewalks</a>
-        <a href="#hardwood">Hardwood Flooring</a>
-        <a href="#vinyl">Vinyl Flooring</a>
-        <a href="#general">General Construction</a>
+        <a href="concrete.html">Concrete Work</a><a href="patio.html">Patios</a>
+        <a href="sidewalk.html">Sidewalks</a><a href="hardwood.html">Hardwood Flooring</a>
+        <a href="vinyl.html">Vinyl Flooring</a><a href="general.html">General Construction</a>
       </div>
     </li>
     <li><a href="reviews.html">Reviews</a></li>
@@ -132,7 +128,7 @@ footer{background:var(--dark);padding:56px 32px 24px}
 
 <section class="svc-section bg-white" id="concrete">
   <div class="svc-inner">
-    <div class="svc-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Concrete work Jacksonville FL" loading="lazy"/></div>
+    <div class="svc-img"><img src="https://lh3.googleusercontent.com/p/AF1QipOfHow5zGU3KGkLqt6ocGwuHGF_MI63ks2Kws=w800-h600-k-no" alt="Concrete work Jacksonville FL" loading="lazy"/></div>
     <div class="svc-text">
       <span class="label">Service 01</span>
       <h2>Concrete Work</h2>
@@ -144,14 +140,14 @@ footer{background:var(--dark);padding:56px 32px 24px}
         <div class="svc-feature">Stamped & decorative concrete</div>
         <div class="svc-feature">Commercial & residential</div>
       </div>
-      <a href="contact.html" class="btn-accent">Get a Free Quote</a>
+      <a href="concrete.html" class="btn-accent">Learn More & Get a Quote</a>
     </div>
   </div>
 </section>
 
 <section class="svc-section bg-off" id="patio">
   <div class="svc-inner reverse">
-    <div class="svc-img"><img src="https://images.unsplash.com/photo-1591129841117-3adfd313e34f?w=800&q=80" alt="Patio installation Jacksonville FL" loading="lazy"/></div>
+    <div class="svc-img"><img src="https://lh3.googleusercontent.com/p/AF1QipMjh1YUn7mhNrubnXSl3XCp2B-zQxlCpGauAdc=w800-h600-k-no" alt="Patio installation Jacksonville FL" loading="lazy"/></div>
     <div class="svc-text">
       <span class="label">Service 02</span>
       <h2>Patios</h2>
@@ -163,14 +159,14 @@ footer{background:var(--dark);padding:56px 32px 24px}
         <div class="svc-feature">Smooth, brushed, or textured finishes</div>
         <div class="svc-feature">Extensions to existing patios</div>
       </div>
-      <a href="contact.html" class="btn-accent">Get a Free Quote</a>
+      <a href="patio.html" class="btn-accent">Learn More & Get a Quote</a>
     </div>
   </div>
 </section>
 
 <section class="svc-section bg-white" id="sidewalk">
   <div class="svc-inner">
-    <div class="svc-img"><img src="https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?w=800&q=80" alt="Sidewalk installation Jacksonville FL" loading="lazy"/></div>
+    <div class="svc-img"><img src="https://lh3.googleusercontent.com/p/AF1QipPtt-aXq1Qc6HylsxgalrU2GelFU17eecSrQOY=w800-h600-k-no" alt="Sidewalk installation Jacksonville FL" loading="lazy"/></div>
     <div class="svc-text">
       <span class="label">Service 03</span>
       <h2>Sidewalks</h2>
@@ -182,14 +178,14 @@ footer{background:var(--dark);padding:56px 32px 24px}
         <div class="svc-feature">Repairs & replacements</div>
         <div class="svc-feature">Proper grading for drainage</div>
       </div>
-      <a href="contact.html" class="btn-accent">Get a Free Quote</a>
+      <a href="sidewalk.html" class="btn-accent">Learn More & Get a Quote</a>
     </div>
   </div>
 </section>
 
 <section class="svc-section bg-off" id="hardwood">
   <div class="svc-inner reverse">
-    <div class="svc-img"><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80" alt="Hardwood flooring Jacksonville FL" loading="lazy"/></div>
+    <div class="svc-img"><img src="https://lh3.googleusercontent.com/p/AF1QipNae5KMZVEt0ulJArGjKQzeJGMZGTxzFdAwkd8=w800-h600-k-no" alt="Hardwood flooring Jacksonville FL" loading="lazy"/></div>
     <div class="svc-text">
       <span class="label">Service 04</span>
       <h2>Hardwood Flooring</h2>
@@ -201,14 +197,14 @@ footer{background:var(--dark);padding:56px 32px 24px}
         <div class="svc-feature">New installation & replacement</div>
         <div class="svc-feature">Multiple wood species & finishes</div>
       </div>
-      <a href="contact.html" class="btn-accent">Get a Free Quote</a>
+      <a href="hardwood.html" class="btn-accent">Learn More & Get a Quote</a>
     </div>
   </div>
 </section>
 
 <section class="svc-section bg-white" id="vinyl">
   <div class="svc-inner">
-    <div class="svc-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Vinyl flooring Jacksonville FL" loading="lazy"/></div>
+    <div class="svc-img"><img src="https://lh3.googleusercontent.com/p/AF1QipOOjZn8lJ1jypftm0ZELmY4k0G2e6hQT8mQ638=w800-h600-k-no" alt="Vinyl flooring Jacksonville FL" loading="lazy"/></div>
     <div class="svc-text">
       <span class="label">Service 05</span>
       <h2>Vinyl Flooring</h2>
@@ -220,14 +216,14 @@ footer{background:var(--dark);padding:56px 32px 24px}
         <div class="svc-feature">Click-lock & glue-down methods</div>
         <div class="svc-feature">Full rooms or whole-home installs</div>
       </div>
-      <a href="contact.html" class="btn-accent">Get a Free Quote</a>
+      <a href="vinyl.html" class="btn-accent">Learn More & Get a Quote</a>
     </div>
   </div>
 </section>
 
 <section class="svc-section bg-off" id="general">
   <div class="svc-inner reverse">
-    <div class="svc-img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="General construction Jacksonville FL" loading="lazy"/></div>
+    <div class="svc-img"><img src="https://lh3.googleusercontent.com/p/AF1QipPeG6dOCba9kX4pBRXgwBz5rstFpoByPRl6rLM=w800-h600-k-no" alt="General construction Jacksonville FL" loading="lazy"/></div>
     <div class="svc-text">
       <span class="label">Service 06</span>
       <h2>General Construction</h2>
@@ -239,7 +235,7 @@ footer{background:var(--dark);padding:56px 32px 24px}
         <div class="svc-feature">Framing & carpentry</div>
         <div class="svc-feature">Commercial & residential projects</div>
       </div>
-      <a href="contact.html" class="btn-accent">Get a Free Quote</a>
+      <a href="general.html" class="btn-accent">Learn More & Get a Quote</a>
     </div>
   </div>
 </section>
@@ -256,13 +252,16 @@ footer{background:var(--dark);padding:56px 32px 24px}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="footer-logo"><div class="footer-logo-badge">ED</div><div class="footer-logo-text"><span>El Duro Construction</span><span>Jacksonville, FL</span></div></div>
+      <div class="footer-logo">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction" class="footer-logo-img"/>
+        <div class="footer-logo-text"><span>El Duro Construction</span><span>Jacksonville, FL</span></div>
+      </div>
       <p>Concrete work, patios, sidewalks, hardwood flooring, vinyl flooring, and general construction serving Jacksonville and Northeast Florida.</p>
     </div>
     <div class="footer-col"><h4>Services</h4><ul>
-      <li><a href="#concrete">Concrete Work</a></li><li><a href="#patio">Patios</a></li>
-      <li><a href="#sidewalk">Sidewalks</a></li><li><a href="#hardwood">Hardwood Flooring</a></li>
-      <li><a href="#vinyl">Vinyl Flooring</a></li><li><a href="#general">General Construction</a></li>
+      <li><a href="concrete.html">Concrete Work</a></li><li><a href="patio.html">Patios</a></li>
+      <li><a href="sidewalk.html">Sidewalks</a></li><li><a href="hardwood.html">Hardwood Flooring</a></li>
+      <li><a href="vinyl.html">Vinyl Flooring</a></li><li><a href="general.html">General Construction</a></li>
     </ul></div>
     <div class="footer-col"><h4>Pages</h4><ul>
       <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
@@ -270,7 +269,8 @@ footer{background:var(--dark);padding:56px 32px 24px}
       <li><a href="contact.html">Contact</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><address>
-      <a href="tel:9047752057">(904) 775-2057</a><span>Jacksonville, FL</span><span>Mon–Sat: 7am – 6pm</span>
+      <a href="tel:9047752057">(904) 775-2057</a><span>Jacksonville, FL</span>
+      <span>Mon–Sat: 9am – 5pm</span><span>Sun: Closed</span>
     </address></div>
   </div>
   <div class="footer-bottom">
