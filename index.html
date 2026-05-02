@@ -110,11 +110,10 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .se-tab:hover:not(.active){color:var(--accent-dk)}
 .se-body{display:grid;grid-template-columns:240px 1fr;border:1px solid var(--bd);border-radius:14px;overflow:hidden;min-height:520px}
 .se-sidebar{background:var(--warm);display:flex;flex-direction:column}
-.se-svc-item{display:flex;align-items:center;gap:12px;padding:18px 20px;font-family:var(--fb);font-weight:600;font-size:15px;color:var(--gray-dk);cursor:pointer;border-bottom:1px solid var(--bd);border-left:4px solid transparent;transition:background .15s,color .15s,border-color .15s}
+.se-svc-item{flex:1;display:flex;align-items:center;padding:0 20px;font-family:var(--fb);font-weight:600;font-size:15px;color:var(--gray-dk);cursor:pointer;border-bottom:1px solid var(--bd);border-left:4px solid transparent;transition:background .15s,color .15s,border-color .15s}
 .se-svc-item:last-child{border-bottom:none}
 .se-svc-item:hover{background:#fff;color:var(--accent)}
 .se-svc-item.active{background:#fff;color:var(--accent);border-left-color:var(--accent);font-weight:700}
-.se-svc-icon{font-size:18px;flex-shrink:0}
 .se-panel{position:relative;overflow:hidden;min-height:520px}
 .se-panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:background-image .35s}
 .se-panel-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,11,7,.88) 0%,rgba(13,11,7,.55) 55%,rgba(13,11,7,.2) 100%)}
@@ -140,7 +139,6 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .serve-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .serve-card{background:#fff;border-radius:14px;padding:32px 24px;text-align:center;border:1px solid var(--bd);transition:transform .25s,box-shadow .25s}
 .serve-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(13,11,7,.1)}
-.serve-icon{font-size:40px;margin-bottom:16px}
 .serve-card h3{font-family:var(--fh);font-weight:800;font-size:20px;text-transform:uppercase;color:var(--dark);margin-bottom:10px}
 .serve-card p{font-size:14px;color:var(--gray);line-height:1.6}
 
@@ -153,7 +151,7 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .why-text h2{font-family:var(--fh);font-weight:900;font-size:clamp(34px,4vw,52px);text-transform:uppercase;line-height:1;color:#fff;margin-bottom:20px}
 .why-points{display:flex;flex-direction:column;gap:18px;margin-top:10px}
 .why-point{display:flex;gap:16px;align-items:flex-start}
-.why-point-icon{width:42px;height:42px;border-radius:8px;background:rgba(201,160,53,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px}
+.why-point-icon{width:42px;height:42px;border-radius:8px;background:rgba(201,160,53,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;font-weight:700;color:var(--accent-lt)}
 .why-point-text h4{font-family:var(--fh);font-weight:700;font-size:17px;color:#fff;text-transform:uppercase;margin-bottom:4px}
 .why-point-text p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.5}
 
@@ -196,14 +194,14 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .reviews-cta{text-align:center;margin-top:32px}
 
 /* SERVICE AREA */
-.area-section{padding:80px 32px;background:var(--dark2)}
+.area-section{padding:80px 32px;background:var(--dark)}
 .area-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 .area-text .section-label{color:var(--accent-lt)}
 .area-text h2{font-family:var(--fh);font-weight:900;font-size:clamp(34px,4vw,48px);text-transform:uppercase;line-height:1;color:#fff;margin-bottom:24px}
 .area-text p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:24px;line-height:1.6}
 .area-cities{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .city-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(255,255,255,.75);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07)}
-.city-item::before{content:'📍';font-size:13px}
+.city-item::before{content:'›';font-size:16px;color:var(--accent);font-weight:700}
 .area-map{border-radius:12px;overflow:hidden;height:320px}
 .area-map iframe{width:100%;height:100%;border:0}
 
@@ -217,8 +215,22 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:12px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:border-color .2s,background .2s}
 .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.12)}
 
+/* ABOUT SECTION */
+.about-section{padding:80px 32px;background:var(--warm)}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-img{border-radius:16px;overflow:hidden;height:480px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-text .section-label{margin-bottom:10px}
+.about-text h2{font-family:var(--fh);font-weight:800;font-size:clamp(36px,4vw,54px);color:var(--dark);line-height:1.1;margin-bottom:14px}
+.about-divider{width:48px;height:4px;background:var(--accent);border-radius:2px;margin-bottom:18px}
+.about-sub{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:14px}
+.about-text p{font-size:15px;color:var(--gray-dk);line-height:1.75;margin-bottom:14px}
+.btn-about{display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s;margin-top:10px}
+.btn-about:hover{background:var(--accent-dk)}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr}.about-img{height:280px}}
+
 /* FOOTER */
-footer{background:var(--dark);padding:56px 32px 24px}
+footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 4L76 40L40 76L4 40Z' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3C/svg%3E")}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
 .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .footer-logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(201,160,53,.4)}
@@ -268,7 +280,7 @@ footer{background:var(--dark);padding:56px 32px 24px}
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <div class="top-bar-phone">📞 &nbsp;(904) 775-2057</div>
+  <div class="top-bar-phone">(904) 775-2057</div>
   <div class="top-bar-actions">
     <a href="contact.html" class="top-bar-btn">Request a Quote</a>
     <a href="contact.html#area" class="top-bar-btn">See If We Serve Your Area</a>
@@ -311,7 +323,7 @@ footer{background:var(--dark);padding:56px 32px 24px}
     </li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="tel:9047752057" class="nav-cta">📞 (904) 775-2057</a>
+  <a href="tel:9047752057" class="nav-cta">(904) 775-2057</a>
 </nav>
 
 <!-- HERO -->
@@ -323,7 +335,7 @@ footer{background:var(--dark);padding:56px 32px 24px}
       <div class="hero-rating">El Duro Construction <span class="hero-stars">★★★★★</span></div>
       <h1 class="hero-title">El Duro<br/>Construction<br/>LLC</h1>
       <p class="hero-desc">Jacksonville's trusted contractor for concrete work, patios, sidewalks, hardwood &amp; vinyl flooring. We show up when we say we will, do the work properly, and stand behind it. 4.9 stars on Google from 14 real customers.</p>
-      <div class="hero-ctas"><a href="tel:9047752057" class="btn-hero-primary">📞 (904) 775-2057</a><a href="projects.html" class="btn-hero-secondary">See Our Work</a></div>
+      <div class="hero-ctas"><a href="tel:9047752057" class="btn-hero-primary">Call (904) 775-2057</a><a href="projects.html" class="btn-hero-secondary">See Our Work</a></div>
     </div>
     <div class="hero-form-card">
       <p class="form-hook">Free Estimates — No Obligation</p>
@@ -355,13 +367,13 @@ footer{background:var(--dark);padding:56px 32px 24px}
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-item">⭐ 4.9-Star Google Rated</div>
+  <div class="trust-item">★ 4.9-Star Google Rated</div>
   <div class="trust-dot"></div>
-  <div class="trust-item">📍 Jacksonville, FL</div>
+  <div class="trust-item">Jacksonville, FL</div>
   <div class="trust-dot"></div>
-  <div class="trust-item">🏠 Concrete &amp; Flooring Experts</div>
+  <div class="trust-item">Concrete &amp; Flooring Experts</div>
   <div class="trust-dot"></div>
-  <div class="trust-item">✅ Free Estimates</div>
+  <div class="trust-item">Free Estimates Available</div>
 </div>
 
 <!-- SERVICES EXPLORER -->
@@ -403,22 +415,18 @@ footer{background:var(--dark);padding:56px 32px 24px}
   </div>
   <div class="serve-grid">
     <div class="serve-card">
-      <div class="serve-icon">🏡</div>
       <h3>Homeowners</h3>
       <p>Patios, driveways, hardwood floors, and home upgrades done with care. We treat your home like it's our own.</p>
     </div>
     <div class="serve-card">
-      <div class="serve-icon">🏢</div>
       <h3>Business Owners</h3>
       <p>Commercial concrete and flooring for storefronts, offices, and commercial properties throughout Jacksonville.</p>
     </div>
     <div class="serve-card">
-      <div class="serve-icon">🔑</div>
       <h3>Property Managers</h3>
       <p>Concrete repairs, flooring replacement, and maintenance work for rental properties and managed buildings.</p>
     </div>
     <div class="serve-card">
-      <div class="serve-icon">🏗</div>
       <h3>Real Estate Investors</h3>
       <p>Fast, reliable work for flips and renovations — we understand timelines and get the job done efficiently.</p>
     </div>
@@ -436,34 +444,52 @@ footer{background:var(--dark);padding:56px 32px 24px}
       <h2>Why Customers Choose Us</h2>
       <div class="why-points">
         <div class="why-point">
-          <div class="why-point-icon">⭐</div>
+          <div class="why-point-icon">★</div>
           <div class="why-point-text">
             <h4>4.9-Star Google Rating</h4>
             <p>14 verified Google reviews — consistently praised for quality work, fair pricing, and showing up on time.</p>
           </div>
         </div>
         <div class="why-point">
-          <div class="why-point-icon">📍</div>
+          <div class="why-point-icon">✓</div>
           <div class="why-point-text">
             <h4>Locally Based in Jacksonville</h4>
             <p>We're not a franchise. We're local. You deal directly with the people doing the work on your property.</p>
           </div>
         </div>
         <div class="why-point">
-          <div class="why-point-icon">💬</div>
+          <div class="why-point-icon">✓</div>
           <div class="why-point-text">
             <h4>Straight Pricing — No Surprises</h4>
             <p>We give honest upfront quotes and stick to them. No hidden fees, no last-minute upsells.</p>
           </div>
         </div>
         <div class="why-point">
-          <div class="why-point-icon">⏰</div>
+          <div class="why-point-icon">✓</div>
           <div class="why-point-text">
             <h4>We Show Up When We Say We Will</h4>
             <p>Punctuality matters. We respect your schedule and keep projects moving without unnecessary delays.</p>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-img">
+      <img src="./images/concrete-compactor.jpg" alt="El Duro Construction team Jacksonville FL" loading="lazy"/>
+    </div>
+    <div class="about-text">
+      <span class="section-label">About Us</span>
+      <h2>Our Story</h2>
+      <div class="about-divider"></div>
+      <p class="about-sub">Built on trust. Driven by quality.</p>
+      <p>El Duro Construction LLC was founded with one belief: contractors should show up when they say they will, do honest work, and charge fair prices. Based in Jacksonville, FL, we've built our reputation project by project across Northeast Florida.</p>
+      <p>From concrete driveways and custom patios to hardwood and vinyl flooring, we bring the same attention to detail to every job — residential or commercial. Our 4.9-star Google rating reflects the relationships we've built with customers who trust us to deliver.</p>
+      <a href="contact.html" class="btn-about">Get a Free Quote</a>
     </div>
   </div>
 </section>
@@ -622,7 +648,7 @@ footer{background:var(--dark);padding:56px 32px 24px}
     list.forEach(function(s,i){
       var li = document.createElement('li');
       li.className = 'se-svc-item' + (i===activeIdx?' active':'');
-      li.innerHTML = '<span class="se-svc-icon">'+s.icon+'</span>'+s.name;
+      li.innerHTML = s.name;
       li.addEventListener('click',function(){activeIdx=i;render();});
       sidebar.appendChild(li);
     });
