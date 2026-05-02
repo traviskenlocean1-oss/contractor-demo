@@ -91,20 +91,42 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .section-head h2{font-family:var(--fh);font-weight:900;font-size:clamp(34px,4vw,52px);text-transform:uppercase;line-height:1;color:var(--dark);margin-bottom:14px}
 .section-head p{font-size:16px;color:var(--gray);line-height:1.6}
 
-/* SERVICES GRID */
-.services-section{padding:80px 32px;background:#fff}
-.services-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.svc-card{border-radius:12px;overflow:hidden;border:1px solid var(--bd);transition:transform .25s,box-shadow .25s;background:#fff;display:flex;flex-direction:column}
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(13,11,7,.12)}
-.svc-card-img{height:200px;overflow:hidden;position:relative}
-.svc-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.svc-card:hover .svc-card-img img{transform:scale(1.06)}
-.svc-card-body{padding:20px;flex:1;display:flex;flex-direction:column}
-.svc-card-body h3{font-family:var(--fh);font-weight:800;font-size:22px;text-transform:uppercase;color:var(--dark);margin-bottom:8px}
-.svc-card-body p{font-size:14px;color:var(--gray);line-height:1.5;flex:1}
-.svc-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-weight:700;font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;transition:gap .2s}
-.svc-card-link:hover{gap:10px}
-.svc-card-link::after{content:'→'}
+/* SERVICES EXPLORER */
+.services-explorer{padding:80px 32px;background:#fff}
+.se-inner{max-width:1200px;margin:0 auto}
+.se-top{margin-bottom:32px}
+.se-eyebrow{display:block;font-family:var(--fh);font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.se-heading{font-family:var(--fh);font-weight:900;font-size:clamp(34px,4vw,52px);text-transform:uppercase;color:var(--dark);line-height:1}
+.se-tabs{display:flex;gap:0;border-bottom:2px solid var(--bd);margin-bottom:0}
+.se-tab{background:none;border:none;padding:13px 30px;font-family:var(--fh);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
+.se-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.se-tab:hover:not(.active){color:var(--accent-dk)}
+.se-body{display:grid;grid-template-columns:240px 1fr;border:1px solid var(--bd);border-radius:14px;overflow:hidden;min-height:520px}
+.se-sidebar{background:var(--warm);display:flex;flex-direction:column}
+.se-svc-item{display:flex;align-items:center;gap:12px;padding:18px 20px;font-family:var(--fb);font-weight:600;font-size:15px;color:var(--gray-dk);cursor:pointer;border-bottom:1px solid var(--bd);border-left:4px solid transparent;transition:background .15s,color .15s,border-color .15s}
+.se-svc-item:last-child{border-bottom:none}
+.se-svc-item:hover{background:#fff;color:var(--accent)}
+.se-svc-item.active{background:#fff;color:var(--accent);border-left-color:var(--accent);font-weight:700}
+.se-svc-icon{font-size:18px;flex-shrink:0}
+.se-panel{position:relative;overflow:hidden;min-height:520px}
+.se-panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:background-image .35s}
+.se-panel-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,11,7,.88) 0%,rgba(13,11,7,.55) 55%,rgba(13,11,7,.2) 100%)}
+.se-panel-content{position:relative;z-index:2;padding:52px 44px;height:100%;display:flex;flex-direction:column;justify-content:flex-end}
+.se-panel-label{font-family:var(--fh);font-size:12px;color:var(--accent-lt);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.se-panel-title{font-family:var(--fh);font-weight:900;font-size:clamp(32px,4vw,52px);text-transform:uppercase;color:#fff;line-height:1;margin-bottom:14px}
+.se-panel-desc{font-size:15px;color:rgba(255,255,255,.82);line-height:1.65;max-width:500px;margin-bottom:30px}
+.se-panel-btns{display:flex;gap:14px;flex-wrap:wrap}
+.se-btn-primary{background:var(--accent);color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px;transition:background .2s}
+.se-btn-primary:hover{background:var(--accent-dk)}
+.se-btn-secondary{border:2px solid rgba(255,255,255,.55);color:#fff;padding:11px 28px;border-radius:8px;font-weight:700;font-size:14px;text-transform:uppercase;transition:border-color .2s,background .2s}
+.se-btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+@media(max-width:768px){
+  .se-body{grid-template-columns:1fr;min-height:auto}
+  .se-sidebar{flex-direction:row;overflow-x:auto;flex-wrap:nowrap}
+  .se-svc-item{border-left:none;border-bottom:3px solid transparent;white-space:nowrap;padding:14px 16px}
+  .se-svc-item.active{border-bottom-color:var(--accent);border-left:none}
+  .se-panel{min-height:420px}
+}
 
 /* WHO WE SERVE */
 .serve-section{padding:80px 32px;background:var(--warm)}
@@ -336,62 +358,33 @@ footer{background:var(--dark);padding:56px 32px 24px}
   <div class="trust-item">✅ Free Estimates</div>
 </div>
 
-<!-- SERVICES GRID -->
-<section class="services-section">
-  <div class="section-head">
-    <span class="section-label">What We Do</span>
-    <h2>Our Services</h2>
-    <p>From concrete foundations to finished floors — click any service to learn more.</p>
-  </div>
-  <div class="services-grid">
-    <a href="concrete.html" class="svc-card">
-      <div class="svc-card-img"><img src="https://lh3.googleusercontent.com/p/AF1QipPeG6dOCba9kX4pBRXgwBz5rstFpoByPRl6rLM=w800-h600-k-no" alt="Concrete work Jacksonville FL" loading="lazy"/></div>
-      <div class="svc-card-body">
-        <h3>Concrete Work</h3>
-        <p>Driveways, slabs, foundations, and structural concrete done right the first time.</p>
-        <span class="svc-card-link">Learn More</span>
+<!-- SERVICES EXPLORER -->
+<section class="services-explorer">
+  <div class="se-inner">
+    <div class="se-top">
+      <span class="se-eyebrow">What We Do</span>
+      <h2 class="se-heading">Explore Our Services</h2>
+    </div>
+    <div class="se-tabs">
+      <button class="se-tab active" data-cat="concrete">Concrete &amp; Patio</button>
+      <button class="se-tab" data-cat="flooring">Flooring &amp; More</button>
+    </div>
+    <div class="se-body">
+      <ul class="se-sidebar" id="se-sidebar"></ul>
+      <div class="se-panel" id="se-panel">
+        <div class="se-panel-bg" id="se-bg"></div>
+        <div class="se-panel-overlay"></div>
+        <div class="se-panel-content">
+          <span class="se-panel-label" id="se-label"></span>
+          <h3 class="se-panel-title" id="se-title"></h3>
+          <p class="se-panel-desc" id="se-desc"></p>
+          <div class="se-panel-btns">
+            <a id="se-learn" href="#" class="se-btn-primary">Learn More →</a>
+            <a href="contact.html" class="se-btn-secondary">Get a Free Quote</a>
+          </div>
+        </div>
       </div>
-    </a>
-    <a href="patio.html" class="svc-card">
-      <div class="svc-card-img"><img src="./images/patio-work.jpg" alt="Patio installation Jacksonville FL" loading="lazy"/></div>
-      <div class="svc-card-body">
-        <h3>Patios</h3>
-        <p>Custom concrete patio installations that add outdoor living value to your property.</p>
-        <span class="svc-card-link">Learn More</span>
-      </div>
-    </a>
-    <a href="sidewalk.html" class="svc-card">
-      <div class="svc-card-img"><img src="./images/sidewalk-work.jpg" alt="Sidewalk installation Jacksonville FL" loading="lazy"/></div>
-      <div class="svc-card-body">
-        <h3>Sidewalks</h3>
-        <p>Properly graded and finished concrete sidewalks and walkways built to code.</p>
-        <span class="svc-card-link">Learn More</span>
-      </div>
-    </a>
-    <a href="hardwood.html" class="svc-card">
-      <div class="svc-card-img"><img src="https://lh3.googleusercontent.com/p/AF1QipNae5KMZVEt0ulJArGjKQzeJGMZGTxzFdAwkd8=w800-h600-k-no" alt="Hardwood flooring Jacksonville FL" loading="lazy"/></div>
-      <div class="svc-card-body">
-        <h3>Hardwood Flooring</h3>
-        <p>Solid and engineered hardwood installation that transforms any interior space.</p>
-        <span class="svc-card-link">Learn More</span>
-      </div>
-    </a>
-    <a href="vinyl.html" class="svc-card">
-      <div class="svc-card-img"><img src="./images/lvp-flooring.jpg" alt="Vinyl flooring Jacksonville FL" loading="lazy"/></div>
-      <div class="svc-card-body">
-        <h3>Vinyl Flooring</h3>
-        <p>Durable LVP flooring installed with precision — perfect for high-traffic areas.</p>
-        <span class="svc-card-link">Learn More</span>
-      </div>
-    </a>
-    <a href="general.html" class="svc-card">
-      <div class="svc-card-img"><img src="./images/general-construction.jpg" alt="General construction Jacksonville FL" loading="lazy"/></div>
-      <div class="svc-card-body">
-        <h3>General Construction</h3>
-        <p>Additions, repairs, and broader construction projects handled professionally.</p>
-        <span class="svc-card-link">Learn More</span>
-      </div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -597,6 +590,57 @@ footer{background:var(--dark);padding:56px 32px 24px}
 
 <!-- STICKY QUOTE BUTTON -->
 <a href="contact.html" class="sticky-quote">Get a Free Quote</a>
+
+<script>
+(function(){
+  var SE = {
+    concrete:[
+      {name:'Concrete Work',icon:'🧱',img:'https://lh3.googleusercontent.com/p/AF1QipPeG6dOCba9kX4pBRXgwBz5rstFpoByPRl6rLM=w1400-h900-k-no',desc:'Driveways, slabs, foundations, and structural concrete done right the first time. We handle projects of every size across Jacksonville and Northeast Florida.',href:'concrete.html'},
+      {name:'Patios',icon:'🏡',img:'./images/patio-work.jpg',desc:'Custom concrete patio installations that transform your outdoor space and add lasting value to your property.',href:'patio.html'},
+      {name:'Sidewalks',icon:'🚶',img:'./images/sidewalk-work.jpg',desc:'Properly graded and finished concrete sidewalks and walkways built to code. Clean edges, smooth finish, and built to handle Florida weather.',href:'sidewalk.html'}
+    ],
+    flooring:[
+      {name:'Hardwood Flooring',icon:'🪵',img:'https://lh3.googleusercontent.com/p/AF1QipNae5KMZVEt0ulJArGjKQzeJGMZGTxzFdAwkd8=w1400-h900-k-no',desc:'Solid and engineered hardwood installation that transforms any interior. We handle everything from subfloor prep to the final finish.',href:'hardwood.html'},
+      {name:'Vinyl Flooring',icon:'📐',img:'./images/lvp-flooring.jpg',desc:'Durable LVP flooring installed with precision. Waterproof, stylish, and perfect for high-traffic areas throughout your home or business.',href:'vinyl.html'},
+      {name:'General Construction',icon:'🔨',img:'./images/general-construction.jpg',desc:'Additions, repairs, and broader construction projects handled professionally. One crew, one call — we get it done.',href:'general.html'}
+    ]
+  };
+
+  var activeCat = 'concrete';
+  var activeIdx = 0;
+
+  function render(){
+    var list = SE[activeCat];
+    var sidebar = document.getElementById('se-sidebar');
+    sidebar.innerHTML = '';
+    list.forEach(function(s,i){
+      var li = document.createElement('li');
+      li.className = 'se-svc-item' + (i===activeIdx?' active':'');
+      li.innerHTML = '<span class="se-svc-icon">'+s.icon+'</span>'+s.name;
+      li.addEventListener('click',function(){activeIdx=i;render();});
+      sidebar.appendChild(li);
+    });
+    var svc = list[activeIdx];
+    document.getElementById('se-bg').style.backgroundImage = 'url('+svc.img+')';
+    document.getElementById('se-label').textContent = activeCat==='concrete'?'Concrete & Patio':'Flooring & More';
+    document.getElementById('se-title').textContent = svc.name;
+    document.getElementById('se-desc').textContent = svc.desc;
+    document.getElementById('se-learn').href = svc.href;
+  }
+
+  document.querySelectorAll('.se-tab').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.se-tab').forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat;
+      activeIdx = 0;
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
 
 </body>
 </html>
