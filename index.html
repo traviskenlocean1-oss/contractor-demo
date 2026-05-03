@@ -130,7 +130,7 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .se-tab:hover:not(.active){color:var(--accent-dk)}
 .se-body{display:grid;grid-template-columns:300px 1fr;border:1px solid var(--bd);border-radius:14px;overflow:hidden;min-height:620px}
 .se-sidebar{background:var(--warm);display:flex;flex-direction:column}
-.se-svc-item{min-height:100px;display:flex;align-items:center;padding:0 28px;font-family:var(--fb);font-weight:600;font-size:17px;color:var(--gray-dk);cursor:pointer;border-bottom:1px solid var(--bd);border-left:5px solid transparent;transition:background .15s,color .15s,border-color .15s;gap:14px}
+.se-svc-item{flex:1;min-height:100px;display:flex;align-items:center;padding:0 28px;font-family:var(--fb);font-weight:600;font-size:17px;color:var(--gray-dk);cursor:pointer;border-bottom:1px solid var(--bd);border-left:5px solid transparent;transition:background .15s,color .15s,border-color .15s;gap:14px}
 .se-svc-item:last-child{border-bottom:none}
 .se-svc-item:hover{background:#fff;color:var(--accent)}
 .se-svc-item.active{background:#fff;color:var(--accent);border-left-color:var(--accent);font-weight:700}
@@ -393,12 +393,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
 <section class="about-svc-section">
   <div class="as-about">
     <div class="as-img-wrap">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80" alt="El Duro Construction crew Jacksonville FL" loading="lazy"/>
-      <div class="as-img-badge">
-        <span class="as-badge-num">4.9</span>
-        <span class="as-badge-stars">★★★★★</span>
-        <span class="as-badge-label">Google Rating</span>
-      </div>
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80" alt="El Duro Construction crew Jacksonville FL" loading="lazy"/>
     </div>
     <div class="as-right">
       <span class="section-label">About El Duro</span>
@@ -412,8 +407,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
       <p>El Duro Construction LLC was founded with one belief: contractors should show up when they say they will, do honest work, and charge fair prices. Based in Jacksonville, FL, we've built our reputation project by project across Northeast Florida.</p>
       <p>From concrete driveways and custom patios to hardwood and vinyl flooring, we bring the same care and attention to every job — residential or commercial.</p>
       <div class="as-btn-row">
-        <a href="contact.html" class="btn-about">Get a Free Quote</a>
-        <a href="services.html" class="btn-about-outline">More About Us</a>
+        <a href="services.html" class="btn-about">More About Us</a>
       </div>
     </div>
   </div>
