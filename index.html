@@ -128,13 +128,13 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .se-tab{background:none;border:none;padding:13px 30px;font-family:var(--fh);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
 .se-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .se-tab:hover:not(.active){color:var(--accent-dk)}
-.se-body{display:grid;grid-template-columns:240px 1fr;border:1px solid var(--bd);border-radius:14px;overflow:hidden;min-height:520px}
+.se-body{display:grid;grid-template-columns:300px 1fr;border:1px solid var(--bd);border-radius:14px;overflow:hidden;min-height:620px}
 .se-sidebar{background:var(--warm);display:flex;flex-direction:column}
-.se-svc-item{flex:1;display:flex;align-items:center;padding:0 20px;font-family:var(--fb);font-weight:600;font-size:15px;color:var(--gray-dk);cursor:pointer;border-bottom:1px solid var(--bd);border-left:4px solid transparent;transition:background .15s,color .15s,border-color .15s}
+.se-svc-item{min-height:100px;display:flex;align-items:center;padding:0 28px;font-family:var(--fb);font-weight:600;font-size:17px;color:var(--gray-dk);cursor:pointer;border-bottom:1px solid var(--bd);border-left:5px solid transparent;transition:background .15s,color .15s,border-color .15s;gap:14px}
 .se-svc-item:last-child{border-bottom:none}
 .se-svc-item:hover{background:#fff;color:var(--accent)}
 .se-svc-item.active{background:#fff;color:var(--accent);border-left-color:var(--accent);font-weight:700}
-.se-panel{position:relative;overflow:hidden;min-height:520px}
+.se-panel{position:relative;overflow:hidden;min-height:620px}
 .se-panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:background-image .35s}
 .se-panel-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,11,7,.88) 0%,rgba(13,11,7,.55) 55%,rgba(13,11,7,.2) 100%)}
 .se-panel-content{position:relative;z-index:2;padding:52px 44px;height:100%;display:flex;flex-direction:column;justify-content:flex-end}
@@ -235,8 +235,11 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 .btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:12px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:border-color .2s,background .2s}
 .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.12)}
 
-.btn-about{display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s;margin-top:10px}
+.as-btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+.btn-about{display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s}
 .btn-about:hover{background:var(--accent-dk)}
+.btn-about-outline{display:inline-block;border:2px solid var(--accent);color:var(--accent);padding:12px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s,color .2s}
+.btn-about-outline:hover{background:var(--accent);color:#fff}
 
 /* FOOTER */
 footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 4L76 40L40 76L4 40Z' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3C/svg%3E")}
@@ -390,7 +393,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
 <section class="about-svc-section">
   <div class="as-about">
     <div class="as-img-wrap">
-      <img src="./images/patio-work.jpg" alt="El Duro Construction Jacksonville FL" loading="lazy"/>
+      <img src="./images/concrete-compactor.jpg" alt="El Duro Construction crew Jacksonville FL" loading="lazy"/>
       <div class="as-img-badge">
         <span class="as-badge-num">4.9</span>
         <span class="as-badge-stars">★★★★★</span>
@@ -399,7 +402,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
     </div>
     <div class="as-right">
       <span class="section-label">About El Duro</span>
-      <h2>Built Different.<br>Built to Last.</h2>
+      <h2>More Than a Contractor.<br>We're Your Team.</h2>
       <div class="as-divider"></div>
       <div class="as-stats">
         <div class="as-stat"><span class="as-stat-num">4.9★</span><span class="as-stat-lbl">Google Rating</span></div>
@@ -408,7 +411,10 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
       </div>
       <p>El Duro Construction LLC was founded with one belief: contractors should show up when they say they will, do honest work, and charge fair prices. Based in Jacksonville, FL, we've built our reputation project by project across Northeast Florida.</p>
       <p>From concrete driveways and custom patios to hardwood and vinyl flooring, we bring the same care and attention to every job — residential or commercial.</p>
-      <a href="contact.html" class="btn-about">Get a Free Quote</a>
+      <div class="as-btn-row">
+        <a href="contact.html" class="btn-about">Get a Free Quote</a>
+        <a href="services.html" class="btn-about-outline">More About Us</a>
+      </div>
     </div>
   </div>
   <div class="as-services">
