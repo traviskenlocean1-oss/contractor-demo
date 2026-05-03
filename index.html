@@ -350,16 +350,13 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
       <div class="hero-ctas"><a href="tel:9047752057" class="btn-hero-primary">Call (904) 775-2057</a><a href="projects.html" class="btn-hero-secondary">See Our Work</a></div>
     </div>
     <div class="hero-form-card">
-      <p class="form-hook">Free Estimates — No Obligation</p>
       <h2 class="form-title">Get a Free Quote</h2>
       <p class="form-sub">We respond within 24 hours</p>
       <form class="qf" action="https://formspree.io/f/YOUR_ID" method="POST">
-        <div class="qf-row">
-          <input type="text" name="firstname" placeholder="First Name" required/>
-          <input type="text" name="lastname" placeholder="Last Name" required/>
-        </div>
-        <input type="tel" name="phone" placeholder="Phone Number" required/>
-        <input type="email" name="email" placeholder="Email Address"/>
+        <input type="text" name="fullname" placeholder="Full Name*" required/>
+        <input type="tel" name="phone" placeholder="Phone*" required/>
+        <input type="email" name="email" placeholder="Email*"/>
+        <input type="text" name="city" placeholder="City"/>
         <select name="service" required>
           <option value="" disabled selected>Select a Service</option>
           <option>Concrete Work</option>
@@ -370,8 +367,8 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
           <option>General Construction</option>
           <option>Other</option>
         </select>
-        <textarea name="message" placeholder="Describe your project..." rows="3"></textarea>
-        <button type="submit">Request My Free Quote →</button>
+        <textarea name="message" placeholder="Tell us about your project..." rows="3"></textarea>
+        <button type="submit">Get My Free Quote</button>
       </form>
     </div>
   </div>
