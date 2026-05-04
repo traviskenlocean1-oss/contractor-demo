@@ -271,13 +271,35 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
 }
 @media(max-width:768px){
   .top-bar{padding:8px 20px}.top-bar-actions{display:none}
-  nav{padding:0 20px}.nav-links{display:none}
+  nav{padding:0 16px}.nav-links{display:none}
+  /* Nav logo: shrink so it doesn't overflow with phone CTA */
+  .nav-logo-img{width:44px;height:44px}
+  .logo-name{font-size:20px}
+  .logo-trade{display:none}
+  .nav-cta{font-size:12px;padding:8px 14px}
   .hero-split{padding:40px 20px}
-  .hero-title{font-size:52px}
-  .serve-grid{grid-template-columns:1fr 1fr}
-  .why-inner{grid-template-columns:1fr}.why-img{height:260px}
-  .process-grid{grid-template-columns:repeat(2,1fr)}
-  .projects-grid{grid-template-columns:1fr}.proj-card.featured{height:280px;grid-row:auto}
+  .hero-title{font-size:48px}
+  /* Tighten section padding site-wide on mobile */
+  .serve-section{padding:48px 20px}
+  .why-section{padding:48px 20px}
+  .process-section{padding:48px 20px}
+  .services-section{padding:48px 20px}
+  .projects-section{padding:48px 20px}
+  .reviews-section{padding:48px 20px}
+  .area-section{padding:48px 20px}
+  .trust-bar{padding:28px 20px}
+  /* Serve cards: tighter gap when stacked */
+  .serve-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .serve-card{padding:22px 16px}
+  /* Services explorer horizontal scroll: allow wrapping */
+  .se-svc-item{white-space:normal;font-size:14px;padding:12px 14px;min-height:60px}
+  /* Why section */
+  .why-inner{grid-template-columns:1fr}.why-img{height:240px}
+  /* Process: 1 column on small screen to stop heading wraps */
+  .process-grid{grid-template-columns:1fr 1fr}
+  .step-card{padding:20px 16px}
+  /* Projects / reviews */
+  .projects-grid{grid-template-columns:1fr}.proj-card.featured{height:260px;grid-row:auto}
   .review-cards{grid-template-columns:1fr}
   .area-inner{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
@@ -285,7 +307,11 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
   .reviews-divider{width:80px;height:1px}
   .sticky-quote{bottom:16px;left:16px;font-size:13px;padding:11px 18px}
 }
-@media(max-width:480px){.serve-grid{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .serve-grid{grid-template-columns:1fr;gap:12px}
+  .process-grid{grid-template-columns:1fr}
+  .hero-title{font-size:40px}
+}
 </style>
 </head>
 <body>
