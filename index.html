@@ -55,7 +55,7 @@ nav{background:#fff;height:72px;display:flex;align-items:center;justify-content:
 
 /* HERO */
 #hero{position:relative;min-height:calc(100vh - 108px);display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0;background:url('https://lh3.googleusercontent.com/p/AF1QipN7N5DEj1QfaYNm61ll6Ha7FkCLPrEziGlj2aM=w1600-h1000-k-no') center/cover no-repeat;z-index:0}
+.hero-bg{position:absolute;inset:0;background:url('/images/gbp-photo-1.jpg') center/cover no-repeat;z-index:0}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,8,4,.88) 0%,rgba(10,8,4,.72) 55%,rgba(10,8,4,.60) 100%);z-index:1}
 .hero-split{position:relative;z-index:2;width:100%;max-width:1340px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:1fr 480px;gap:52px;align-items:center}
 .hero-left{color:#fff}
@@ -313,6 +313,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
   .hero-title{font-size:40px}
 }
 </style>
+<link rel="stylesheet" href="/assets/motion.css?v=1">
 </head>
 <body>
 
@@ -328,7 +329,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction LLC" class="nav-logo-img"/>
+    <img src="/images/logo.png" alt="El Duro Construction LLC" class="nav-logo-img"/>
     <div class="nav-logo-text">
       <span class="logo-name">El Duro</span>
       <span class="logo-trade">Construction</span>
@@ -558,7 +559,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
       <div class="proj-overlay"><h3>Concrete Work — Jacksonville</h3><span>Northeast Florida</span></div>
     </a>
     <a href="projects.html" class="proj-card">
-      <img src="https://lh3.googleusercontent.com/p/AF1QipNae5KMZVEt0ulJArGjKQzeJGMZGTxzFdAwkd8=w800-h600-k-no" alt="Hardwood floors Jacksonville" loading="lazy"/>
+      <img src="/images/gbp-hardwood.jpg" alt="Hardwood floors Jacksonville" loading="lazy"/>
       <div class="proj-overlay"><h3>Hardwood Floors</h3><span>Jacksonville, FL</span></div>
     </a>
     <a href="projects.html" class="proj-card">
@@ -627,7 +628,7 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="https://lh3.googleusercontent.com/p/AF1QipMFB9abfVwF2ZuI_oWborezmzhsaFSu4l5sX4Y=w80-h80-k-no" alt="El Duro Construction" class="footer-logo-img"/>
+        <img src="/images/logo.png" alt="El Duro Construction" class="footer-logo-img"/>
         <div class="footer-logo-text"><span>El Duro Construction</span><span>Jacksonville, FL</span></div>
       </div>
       <p>Concrete work, patios, sidewalks, hardwood flooring, vinyl flooring, and general construction serving Jacksonville and Northeast Florida.</p>
@@ -662,12 +663,12 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
 (function(){
   var SE = {
     concrete:[
-      {name:'Concrete Work',img:'https://lh3.googleusercontent.com/p/AF1QipPeG6dOCba9kX4pBRXgwBz5rstFpoByPRl6rLM=w1400-h900-k-no',desc:'Driveways, slabs, and concrete flatwork done right the first time. We handle projects of every size across Jacksonville and Northeast Florida.',href:'concrete.html'},
+      {name:'Concrete Work',img:'/images/gbp-concrete.jpg',desc:'Driveways, slabs, and concrete flatwork done right the first time. We handle projects of every size across Jacksonville and Northeast Florida.',href:'concrete.html'},
       {name:'Patios',img:'./images/patio-work.jpg',desc:'Custom concrete patio installations that transform your outdoor space and add lasting value to your property.',href:'patio.html'},
       {name:'Sidewalks',img:'./images/sidewalk-work.jpg',desc:'Properly graded and finished concrete sidewalks and walkways built to code. Clean edges, smooth finish, and built to handle Florida weather.',href:'sidewalk.html'}
     ],
     flooring:[
-      {name:'Hardwood Flooring',img:'https://lh3.googleusercontent.com/p/AF1QipNae5KMZVEt0ulJArGjKQzeJGMZGTxzFdAwkd8=w1400-h900-k-no',desc:'Solid and engineered hardwood installation that transforms any interior. We handle everything from subfloor prep to the final finish.',href:'hardwood.html'},
+      {name:'Hardwood Flooring',img:'/images/gbp-hardwood.jpg',desc:'Solid and engineered hardwood installation that transforms any interior. We handle everything from subfloor prep to the final finish.',href:'hardwood.html'},
       {name:'Vinyl Flooring',img:'./images/lvp-flooring.jpg',desc:'Durable LVP flooring installed with precision. Waterproof, stylish, and perfect for high-traffic areas throughout your home or business.',href:'vinyl.html'},
       {name:'General Construction',img:'./images/general-construction.jpg',desc:'Additions, repairs, and broader construction projects handled professionally. One crew, one call — we get it done.',href:'general.html'}
     ]
@@ -709,5 +710,6 @@ footer{background:var(--dark);padding:56px 32px 24px;background-image:url("data:
 })();
 </script>
 
+<script src="/assets/motion.js?v=1" defer></script>
 </body>
 </html>
